@@ -2,5 +2,5 @@
 <h1 align = center color =>ILLUMIGEO x GEOPSYCHO</h1>
 
 <div align = center>
-  <img src = img-readme/AcesSOL.png>
+  <img src = img/AcesSOL.png>
 </div>
