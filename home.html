@@ -1,91 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="acessol">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcesSol</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header class="pb-10">
-        <section class="flex justify-between p-6 shadow-sm">
-            
-            <div>
-                <img src="img/AcesSOL.png" alt="">
-            </div>
 
-            <nav>
-                <ul class="flex gap-5 items-center">
+<style>
+    [data-theme="acessol"] {
+  --color-base-100: oklch(95.411% 0.02764 102.522);
+  --color-base-200: oklch(92.059% 0.04777 70.189);
+  --color-base-300: oklch(73.256% 0.13229 52.452);
+  --color-base-content: oklch(14% 0 0);
+  --color-primary: rgba(228, 151, 81, 1);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(85% 0.199 91.936);
+  --color-secondary-content: #F87C0A;
+  --color-accent: oklch(64% 0.222 41.116);
+  --color-accent-content: oklch(98% 0.016 73.684);
+  --color-neutral: oklch(45% 0.124 130.933);
+  --color-neutral-content: oklch(97% 0.017 320.058);
+  --color-info: oklch(82% 0.189 84.429);
+  --color-info-content: oklch(97% 0.014 254.604);
+  --color-success: oklch(76% 0.233 130.85);
+  --color-success-content: oklch(98% 0.031 120.757);
+  --color-warning: oklch(79% 0.184 86.047);
+  --color-warning-content: oklch(98% 0.026 102.212);
+  --color-error: oklch(55% 0.195 38.402);
+  --color-error-content: oklch(96% 0.015 12.422);
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 2rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1.5px;
+  --depth: 1;
+  --noise: 1;
+}
+</style>
+</head>
+<body class="bg-base-300">
+
+    <header class="bg-base-100 text-secondary-content ">
+        
+        <div class="navbar shadow-sm p-4">
+            <div class="navbar-start">
+                <img src="img/acessol logo.png" alt="">
+            </div>
+                
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal gap-4">
                     <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Home</a></li>
-                    <li><a href="Sobre.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
+                    <li><a href="sobre.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="mapa.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
                     <li><a href="blog.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
                     <li><a href="empregos.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><a href="login.html" class="border p-3 rounded-xl bg-gray-950 text-[#FFF] hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Entrar</a></li>
-                    <li><a href="criar.html" class="border p-3 rounded-xl bg-gray-950 text-[#FFF] hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Criar conta</a></li>
+                    <li><a href="login.html" class="btn btn-primary rounded-lg transition-transform duration-300 hover:scale-110">Entrar</a></li>
+                    <li><a href="criar.html" class="btn btn-outline  rounded-lg transition-transform duration-300 hover:scale-110"> Criar conta</a></li>
                 </ul>
-            </nav>
-
-        </section>
-
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section>
+  <main class="max-w-6xl mx-auto p-8 text-primary-content">
+    <section class="hero">
+      <div class="hero-content flex-col lg:flex-row gap-12">
+        <div x-data="{
+      texts: [
+        'Lorem ipsum dolor sit amet. Aut omnis quia aut totam quidem eos illo reiciendis cum galisum quam eos suscipit enim et cumque nesciunt? Et dignissimos nihil aut enim voluptas et omnis ducimus est odio galisum?',
+        'Lorem ipsum dolor sit amet. Ut veritatis maxime qui quaerat quia eum unde quasi qui nihil consectetur ut veniam debitis qui dolore quisquam. Sed beatae molestiae ut officiis sunt et omnis facilis et consectetur tenetur vel quis accusamus.',
+        'Lorem ipsum dolor sit amet. Et facilis facere qui voluptates quas et reprehenderit Quis et fuga suscipit. Quo minus galisum et dignissimos dolorum et quis incidunt quo minima ipsam.',
+        'Lorem ipsum dolor sit amet. Ut porro deleniti et itaque perspiciatis et omnis blanditiis. Eum suscipit dolor aut ipsum veniam et itaque molestiae. Cum placeat similique ea dolor repellat sed consequatur omnis quo molestiae enim qui quos amet. Ex perspiciatis cumque non corporis voluptatem in quaerat exercitationem et perferendis autem aut nobis reiciendis.',
+        'Lorem ipsum dolor sit amet. Ut tenetur iste est deserunt officiis ut quod iure id perferendis aspernatur! Ut aliquid dolor est vero commodi ea fugiat praesentium sit labore dolores.'
+      ],
+      current: 0,
+      show(index) {
+        this.current = index;
+      }
+    }"
+    class="max-w-3xl mx-auto  py-16 relative overflow-hidden">
 
-            <div class="max-w-6xl mx-auto px-10 flex justify-between items-center gap-20">
-                <div class="">
-                <h1 class="font-bold text-7xl max-w-2xl p-5 ">Acessibilidade e solidariedade para todos</h1>
-                <p class="p-5 text-lg max-w-2xl text-gray-800">Lorem ipsum dolor sit amet. Et voluptatem quasi rem omnis reiciendis est voluptatem tempore et omnis maiores aut quasi possimus vel soluta tenetur et obcaecati officia.  Sed dolorem quasi et quaerat impedit et nulla itaque aut iste veritatis id quae accusamus qui provident maiores. </p>
-                <div class="flex gap-5">
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                </div>
-                </div>
-                <figure class="max-w-lg max-h-lg">
-                <img src="https://picsum.photos/400" alt="Imagem placeholder" >
-                </figure>   
-            </div>
-            <hr class="border-gray-300 m-10">
+  <h1 class="font-bold text-5xl "> Acessibilidade e Solidariedade para todos </h1>
+  <p class="mt-6">
+    <span x-text="texts[current]" 
+          x-transition:enter="transition transform duration-500 "
+          x-transition:enter-start="translate-x-full opacity-0"
+          x-transition:enter-end="translate-x-0 opacity-100"
+          x-transition:leave="transition transform duration-500"
+          x-transition:leave-start="translate-x-0 opacity-100"
+          x-transition:leave-end="-translate-x-full opacity-0"
+    ></span>
+  </p>
 
-        </section>
-    </main>
+  <div class="flex justify-start gap-3 mt-8">
+    <template x-for="(text, index) in texts" :key="index">
+      <button @click="show(index)"
+              :class="current === index ? 'bg-white' : 'bg-gray-300'"
+              class="w-3 h-3 rounded-full transition-colors hover:bg-orange-600">
+      </button>
+    </template>
+  </div>
 
-    <footer>
-        <section class="flex p-7">
-            <section>
-                <div class="pl-25 py-10">
-                    <strong class="text-xl">AcesSol</strong>
-                    <p class="text-gray-800 w-full max-w-3xl pt-2">Lorem ipsum dolor sit amet. Et voluptatem quasi rem omnis reiciendis est voluptatem tempore et omnis maiores aut quasi possimus vel soluta tenetur et obcaecati officia.  Sed dolorem quasi et quaerat impedit et nulla itaque aut iste veritatis id quae accusamus qui provident maiores. Ea esse dolores aut doloribus harum qui adipisci libero ex dolores reprehenderit ut praesentium porro sit dolor possimus aut mollitia vitae. Et internos voluptas id nostrum repellendus eos rerum harum est odio omnis et nostrum voluptatem quo perspiciatis dolores.</p>
-                </div>
-                <div class="pl-25">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-linkedin"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                </div>
-            </section>
+</div>
 
-            <section class="flex gap-20 ml-40">
-                <div class="flex flex-col gap-2">
-                    <strong>Site map</strong>
-                    <p>Sobre</p>
-                    <p>Mapa</p>
-                    <p>Blog</p>
-                    <p>Empregos</p>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <strong>Contato</strong>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                    <p>lorem</p>
-                </div>
-            </section>
-        </section>
-    </footer>
+        <img
+          src="https://picsum.photos/400"
+          class="max-w-sm shadow"
+          alt="Imagem placeholder"
+        />
+      </div>
+    </section>
+  </main>
+
+<footer class="footer p-10 bg-base-100 shadow flex flex-col sm:flex-row gap-y-6 sm:gap-x-16 text-primary">
+  <aside class="max-w-lg">
+    <figure>
+      <img class="w-40" src="img/acessol logo.png" alt="AcesSol">
+    </figure>
+    <p class="">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
+    </p>
+  </aside>
+
+  <nav>
+    <strong class="footer-title text-primary font-bold">Site map</strong>
+    <a href="sobre.html" class="link link-hover">Sobre</a>
+    <a href="mapa.html" class="link link-hover">Mapa</a>
+    <a href="blog.html" class="link link-hover">Blog</a>
+    <a href="empregos.html" class="link link-hover">Empregos</a>
+  </nav>
+</footer>
+
 </body>
 </html>
