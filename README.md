@@ -11,7 +11,7 @@ acessibilidade e inclusão urbana. Tendo em vista a história da ocupação urba
 </p>
 <h3>Escopo</h3>
 <p>O QUE ENTRA | Pretendemos adicionar o máximo de opções de acessibilidade possíveis, tal qual, TalkBack. Pretendemos também integrar a API do google maps com algumas alterações onde teremos um mapa mostrando um marcador com os locais que já tiveram alguma denúncia e aparecer abaixo da section do mapa um espaço com todas as denúncias recentes, a quantidade de denúncias e o nível de prioridade de cada uma, além disso, teremos uma aba para que pessoas com defíciência possam criar ou colocar seu cúrriculo para que sirvamos de ponte do candidato até a empresa, lá terá mostrando as vagas postadas recentemente e uma aba de criar meu currículo.<br>
-O QUE NÃO ENTRA | </p>
+O QUE NÃO ENTRA | Extruturas visuais muito complexas, pois vai contra o nosso objetivo de ser acessível e de fácil entendimento para todos, sistema de pagar para usar, como uma versão "premium" do site.</p>
 <h3>Papéis do grupo</h3>
 <p>Letícia  - Programadora Chefe     | Designer - Ficará responsável por coordenar e instruir os outros componentes no que precisarem, além de também coordenar a parte do design do site do projeto.<br>
    Eloah    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.<br>
