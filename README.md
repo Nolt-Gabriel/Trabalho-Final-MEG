@@ -1,5 +1,6 @@
 <h1 align = center> Trabalho Final</h1>
 <h1 align = center>ILLUMIGEO x GEOPSYCHO</h1>
+<h2 align = center>AcesSOL</h2>
 <h3>Tema do projeto</h3>
 <p>Levando em consideração o tema proposto Olhares Sobre a Cidade - Urbanização, o nosso projeto é voltado para o subtema de
 acessibilidade e inclusão urbana. Tendo em vista a história da ocupação urbana de Natal, é possível perceber que mesmo com os planos urbanísticos e intervenções, o processo de expansão do território ocorreu de forma acelerada e desigual. A ausência de infraestrutura adequada está presente em diversos serviços essenciais, que não possuem elevadores, banheiros acessíveis ou rampas apropriadas. Ao caminhar pela cidade é possível também identificar barreiras físicas e arquitetônicas que são obstáculos que limitam a mobilidade e o acesso de pessoas com deficiência ou mobilidade reduzida. Falta de rampas, presença de calçadas irregulares, buraco e ausência de piso tátil tornam o deslocamento inseguro e dificultam a mobilidade da população.</p>
