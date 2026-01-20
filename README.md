@@ -1,5 +1,5 @@
 <h1 align = center> Trabalho Final</h1>
-<h1 align = center color =>ILLUMIGEO x GEOPSYCHO</h1>
+<h1 align = center>ILLUMIGEO x GEOPSYCHO</h1>
 <h3>Tema do projeto</h3>
 <p>Levando em consideração o tema proposto Olhares Sobre a Cidade - Urbanização, o nosso projeto é voltado para o subtema de
 acessibilidade e inclusão urbana. Tendo em vista a história da ocupação urbana de Natal, é possível perceber que mesmo com os planos urbanísticos e intervenções, o processo de expansão do território ocorreu de forma acelerada e desigual. A ausência de infraestrutura adequada está presente em diversos serviços essenciais, que não possuem elevadores, banheiros acessíveis ou rampas apropriadas. Ao caminhar pela cidade é possível também identificar barreiras físicas e arquitetônicas que são obstáculos que limitam a mobilidade e o acesso de pessoas com deficiência ou mobilidade reduzida. Falta de rampas, presença de calçadas irregulares, buraco e ausência de piso tátil tornam o deslocamento inseguro e dificultam a mobilidade da população.</p>
@@ -12,4 +12,11 @@ acessibilidade e inclusão urbana. Tendo em vista a história da ocupação urba
 <h3>Escopo</h3>
 <p></p>
 <h3>Papéis do grupo</h3>
-<p></p>
+<p>Letícia  - Programadora Chefe     | Designer - Ficará responsável por coordenar e instruir os outros componentes no que precisarem, além de também coordenar a parte do design do site do projeto.
+   Eloah    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.
+   Nayla    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.
+   Cauã     - Programador Full-stack            - Contribuirá na produção geral do site, com ideias e mudanças hábeis para o projeto.
+   Arthur   - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.
+   Ítalo    - Programador Back-end              - Ficará responsável por auxiliar na produção do projeto APOO com python e Banco de Dados.
+   Nicholas - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.
+   Pedro G. - Programador Back-end              - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.</p>
