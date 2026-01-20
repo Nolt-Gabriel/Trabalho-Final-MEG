@@ -12,11 +12,11 @@ acessibilidade e inclusão urbana. Tendo em vista a história da ocupação urba
 <h3>Escopo</h3>
 <p></p>
 <h3>Papéis do grupo</h3>
-<p>Letícia  - Programadora Chefe     | Designer - Ficará responsável por coordenar e instruir os outros componentes no que precisarem, além de também coordenar a parte do design do site do projeto.
-   Eloah    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.
-   Nayla    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.
-   Cauã     - Programador Full-stack            - Contribuirá na produção geral do site, com ideias e mudanças hábeis para o projeto.
-   Arthur   - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.
-   Ítalo    - Programador Back-end              - Ficará responsável por auxiliar na produção do projeto APOO com python e Banco de Dados.
-   Nicholas - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.
+<p>Letícia  - Programadora Chefe     | Designer - Ficará responsável por coordenar e instruir os outros componentes no que precisarem, além de também coordenar a parte do design do site do projeto.<br>
+   Eloah    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.<br>
+   Nayla    - Programadora Front-end | Designer - Contribuirá no design com ideias e mudanças hábeis para o projeto e participará da produção do front-end do site.<br>
+   Cauã     - Programador Full-stack            - Contribuirá na produção geral do site, com ideias e mudanças hábeis para o projeto.<br>
+   Arthur   - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.<br>
+   Ítalo    - Programador Back-end              - Ficará responsável por auxiliar na produção do projeto APOO com python e Banco de Dados.<br>
+   Nicholas - Programador Full-stack            - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.<br>
    Pedro G. - Programador Back-end              - Ficará responsável pela correlação entre a junção APOO-DesignWeb utilizando de frameworks python para integração de ambos, assim como o Banco de Dados.</p>
