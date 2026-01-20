@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="acessol">
+<html lang="pt-BR" data-theme="acessol" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,46 +11,43 @@
 
 <style>
     [data-theme="acessol"] {
-  --color-base-100: oklch(95.411% 0.02764 102.522);
-  --color-base-200: oklch(92.059% 0.04777 70.189);
-  --color-base-300: oklch(73.256% 0.13229 52.452);
-  --color-base-content: oklch(14% 0 0);
-  --color-primary: rgba(228, 151, 81, 1);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(85% 0.199 91.936);
-  --color-secondary-content: #F87C0A;
-  --color-accent: oklch(64% 0.222 41.116);
-  --color-accent-content: oklch(98% 0.016 73.684);
-  --color-neutral: oklch(45% 0.124 130.933);
-  --color-neutral-content: oklch(97% 0.017 320.058);
-  --color-info: oklch(82% 0.189 84.429);
-  --color-info-content: oklch(97% 0.014 254.604);
-  --color-success: oklch(76% 0.233 130.85);
-  --color-success-content: oklch(98% 0.031 120.757);
-  --color-warning: oklch(79% 0.184 86.047);
-  --color-warning-content: oklch(98% 0.026 102.212);
-  --color-error: oklch(55% 0.195 38.402);
-  --color-error-content: oklch(96% 0.015 12.422);
-  --radius-selector: 0.5rem;
-  --radius-field: 1rem;
-  --radius-box: 2rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1.5px;
-  --depth: 1;
-  --noise: 1;
-}
+    --color-base-100: oklch(95.411% 0.02764 102.522);
+    --color-base-200: oklch(92.059% 0.04777 70.189);
+    --color-base-300: oklch(73.256% 0.13229 52.452);
+    --color-base-content: oklch(14% 0 0);
+    --color-primary: rgba(228, 151, 81, 1);
+    --color-primary-content: oklch(100% 0 0);
+    --color-secondary: oklch(85% 0.199 91.936);
+    --color-secondary-content: #F87C0A;
+    --color-accent:  rgb(144, 231, 144);
+    --color-accent-content: oklch(98% 0.016 73.684);
+    --color-neutral:rgb(108, 187, 108) ;
+    --color-neutral-content: oklch(97% 0.017 320.058);
+    --color-info: oklch(82% 0.189 84.429);
+    --color-info-content: oklch(97% 0.014 254.604);
+    --color-success: oklch(76% 0.233 130.85);
+    --color-success-content: oklch(98% 0.031 120.757);
+    --color-warning: oklch(79% 0.184 86.047);
+    --color-warning-content: oklch(98% 0.026 102.212);
+    --color-error: oklch(55% 0.195 38.402);
+    --color-error-content: oklch(96% 0.015 12.422);
+    --radius-selector: 0.5rem;
+    --radius-field: 1rem;
+    --radius-box: 2rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 1;
+    --noise: 1;
+    }
 </style>
 </head>
-<body class="bg-base-300">
-
+<body class="min-h-screen m-0 bg-base-300 flex flex-col">
     <header class="bg-base-100 text-secondary-content ">
-        
         <div class="navbar shadow-sm p-4">
             <div class="navbar-start">
                 <img src="img/acessol logo.png" alt="">
-            </div>
-                
+            </div>    
             <div class="navbar-end">
                 <ul class="menu menu-horizontal gap-4">
                     <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Home</a></li>
@@ -65,74 +62,72 @@
         </div>
     </header>
 
-  <main class="max-w-6xl mx-auto p-8 text-primary-content">
-    <section class="hero">
-      <div class="hero-content flex-col lg:flex-row gap-12">
-        <div x-data="{
-      texts: [
-        'Lorem ipsum dolor sit amet. Aut omnis quia aut totam quidem eos illo reiciendis cum galisum quam eos suscipit enim et cumque nesciunt? Et dignissimos nihil aut enim voluptas et omnis ducimus est odio galisum?',
-        'Lorem ipsum dolor sit amet. Ut veritatis maxime qui quaerat quia eum unde quasi qui nihil consectetur ut veniam debitis qui dolore quisquam. Sed beatae molestiae ut officiis sunt et omnis facilis et consectetur tenetur vel quis accusamus.',
-        'Lorem ipsum dolor sit amet. Et facilis facere qui voluptates quas et reprehenderit Quis et fuga suscipit. Quo minus galisum et dignissimos dolorum et quis incidunt quo minima ipsam.',
-        'Lorem ipsum dolor sit amet. Ut porro deleniti et itaque perspiciatis et omnis blanditiis. Eum suscipit dolor aut ipsum veniam et itaque molestiae. Cum placeat similique ea dolor repellat sed consequatur omnis quo molestiae enim qui quos amet. Ex perspiciatis cumque non corporis voluptatem in quaerat exercitationem et perferendis autem aut nobis reiciendis.',
-        'Lorem ipsum dolor sit amet. Ut tenetur iste est deserunt officiis ut quod iure id perferendis aspernatur! Ut aliquid dolor est vero commodi ea fugiat praesentium sit labore dolores.'
-      ],
-      current: 0,
-      show(index) {
-        this.current = index;
-      }
-    }"
-    class="max-w-3xl mx-auto  py-16 relative overflow-hidden">
+    <main class="flex-1 max-w-8xl mx-auto text-primary-content">
+        <section class="hero">
+            <div class="hero-content flex-col:flex-row gap-20 ">
+                <div x-data="{
+                texts: [
+                    'Lorem ipsum dolor sit amet. Aut omnis quia aut totam quidem eos illo reiciendis cum galisum quam eos suscipit enim et cumque nesciunt? Et dignissimos nihil aut enim voluptas et omnis ducimus est odio galisum?',
+                    'Lorem ipsum dolor sit amet. Ut veritatis maxime qui quaerat quia eum unde quasi qui nihil consectetur ut veniam debitis qui dolore quisquam. Sed beatae molestiae ut officiis sunt et omnis facilis et consectetur tenetur vel quis accusamus.',
+                    'Lorem ipsum dolor sit amet. Et facilis facere qui voluptates quas et reprehenderit Quis et fuga suscipit. Quo minus galisum et dignissimos dolorum et quis incidunt quo minima ipsam.',
+                    'Lorem ipsum dolor sit amet. Ut porro deleniti et itaque perspiciatis et omnis blanditiis. Eum suscipit dolor aut ipsum veniam et itaque molestiae. Cum placeat similique ea dolor repellat sed consequatur omnis quo molestiae enim qui quos amet. Ex perspiciatis cumque non corporis voluptatem in quaerat exercitationem et perferendis autem aut nobis reiciendis.',
+                    'Lorem ipsum dolor sit amet. Ut tenetur iste est deserunt officiis ut quod iure id perferendis aspernatur! Ut aliquid dolor est vero commodi ea fugiat praesentium sit labore dolores.'
+                ],
+                current: 0,
+                show(index) {
+                    this.current = index;
+                }
+                }"
+                class="max-w-3xl mx-auto py-16 relative overflow-hidden">
 
-  <h1 class="font-bold text-5xl "> Acessibilidade e Solidariedade para todos </h1>
-  <p class="mt-6">
-    <span x-text="texts[current]" 
-          x-transition:enter="transition transform duration-500 "
-          x-transition:enter-start="translate-x-full opacity-0"
-          x-transition:enter-end="translate-x-0 opacity-100"
-          x-transition:leave="transition transform duration-500"
-          x-transition:leave-start="translate-x-0 opacity-100"
-          x-transition:leave-end="-translate-x-full opacity-0"
-    ></span>
-  </p>
+                <h1 class="font-bold text-5xl "> Acessibilidade e Solidariedade para todos </h1>
+                <p class="mt-6">
+                    <span x-text="texts[current]" 
+                        x-transition:enter="transition transform duration-500 "
+                        x-transition:enter-start="translate-x-full opacity-0"
+                        x-transition:enter-end="translate-x-0 opacity-100"
+                        x-transition:leave="transition transform duration-500"
+                        x-transition:leave-start="translate-x-0 opacity-100"
+                        x-transition:leave-end="-translate-x-full opacity-0"
+                    ></span>
+                </p>
 
-  <div class="flex justify-start gap-3 mt-8">
-    <template x-for="(text, index) in texts" :key="index">
-      <button @click="show(index)"
-              :class="current === index ? 'bg-white' : 'bg-gray-300'"
-              class="w-3 h-3 rounded-full transition-colors hover:bg-orange-600">
-      </button>
-    </template>
-  </div>
+                <div class="flex justify-start gap-3 mt-8">
+                    <template x-for="(text, index) in texts" :key="index">
+                        <button @click="show(index)"
+                                :class="current === index ? 'bg-white' : 'bg-gray-300'"
+                                class="w-3 h-3 rounded-full transition-colors hover:bg-neutral">
+                        </button>
+                    </template>
+                </div>
+            </div>               
+                <img
+                src="img/Rectangle (1).png"
+                class="w-120  "
+                alt="Imagem do site"
+                />
+            </div>
+        </section>
+    </main>
 
-</div>
+    <footer class="footer p-10 bg-base-100 shadow flex flex-col sm:flex-row gap-y-6 sm:gap-x-16 text-primary">
+        <aside class="max-w-lg">
+            <figure>
+            <img class="w-40" src="img/acessol logo.png" alt="AcesSol">
+            </figure>
+            <p class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
+            </p>
+        </aside>
 
-        <img
-          src="https://picsum.photos/400"
-          class="max-w-sm shadow"
-          alt="Imagem placeholder"
-        />
-      </div>
-    </section>
-  </main>
-
-<footer class="footer p-10 bg-base-100 shadow flex flex-col sm:flex-row gap-y-6 sm:gap-x-16 text-primary">
-  <aside class="max-w-lg">
-    <figure>
-      <img class="w-40" src="img/acessol logo.png" alt="AcesSol">
-    </figure>
-    <p class="">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
-    </p>
-  </aside>
-
-  <nav>
-    <strong class="footer-title text-primary font-bold">Site map</strong>
-    <a href="sobre.html" class="link link-hover">Sobre</a>
-    <a href="mapa.html" class="link link-hover">Mapa</a>
-    <a href="blog.html" class="link link-hover">Blog</a>
-    <a href="empregos.html" class="link link-hover">Empregos</a>
-  </nav>
-</footer>
+        <nav>
+            <strong class="footer-title text-primary font-bold">Site map</strong>
+            <a href="sobre.html" class="link link-hover">Sobre</a>
+            <a href="mapa.html" class="link link-hover">Mapa</a>
+            <a href="blog.html" class="link link-hover">Blog</a>
+            <a href="empregos.html" class="link link-hover">Empregos</a>
+        </nav>
+    </footer>
 
 </body>
 </html>
