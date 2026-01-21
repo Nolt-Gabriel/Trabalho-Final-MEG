@@ -9,8 +9,8 @@ echo ""
 echo "<<<<< Script de Branchs >>>>>"
 echo "<<<<<    By Noltuser    >>>>>"   
 echo ""
-echo ">Esse Script vai atualizar as branchs locais e sincronizar"
-echo ">com as branchs remotas"
+echo "> Esse Script vai atualizar as branchs locais e sincronizar"
+echo "> com as branchs remotas"
 echo ""
 echo "-------------------------------"
 echo ""
@@ -23,7 +23,8 @@ if [[ $resposta == "s" || $resposta == "S" ]]; then
     git pull --all
 
 else
-    echo "Script interrompido."
+    echo ""
+    echo "Script Encerrado."
     exit 0
 fi
 
