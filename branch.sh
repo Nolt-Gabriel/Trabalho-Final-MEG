@@ -4,12 +4,15 @@
 #Utilize quando você não estiver vendo as branchs remotas no local
 #Para usar executar, digite no terminal: chmod -x ./branch.sh , para tornar o arquivo executável
 #Depois basta digitar ./branch.sh no terminal que ele executará o Script
-
+echo "-------------------------------"
+echo ""
 echo "<<<<< Script de Branchs >>>>>"
 echo "<<<<<    By Noltuser    >>>>>"   
 echo ""
 echo ">Esse Script vai atualizar as branchs locais e sincronizar"
 echo ">com as branchs remotas"
+echo ""
+echo "-------------------------------"
 echo ""
 read -p "Deseja continuar? (s/n): " resposta
 
