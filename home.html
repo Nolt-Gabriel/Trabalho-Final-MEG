@@ -249,12 +249,12 @@
     </section>
 
     <!-- SESSAO EMPREGOS -->
-    <section x-data="{opEmp : false, opCurs : false}">
+    <section id="empregos" x-data="{opEmp : false, opCurs : false}">
         <div class="flex justify-center mx-auto pt-15 gap-6">
             <button class="btn btn-secondary" @click="opCurs = !opCurs">Ofertas de Cursos</button>
             <button class="btn btn-secondary" @click="opEmp = !opEmp">Ofertas de Emprego</button>
         </div>
-        <div x-show="opEmp" id="empregos" class="flex flex-col items-end text-center px-4">
+        <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
             <h1 class="text-5xl font-bold py-10">
             Buscar Vagas
             </h1>
@@ -705,11 +705,11 @@
     </section>
 
     <!-- SESSAO MAPA -->
-    <section x-data="{opMap : false}">
+    <section id="mapa" x-data="{opMap : false}">
         <div class="flex justify-center py-6">
             <button class="btn btn-secondary" @click="opMap = !opMap">Abrir Mapa</button>
         </div>
-        <div x-show="opMap" id="mapa" class="flex flex-col items-center text-center px-4">
+        <div x-show="opMap" class="flex flex-col items-center text-center px-4">
             <h1 class="text-5xl font-bold py-10">
                 Mapa
             </h1>
