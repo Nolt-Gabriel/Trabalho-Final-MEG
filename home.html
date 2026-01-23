@@ -44,16 +44,15 @@
 
 </style>
 </head>
-<body class="min-h-screen m-0 bg-base-100 flex flex-col " x-data="{ authOpen: false, tela: 'login' }">
-
+<body class="min-h-screen m-0 bg-base-100 flex flex-col bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
 <!--HEADER-->
-    <header class="bg-base-300 text-primary rounded-b w-full">
+    <header class="bg-base-300 text-primary fixed top-0 left-0 w-full px-10   ">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
-                <img src="img/logoacessol (1).png" alt="" class=" w-60" >  
+                <img src="img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
-                <img src="img/girassol.png" class="w-20">
+                <img src="img/girassolzinho.svg" class="">
             </figure>
             
             <!--MENU DESKTOP-->
@@ -103,36 +102,30 @@
 
 
 <!--HERO-->
-    <section class="hero">
-       <div class="hero-content flex flex-col md:flex-row text-center md:text-left gap-32">
-        
-        <div class="max-w-lg mt-10">
-            <h1 class="font-bold text-5xl">
-            Acessibilidade e solidariedade para todos 
-            </h1>
+      <section class="mt-50 mb-20 w-160 ">
+        <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
+          
+          <div class="max-w-4xl mt-16">
+              <h1 class="font-bold text-5xl">
+              Acessibilidade e solidariedade para todos 
+              </h1>
 
-            <p class="mt-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Recusandae at harum cupiditate nesciunt veritatis dolores
-            natus aliquid vero ratione nihil, sequi adipisci, officia
-            nisi quam debitis, sit in sapiente enim.
-            </p>
-            
+              <p class="mt-6 text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae at harum cupiditate nesciunt veritatis dolores
+              natus aliquid vero ratione nihil, sequi adipisci, officia
+              nisi quam debitis, sit in sapiente enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsa, voluptate facilis similique explicabo alias numquam et obcaecati accusamus molestiae, deleniti impedit! Hic at, aliquam corrupti sapiente incidunt nulla ab.
+              </p>
+              
 
-            <div class="items-center">
-              <button @click="authOpen = true; tela = 'login'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>
-              <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
-            </div>
-        </div>
+              <div class="items-center">
+                <button @click="authOpen = true; tela = 'login'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>
+                <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
+              </div>
+          </div>
 
-        <img
-            src="img/Rectangle (1).png"
-            class="max-w-md"
-            alt="Imagem do site"
-        />
-
-        </div>
-    </section>
+          </div>
+      </section>
 
 <!-- MODAL-->
     <section>
@@ -526,7 +519,7 @@
     <footer class="footer p-10 bg-base-300 shadow flex-col justify-center md:flex flex-row gap-100 text-primary">
         <aside class="max-w-lg">
             <figure>
-            <img class="w-40" src="img/logoacessol (1).png" alt="AcesSol">
+            <img class="w-40" src="img/logo.svg" alt="AcesSol">
             </figure>
             <p class="text-md  ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
