@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="theme.css">
 </head>
-<body class="min-h-screen m-0 bg-base-100 flex flex-col bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
+<body class="min-h-screen m-0 bg-base-100 bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
 <!--HEADER-->
     <header class="bg-base-300 text-primary fixed top-0 left-0 w-full px-10   ">
         <div class="flex justify-between p-4 items-center">
@@ -69,7 +69,7 @@
 
 
 <!--HERO-->
-      <section class="mt-50 mb-20 w-160 ">
+      <section class="pt-32 mb-20 w-160 ">
         <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
           
           <div class="max-w-4xl mt-16">
@@ -137,7 +137,7 @@
 
 
 <!--SESSAO SOBRE -->
-<section id="sobre" class="mt-24 p-20">
+<section id="sobre" class="pt-32 p-20">
   
   <div class="flex flex-col items-center text-center px-4">
     <h1 class="text-5xl font-bold py-10">
@@ -193,63 +193,116 @@
     </section>
 
     <!-- SESSAO BLOG -->
-    <section id="blog" class="">
-      <div class="flex flex-col items-center text-center px-4">
-        <h1 class="text-5xl font-bold pb-10">
-          Blog
-        </h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima error qui quaerat omnis aliquam nam maxime quidem ipsam obcaecati rem tenetur, esse temporibus nostrum quas quibusdam nobis. Est, saepe quos!
-        </p>
-      </div>
-      <div class="flex flex-row gap-10 mt-10 ">
-        <div class="p-6 bg-white rounded-lg">
-          <figure> 
-            <img src="https://picsum.photos/400" alt="Imagem placeholder" class="rounded-lg">
-          </figure>  
-            <div class="max-w-sm py-10 flex flex-col gap-3">
-              <p>23/01/26</p>
-              <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
-              <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
-            </div>
-            <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
-              <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
-
-            </button>
+    <section id="blog" class="pt-32">
+        <div class="flex flex-col items-center text-center px-4">
+            <h1 class="text-5xl font-bold pb-10">Blog</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima error qui quaerat omnis aliquam nam maxime quidem ipsam obcaecati rem tenetur, esse temporibus nostrum quas quibusdam nobis. Est, saepe quos!</p>
         </div>
 
-        <div class="p-4">
-            <img src="https://picsum.photos/400" alt="Imagem placeholder" >
-            
-            <div class="max-w-sm py-10 flex flex-col gap-3">
-              <p>01/01/01</p>
-              <strong class="text-xl">Noticia 1</strong>
-              <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
-            </div>
-            <div class="text-center">
-              <span class="border py-3 px-35 rounded-xl bg-neutral-950 text-[#FFF] inline-block transition-transform duration-300 hover:scale-110 hover:underline"><a href="Saiba Mais">Saiba Mais</a></span>
-            </div>
-        </div>
+        <!--carrossel-->
+        <div class="carousel w-full gap-10 mt-10 ">
 
-        <div class="p-4">
-            <img src="https://picsum.photos/400" alt="Imagem placeholder" >
-            
-            <div class="max-w-sm py-10 flex flex-col gap-3">
-              <p>01/01/01</p>
-              <strong class="text-xl">Noticia 1</strong>
-              <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+        <!--artigo1-->
+            <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class="py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
             </div>
-            <div class="text-center">
-              <span class="border py-3 px-35 rounded-xl bg-neutral-950 text-[#FFF] inline-block transition-transform duration-300 hover:scale-110 hover:underline"><a href="Saiba Mais">Saiba Mais</a></span>
+
+            <!--artigo2-->
+            <div id="artigo2" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class=" py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
             </div>
-        </div>
+
+            <!--artigo3-->
+            <div id="artigo3" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class=" py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
+            </div>
+
+            <!--artigo4-->
+            <div id="artigo4" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class=" py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
+            </div>
+
+            <!--artigo5-->
+            <div id="artigo5" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class=" py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
+            </div>
+
+            <!--artigo6-->
+            <div id="artigo6" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+                <figure> 
+                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                </figure>  
+                <div class=" py-4 flex flex-col gap-3">
+                    <p>23/01/26</p>
+                    <strong class="text-xl">20 filmes com a inclusão de pessoas com deficiência </strong>
+                    <p>Call out a feature, benefit, or value of your site that can stand on its own.</p>
+                </div>
+                <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/">Acessar </a>
+                </button>
+            </div>
+     
+    </div>
+    <div class="flex justify-center gap-10 mt-10 ">           
+        <a href="#artigo1" class="btn btn-circle ">❮</a>
+        <a href="#artigo6" class="btn btn-circle ">❯</a>   
+    </div>
 
 
-      </div>
     </section>
 
     <!-- SESSAO EMPREGOS -->
-    <section id="empregos" x-data="{opEmp : false, opCurs : false}">
+    <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
         <div class="flex justify-center mx-auto pt-15 gap-6">
             <button class="btn btn-secondary" @click="opCurs = !opCurs">Ofertas de Cursos</button>
             <button class="btn btn-secondary" @click="opEmp = !opEmp">Ofertas de Emprego</button>
