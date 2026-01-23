@@ -46,7 +46,7 @@
 <body class="min-h-screen m-0 bg-base-100 flex flex-col " x-data="{ authOpen: false, tela: 'login' }">
 
 <!--HEADER-->
-    <header class="bg-base-300 text-primary rounded-b  ">
+    <header class="bg-base-300 text-primary rounded-b w-full">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
                 <img src="img/logoacessol (1).png" alt="" class=" w-60" >  
@@ -71,11 +71,9 @@
                     </li>
                     <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
-                    <li><a href="mapa.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
-                    <li><a href="blog.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
-                    <li><a href="empregos.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><button @click="authOpen = true; tela = 'login'" class="btn bg-accent text-secondary-content rounded-lg transition-transform duration-300 hover:scale-110">Entrar</button></li>
-                    <li><button @click="authOpen = true; tela = 'cadastro'" class="btn btn-outline  rounded-lg transition-transform duration-300 hover:scale-110"> Cadastrar-se </button></li>
+                    <li><a href="#mapa" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
+                    <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
+                    <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
             </ul>
 
             <!--MOBILE-->
@@ -89,10 +87,10 @@
                 <div class="menu bg-base-100 rounded p-2">
                     <li><a class="hover:bg-base-200" href="home.html">Início</a></li>
                     <li><a class="hover:bg-base-200" href="#sobre">Sobre</a></li>
-                    <li><a class="hover:bg-base-200" href="mapa.html">Mapa</a></li>
-                    <li><a class="hover:bg-base-200" href="blog.html">Blog</a></li>
-                    <li><a class="hover:bg-base-200" href="empregos.html">Empregos</a></li>
-                    <li><a class="bg-secondary text-secondary-content hover:bg-base-200" @click="authOpen = true; tela = 'login'">Entrar</a></li>
+                    <li><a class="hover:bg-base-200" href="#mapa">Mapa</a></li>
+                    <li><a class="hover:bg-base-200" href="#blog">Blog</a></li>
+                    <li><a class="hover:bg-base-200" href="#empregos">Empregos</a></li>
+                    
                 </div> 
             </div>
         </div>
@@ -120,9 +118,10 @@
             </p>
             
 
-
-
-            <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
+            <div class="items-center">
+              <button @click="authOpen = true; tela = 'login'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>
+              <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
+            </div>
         </div>
 
         <img
@@ -226,7 +225,9 @@
   </div>
 
     </section>
-    <section class="">
+
+    <!-- SESSAO BLOG -->
+    <section id="blog" class="">
       <div class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold pb-10">
           Blog
@@ -276,7 +277,8 @@
       </div>
     </section>
 
-      <div class="flex flex-col items-center text-center px-4">
+    <!-- SESSAO EMPREGOS -->
+      <div id="empregos" class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10">
           Buscar Vagas
         </h1>
@@ -502,7 +504,7 @@
 
     </section>
 
-          <div class="flex flex-col items-center text-center px-4">
+          <div id="mapa" class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10">
           Mapa
         </h1>
@@ -531,10 +533,10 @@
 
         <nav>
             <strong class="footer-title text-primary font-bold">Site map</strong>
-            <a href="sobre.html" class="link link-hover">Sobre</a>
-            <a href="mapa.html" class="link link-hover">Mapa</a>
-            <a href="blog.html" class="link link-hover">Blog</a>
-            <a href="empregos.html" class="link link-hover">Empregos</a>
+            <a href="#sobre" class="link link-hover">Sobre</a>
+            <a href="#mapa" class="link link-hover">Mapa</a>
+            <a href="#blog" class="link link-hover">Blog</a>
+            <a href="#empregos" class="link link-hover">Empregos</a>
         </nav>
     </footer>
 
