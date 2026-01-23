@@ -85,9 +85,9 @@
               </p>
               
 
-              <div class="flex items-center gap-6 ">
-                <button @click="authOpen = true; tela = 'login'" class="btn btn-outline rounded-lg  mt-6"> Entrar</button>
-                <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
+              <div class="flex items-center gap-6 mt-4">
+                <button @click="authOpen = true; tela = 'login'" class="btn btn-lg btn-outline rounded-lg mt-6"> Entrar</button>
+                <button @click="authOpen = true; tela = 'cadastro'"  class="btn btn-lg btn-accent text-secondary-content mt-6"> Cadastrar-se </button>
               </div>
           </div>
 
@@ -154,7 +154,7 @@
 
   </div>
 
-  <div class="mt-26 flex flex-col items-center gap-32 px-4">
+  <div class="mt-26 flex flex-col items-center gap-18 px-4">
     <h2 class="text-4xl font-bold">
       Nossos Pilares
     </h2>
@@ -266,7 +266,7 @@
                 <p class="py-2">Busque sua vaga</p>
 
                 <div>
-                    <input type="text" placeholder="Buscar por vaga..." class="border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
+                    <input type="text" placeholder="Buscar por vaga..." class="input input-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
                 </div>
 
             </div>
@@ -277,7 +277,7 @@
                 
                 <div class="flex gap-5">
                     
-                    <select class="border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                    <select class="select select-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
 
                         <option value="">Selecione sua Cidade</option>
                         <option value="SP" >Natal</option>
@@ -288,7 +288,7 @@
 
                 <div>
 
-                    <button class="bg-neutral-950 text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+                    <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
 
                 </div>
 
@@ -306,17 +306,17 @@
                     <p class="font-semibold">Local de trabalho</p>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Presencial
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Remoto
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Hibrído
                     </label>
 
@@ -327,32 +327,32 @@
                     <p class="font-semibold">Escolaridade</p>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Fundamental
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Ensino Médio
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Superior
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Pós Graduação
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Mestrado
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         Doutorado
                     </label>
 
@@ -362,17 +362,17 @@
                     <p class="font-semibold">Especialidade</p>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         X
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         X
                     </label>
 
                     <label>
-                        <input type="checkbox" class=" cursor-pointer mx-3">
+                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                         X
                     </label>
 
@@ -384,7 +384,7 @@
                 
                 <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
                     <div>
-                        <figure class="pr-5 py-5">
+                        <figure class="pr-5 py-5 mr-4">
                             <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                         </figure>
                     </div>
@@ -405,8 +405,8 @@
                     </div>
 
                     <div class="flex gap-20 pt-10">
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
+                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
                         
                     </div>
 
@@ -414,7 +414,7 @@
 
                 <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
                     <div>
-                        <figure class="pr-5 py-5">
+                        <figure class="pr-5 py-5 mr-4">
                             <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                         </figure>
                     </div>
@@ -436,8 +436,8 @@
                     </div>
 
                     <div class="flex gap-20 pt-10">
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
+                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
                         
                     </div>
                     </div>
@@ -447,7 +447,7 @@
                 <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
 
                     <div>
-                        <figure class="pr-5 py-5">
+                        <figure class="pr-5 py-5 mr-4">
                             <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                         </figure>
                     </div>
@@ -468,8 +468,8 @@
                     </div>
 
                     <div class="flex gap-20 pt-10">
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
+                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
                         
                     </div>
                     </div>
@@ -490,7 +490,7 @@
                     <p class="py-2">Busque seu curso</p>
 
                     <div>
-                        <input type="text" placeholder="Buscar por curso..." class="border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
+                        <input type="text" placeholder="Buscar por curso..." class="input input-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
                     </div>
 
                 </div>
@@ -501,7 +501,7 @@
                     
                     <div class="flex gap-5">
                         
-                        <select class="border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                        <select class="select select-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
 
                             <option value="">Selecione sua Cidade</option>
                             <option value="SP" >Natal</option>
@@ -512,7 +512,7 @@
 
                     <div>
 
-                        <button class="bg-neutral-950 text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+                        <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
 
                     </div>
 
@@ -530,17 +530,17 @@
                         <p class="font-semibold">Local de aula</p>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Presencial
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Remoto
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Hibrído
                         </label>
 
@@ -551,32 +551,32 @@
                         <p class="font-semibold">Escolaridade</p>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Fundamental
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Ensino Médio
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Superior
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Pós Graduação
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Mestrado
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             Doutorado
                         </label>
 
@@ -586,17 +586,17 @@
                         <p class="font-semibold">Especialidade</p>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             X
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             X
                         </label>
 
                         <label>
-                            <input type="checkbox" class=" cursor-pointer mx-3">
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
                             X
                         </label>
 
@@ -608,7 +608,7 @@
                     
                     <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
                         <div>
-                            <figure class="pr-5 py-5">
+                            <figure class="pr-5 py-5 mr-4">
                                 <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                             </figure>
                         </div>
@@ -629,8 +629,8 @@
                         </div>
 
                         <div class="flex gap-20 pt-10">
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
+                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
                             
                         </div>
 
@@ -638,7 +638,7 @@
 
                     <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
                         <div>
-                            <figure class="pr-5 py-5">
+                            <figure class="pr-5 py-5 mr-4">
                                 <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                             </figure>
                         </div>
@@ -660,8 +660,8 @@
                         </div>
 
                         <div class="flex gap-20 pt-10">
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
+                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
                             
                         </div>
                         </div>
@@ -671,7 +671,7 @@
                     <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
 
                         <div>
-                            <figure class="pr-5 py-5">
+                            <figure class="pr-5 py-5 mr-4">
                                 <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
                             </figure>
                         </div>
@@ -692,8 +692,8 @@
                         </div>
 
                         <div class="flex gap-20 pt-10">
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="bg-gray-950 text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
+                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
+                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
                             
                         </div>
                         </div>
