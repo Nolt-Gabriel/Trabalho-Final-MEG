@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="acessol" class="h-full scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcesSol</title>
@@ -43,16 +44,15 @@
 
 </style>
 </head>
-<body class="min-h-screen m-0 bg-base-100 flex flex-col " x-data="{ authOpen: false, tela: 'login' }">
-
+<body class="min-h-screen m-0 bg-base-100 flex flex-col bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
 <!--HEADER-->
-    <header class="bg-base-300 text-primary rounded-b  ">
+    <header class="bg-base-300 text-primary fixed top-0 left-0 w-full px-10   ">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
-                <img src="img/logoacessol (1).png" alt="" class=" w-60" >  
+                <img src="img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
-                <img src="img/girassol.png" class="w-20">
+                <img src="img/girassolzinho.svg" class="">
             </figure>
             
             <!--MENU DESKTOP-->
@@ -71,11 +71,9 @@
                     </li>
                     <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
-                    <li><a href="mapa.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
-                    <li><a href="blog.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
-                    <li><a href="empregos.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><button @click="authOpen = true; tela = 'login'" class="btn bg-accent text-secondary-content rounded-lg transition-transform duration-300 hover:scale-110">Entrar</button></li>
-                    <li><button @click="authOpen = true; tela = 'cadastro'" class="btn btn-outline  rounded-lg transition-transform duration-300 hover:scale-110"> Cadastrar-se </button></li>
+                    <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
+                    <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
+                    <li><a href="#mapa" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
             </ul>
 
             <!--MOBILE-->
@@ -89,10 +87,10 @@
                 <div class="menu bg-base-100 rounded p-2">
                     <li><a class="hover:bg-base-200" href="home.html">Início</a></li>
                     <li><a class="hover:bg-base-200" href="#sobre">Sobre</a></li>
-                    <li><a class="hover:bg-base-200" href="mapa.html">Mapa</a></li>
-                    <li><a class="hover:bg-base-200" href="blog.html">Blog</a></li>
-                    <li><a class="hover:bg-base-200" href="empregos.html">Empregos</a></li>
-                    <li><a class="bg-secondary text-secondary-content hover:bg-base-200" @click="authOpen = true; tela = 'login'">Entrar</a></li>
+                    <li><a class="hover:bg-base-200" href="#mapa">Mapa</a></li>
+                    <li><a class="hover:bg-base-200" href="#blog">Blog</a></li>
+                    <li><a class="hover:bg-base-200" href="#empregos">Empregos</a></li>
+                    
                 </div> 
             </div>
         </div>
@@ -104,35 +102,30 @@
 
 
 <!--HERO-->
-    <section class="hero">
-       <div class="hero-content flex flex-col md:flex-row text-center md:text-left gap-32">
-        
-        <div class="max-w-lg mt-10">
-            <h1 class="font-bold text-5xl">
-            Acessibilidade e solidariedade para todos 
-            </h1>
+      <section class="mt-50 mb-20 w-160 ">
+        <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
+          
+          <div class="max-w-4xl mt-16">
+              <h1 class="font-bold text-5xl">
+              Acessibilidade e solidariedade para todos 
+              </h1>
 
-            <p class="mt-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Recusandae at harum cupiditate nesciunt veritatis dolores
-            natus aliquid vero ratione nihil, sequi adipisci, officia
-            nisi quam debitis, sit in sapiente enim.
-            </p>
-            
+              <p class="mt-6 text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae at harum cupiditate nesciunt veritatis dolores
+              natus aliquid vero ratione nihil, sequi adipisci, officia
+              nisi quam debitis, sit in sapiente enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsa, voluptate facilis similique explicabo alias numquam et obcaecati accusamus molestiae, deleniti impedit! Hic at, aliquam corrupti sapiente incidunt nulla ab.
+              </p>
+              
 
+              <div class="flex items-center gap-6 ">
+                <button @click="authOpen = true; tela = 'login'" class="btn btn-outline rounded-lg  mt-6"> Entrar</button>
+                <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
+              </div>
+          </div>
 
-
-            <button @click="authOpen = true; tela = 'cadastro'"  class="btn bg-accent text-secondary-content mt-6"> Cadastrar-se </button>
-        </div>
-
-        <img
-            src="img/Rectangle (1).png"
-            class="max-w-md"
-            alt="Imagem do site"
-        />
-
-        </div>
-    </section>
+          </div>
+      </section>
 
 <!-- MODAL-->
     <section>
@@ -188,9 +181,13 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae alias repudiandae veritatis facere cum iure mollitia. Autem, voluptatibus? Tenetur ipsam voluptas magnam dicta architecto facere sit atque error doloribus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci molestias non eos ut placeat eligendi tempora? Consectetur maxime suscipit modi sit laboriosam quae optio facilis! Dolorem ratione totam molestias quis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere culpa, repudiandae accusamus doloribus error laudantium quis reprehenderit voluptatibus? Quae illum suscipit aliquam vero voluptates molestias eaque voluptatem sequi! Ad, alias?
     </p>
 
+    <figure>
+      <img src="img/girassolzinho2.svg" class="mt-6">
+    </figure>
+
   </div>
 
-  <div class="mt-32 flex flex-col items-center gap-32 px-4">
+  <div class="mt-26 flex flex-col items-center gap-32 px-4">
     <h2 class="text-4xl font-bold">
       Nossos Pilares
     </h2>
@@ -227,7 +224,9 @@
   </div>
 
     </section>
-    <section class="">
+
+    <!-- SESSAO BLOG -->
+    <section id="blog" class="">
       <div class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold pb-10">
           Blog
@@ -277,7 +276,8 @@
       </div>
     </section>
 
-      <div class="flex flex-col items-center text-center px-4">
+    <!-- SESSAO EMPREGOS -->
+      <div id="empregos" class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10">
           Buscar Vagas
         </h1>
@@ -503,7 +503,7 @@
 
     </section>
 
-          <div class="flex flex-col items-center text-center px-4">
+          <div id="mapa" class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10">
           Mapa
         </h1>
@@ -523,7 +523,7 @@
     <footer class="footer p-10 bg-base-300 shadow flex-col justify-center md:flex flex-row gap-100 text-primary">
         <aside class="max-w-lg">
             <figure>
-            <img class="w-40" src="img/logoacessol (1).png" alt="AcesSol">
+            <img class="w-40" src="img/logo.svg" alt="AcesSol">
             </figure>
             <p class="text-md  ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
@@ -532,10 +532,10 @@
 
         <nav>
             <strong class="footer-title text-primary font-bold">Site map</strong>
-            <a href="sobre.html" class="link link-hover">Sobre</a>
-            <a href="mapa.html" class="link link-hover">Mapa</a>
-            <a href="blog.html" class="link link-hover">Blog</a>
-            <a href="empregos.html" class="link link-hover">Empregos</a>
+            <a href="#sobre" class="link link-hover">Sobre</a>
+            <a href="#mapa" class="link link-hover">Mapa</a>
+            <a href="#blog" class="link link-hover">Blog</a>
+            <a href="#empregos" class="link link-hover">Empregos</a>
         </nav>
     </footer>
 
