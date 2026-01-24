@@ -7,7 +7,7 @@ connection = sqlite3.connect("Acessol.db")
 
 cursor = connection.cursor()
 
-cursor.execute("""CREATE TABLE acessol_database (
+cursor.execute("""CREATE TABLE acessol_usuario (
                
                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                nome TEXT NOT NULL,
@@ -15,5 +15,25 @@ cursor.execute("""CREATE TABLE acessol_database (
                senha CHAR NOT NULL
 
                 )""")
+
+cursor.execute("""CREATE TABLE acessol_adm (
+
+                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                usuario TEXT NOT NULL,
+                senha CHAR NOT NULL
+  
+                ) """)
+
+cursor.execute("""CREATE TABLE acessol_empresas (
+                
+                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                cnpj INTEGER NOT NULL,
+                
+
+
+
+                ) """)
+
+cursor.execute("DROP TABLE acessol_usuario;")
 
 connection.commit()
