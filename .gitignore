@@ -1,2 +1,5 @@
 database.db
 *.db
+venv/
+__pycache__/
+.venv/
