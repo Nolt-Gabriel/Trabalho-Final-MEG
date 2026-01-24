@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="theme.css">
 </head>
 <body class="min-h-screen m-0 bg-base-100 bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
+
+
 <!--HEADER-->
-    <header class="bg-base-300 text-primary fixed top-0 left-0 w-full px-10   ">
+    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10   ">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
                 <img src="img/logo.svg" alt="" class=" w-60" >  
@@ -22,6 +24,8 @@
                 <img src="img/girassolzinho.svg" class="">
             </figure>
             
+
+
             <!--MENU DESKTOP-->
             <ul class="hidden md:flex gap-6">
                     <li>
@@ -36,30 +40,122 @@
                             </svg>
                             </label>
                     </li>
+
+
+
+<!--NAVEGACAO-->
                     <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
                     <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
                     <li><a href="#mapa" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
+
+
+
+<!--MENU usuario-->
+                    <li x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="p-2 rounded-full hover:bg-gray-200 transition">
+                        <i class="fa-solid fa-user text-lg"></i>
+                    </button>
+
+                    <div x-show="open" @click.outside="open = false" x-transition class="menu bg-secondary absolute right-0 mt-2 w-100 rounded-lg  shadow-lg z-50 ">
+                        <ul class="menu-items flex flex-col gap-4 p-4 ">
+
+
+
+<!--informacoes do perfil-->
+                            <li x-data="{ open: false }" class="relative">
+                                <div @click="open = true" class="flex items-center gap-2 bg-base-100 rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
+                                    <i class="fa-solid fa-user text-accent fa-lg "></i>
+                                    <span class="font-semibold text-lg"> Ver Informações do Perfil </span>
+                                </div>
+
+                        <!-- modal DE INFORMACOES  -->
+                                <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+
+                                    <div class="bg-base-100 text-secondary rounded-xl p-8 relative">
+
+                                <!-- botão de fechar modal-->
+                                        <button @click="open = false" class="absolute top-3 right-3 text-secondary hover:text-gray-800">
+                                            <i class="fa-solid fa-xmark fa-lg"></i>
+                                        </button>
+
+                                    <!---INFORMACOES-->
+                                        <h1 class="text-4xl font-bold mb-4">Informações Pessoais </h1>
+                                        <div class="flex flex-col"> 
+                                            <div class="flex flex-row gap-3"> 
+                                                <div>
+                                                    <strong>Primeiro nome:</strong>
+                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                                <div>
+                                                    <strong>Último nome:</strong>
+                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-row gap-3"> 
+                                                <div>
+                                                    <strong>Número de telefone:</strong>
+                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                                <div>
+                                                    <strong>Data de Nascimento:</strong>
+                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-row gap-3"> 
+                                                <div>
+                                                    <strong>Endereço:</strong>
+                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                                <div>
+                                                    <strong>Email:</strong>
+                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-row gap-3"> 
+                                                <div>
+                                                    <strong> Gênero:</strong>
+                                                    <label> 
+                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Feminino 
+                                                    </label> 
+                                                    
+                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Masculino 
+                                                    </label>
+                                                    <label> 
+                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Prefiro não informar 
+                                                    </label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="flex justify-end mt-6 gap-4">
+                                            <button class="btn btn-accent">Editar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+<!--curriculo-->
+                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                                <i class="fa-solid fa-file text-accent fa-lg "></i>
+                                <span class="font-semibold text-lg">Meu currículo </span>
+                            </li>
+                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                                <i class="fa-solid fa-bell text-accent fa-lg "></i>
+                                <span class="font-semibold text-lg">Notificações</span>
+                            </li>
+                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                                <i class="fa-solid fa-arrow-right-from-bracket text-accent fa-lg "></i>
+                                <span class="font-semibold text-lg">Sair</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>   
             </ul>
-
-            <!--MOBILE-->
-
-            <div class="md:hidden flex text-secondary items-center">
-                <details class="collapse ">
-                <summary class="collapse-title"> 
-                    <i class="fa fa-bars text-3xl" aria-hidden="true"></i>  
-                </summary>
-            
-                <div class="menu bg-base-100 rounded p-2">
-                    <li><a class="hover:bg-base-200" href="home.html">Início</a></li>
-                    <li><a class="hover:bg-base-200" href="#sobre">Sobre</a></li>
-                    <li><a class="hover:bg-base-200" href="#mapa">Mapa</a></li>
-                    <li><a class="hover:bg-base-200" href="#blog">Blog</a></li>
-                    <li><a class="hover:bg-base-200" href="#empregos">Empregos</a></li>
-                    
-                </div> 
-            </div>
         </div>
     </header>
 
@@ -200,10 +296,10 @@
         </div>
 
         <!--carrossel-->
-        <div class="carousel w-full gap-10 mt-10 ">
+        <div class="carousel w-full gap-10 mt-10 scroll-smooth">
 
         <!--artigo1-->
-            <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -218,7 +314,7 @@
             </div>
 
             <!--artigo2-->
-            <div id="artigo2" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo2" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -233,7 +329,7 @@
             </div>
 
             <!--artigo3-->
-            <div id="artigo3" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo3" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -248,7 +344,7 @@
             </div>
 
             <!--artigo4-->
-            <div id="artigo4" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo4" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -263,7 +359,7 @@
             </div>
 
             <!--artigo5-->
-            <div id="artigo5" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo5" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -278,7 +374,7 @@
             </div>
 
             <!--artigo6-->
-            <div id="artigo6" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6">
+            <div id="artigo6" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                 <figure> 
                     <img src="https://picsum.photos/400" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                 </figure>  
@@ -315,28 +411,20 @@
         <section x-show="opEmp" class="flex  gap-15 pl-20">
 
             <div>
-
-                <p class="py-2">Busque sua vaga</p>
-
+                <p class="py-2 font-bold">Busque sua vaga</p>
                 <div>
-                    <input type="text" placeholder="Buscar por vaga..." class="input input-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
+                    <input type="text" placeholder="Buscar por vaga..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                 </div>
-
             </div>
             
             <div>
-
-                <p class="py-2">Cidade</p>
-                
+                <p class="py-2 font-bold">Região Administrativa</p>
                 <div class="flex gap-5">
-                    
-                    <select class="select select-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-
-                        <option value="">Selecione sua Cidade</option>
-                        <option value="SP" >Natal</option>
-                        <option value="RJ">Extremoz</option>
-                        <option value="MG">Parnamirim</option>
-
+                    <select class="select bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"
+                        <option value="ZN" >Zona Norte</option>
+                        <option value="ZL">Zona Leste</option>
+                        <option value="ZS">Zona Sul</option>
+                        <option value="ZO">Zona Oeste</option>
                     </select>
 
                 <div>
@@ -350,187 +438,128 @@
         </section>
 
         <section x-show="opEmp" class="flex justify-around px-10">
-            <section class="flex flex-col p-15 gap-15">
+            
+           <section class="flex flex-col p-8 gap-15">
+                <h1 class="text-3xl font-bold">Filtros</h1>
+                <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
+                  
+                    <div class="flex flex-col gap-2 gap-2">
+                        <p class="font-bold">LOCAL DE TRABALHO </p>
+                        <label> 
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                        </label>
+                    </div>
 
-                <p class="text-3xl font-bold">Filtros</p>
+                    <div class="flex flex-col gap-2 gap-2">
+                        <p class="font-bold">ESCOLARIDADE</p>
+                        <label> 
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                        </label>
+                    </div>
 
-                <div class="flex flex-col gap-2 gap-2">
-
-                    <p class="font-semibold">Local de trabalho</p>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Presencial
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Remoto
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Hibrído
-                    </label>
+                    <div class="flex flex-col gap-2 gap-2">
+                        <p class="font-bold">SETOR</p>
+                        <label> 
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
+                        </label>
+                        <label> 
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Financias 
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
+                        </label>
+                        <label> 
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
+                        </label>
+                        <label>
+                            <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
+                        </label>
+                    </div>
 
                 </div>
 
-                <div class="flex flex-col gap-2">
-
-                    <p class="font-semibold">Escolaridade</p>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Fundamental
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Ensino Médio
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Superior
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Pós Graduação
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Mestrado
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        Doutorado
-                    </label>
-
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <p class="font-semibold">Especialidade</p>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        X
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        X
-                    </label>
-
-                    <label>
-                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                        X
-                    </label>
-
-                </div>
 
             </section>
-
+<!--vagas-->
             <section class="flex flex-col pt-15 list-none">
-                
-                <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-                    <div>
+                <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                    <div class="flex flex-row">
                         <figure class="pr-5 py-5 mr-4">
-                            <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
+                            <img src="https://picsum.photos/400" alt="Imagem placeholder" class="object-cover rounded">
                         </figure>
+                        <div>
+                            <h5 class="font-bold text-xl pb-3">Vaga 1#</h5>
+                            <p class="pb-3">Empresa</p>
+                            <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                        </div>
                     </div>
-                    <div>
-                    <div>
+
+                    <div class="flex justify-between gap-8 font-semibold">
+                        <div>
+                            <p id="bairro"> Bairro</p>
+                            <p id="salario">Salário</p>
+                            <p id="local">Local de Trabalho</p>
+                        </div>
+                        <div class="flex pt-10 gap-6">
+                            <button class="btn btn-secondary w-10 rounded-full">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </button>
                         
-                        <h5 class="font-bold text-xl pb-3">Vaga 1#</h5>
-                        <p class="pb-3">Empresa</p>
-                        <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                            <button class="btn btn-accent w-10 rounded-full">
+                                <i class="fa-regular fa-plus"></i>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="flex gap-20 text-gray-500">
-
-                        <p>Cidade</p>
-                        <p>Salário</p>
-                        <p>Local de Trabalho</p>
-
-                    </div>
-
-                    <div class="flex gap-20 pt-10">
-                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
-                        
-                    </div>
-
-                </article>
-
-                <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-                    <div>
-                        <figure class="pr-5 py-5 mr-4">
-                            <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
-                        </figure>
-                    </div>
-                    <div>
-
-                    <div>
-
-                        <h5 class="font-bold text-xl pb-3">Vaga 2#</h5>
-                        <p class="pb-3">Empresa</p>
-                        <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
-                    </div>
-
-                    <div class="flex gap-20 text-gray-500">
-
-                        <p>Cidade</p>
-                        <p>Salário</p>
-                        <p>Local de Trabalho</p>
-
-                    </div>
-
-                    <div class="flex gap-20 pt-10">
-                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
-                        
-                    </div>
-                    </div>
-                    </div>
-                </article> 
-
-                <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-
-                    <div>
-                        <figure class="pr-5 py-5 mr-4">
-                            <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
-                        </figure>
-                    </div>
-                    <div>
-                    <div>
-
-                        <h5 class="font-bold text-xl pb-3">Vaga 3#</h5>
-                        <p class="pb-3">Empresa</p>
-                        <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
-                    </div>
-
-                    <div class="flex gap-20 text-gray-500">
-
-                        <p>Cidade</p>
-                        <p>Salário</p>
-                        <p>Local de Trabalho</p>
-
-                    </div>
-
-                    <div class="flex gap-20 pt-10">
-                        <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                        <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar Vaga">Visualizar Vaga</a></li></button>
-                        
-                    </div>
-                    </div>
-                </article>
-            </section>
+                </div>
         </section>
+    </section>
 
-        <!-- SESSAO CURSOS -->
+<!-- SESSAO CURSOS -->
             <div x-show="opCurs" id="Cursos" class="flex flex-col items-start text-center px-4">
                 <h1 class="text-5xl font-bold py-10">
                 Buscar Cursos
@@ -657,100 +686,38 @@
 
                 </section>
 
+<!--cursos-->
                 <section class="flex flex-col pt-15 list-none">
                     
-                    <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-                        <div>
+                    <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                        <div class="flex flex-row">
                             <figure class="pr-5 py-5 mr-4">
-                                <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
+                                <img src="https://picsum.photos/400" alt="Imagem placeholder" class="object-cover rounded">
                             </figure>
+                            <div>
+                                <h5 class="font-bold text-xl pb-3">Vaga 1#</h5>
+                                <p class="pb-3">Curso</p>
+                                <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                            </div>
                         </div>
-                        <div>
-                        <div>
+                        <div class="flex justify-between gap-8 font-semibold">
+                            <div>
+                                <p id="bairro"> Bairro</p>
+                                <p id="salario">Carga horária</p>
+                                <p id="local">Período</p>
+                            </div>
+                            <div class="flex pt-10 gap-6">
+                                <button class="btn btn-secondary w-10 rounded-full">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </button>
                             
-                            <h5 class="font-bold text-xl pb-3">Curso 1#</h5>
-                            <p class="pb-3">Informática</p>
-                            <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                                <button class="btn btn-accent w-10 rounded-full">
+                                    <i class="fa-regular fa-plus"></i>
+                                </button>
+                            </div>
                         </div>
-
-                        <div class="flex gap-20 text-gray-500">
-
-                            <p>Cidade</p>
-                            <p>Carga horária</p>
-                            <p>Local de aula</p>
-
-                        </div>
-
-                        <div class="flex gap-20 pt-10">
-                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
-                            
-                        </div>
-
-                    </article>
-
-                    <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-                        <div>
-                            <figure class="pr-5 py-5 mr-4">
-                                <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
-                            </figure>
-                        </div>
-                        <div>
-
-                        <div>
-
-                            <h5 class="font-bold text-xl pb-3">Curso 2#</h5>
-                            <p class="pb-3">Comércio</p>
-                            <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
-                        </div>
-
-                        <div class="flex gap-20 text-gray-500">
-
-                            <p>Cidade</p>
-                            <p>Carga horária</p>
-                            <p>Local de aula</p>
-
-                        </div>
-
-                        <div class="flex gap-20 pt-10">
-                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
-                            
-                        </div>
-                        </div>
-                        </div>
-                    </article> 
-
-                    <article class="max-w-4xl border border-gray-300 rounded-xl p-10 m-5 shadow-lg flex">
-
-                        <div>
-                            <figure class="pr-5 py-5 mr-4">
-                                <img src="https://picsum.photos/400" alt="Imagem placeholder" class="w-180 h-60 object-cover rounded-lg">
-                            </figure>
-                        </div>
-                        <div>
-                        <div>
-
-                            <h5 class="font-bold text-xl pb-3">Curso 3#</h5>
-                            <p class="pb-3">Eletrônica</p>
-                            <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
-                        </div>
-
-                        <div class="flex gap-20 text-gray-500">
-
-                            <p>Cidade</p>
-                            <p>Carga horária</p>
-                            <p>Local de aula</p>
-
-                        </div>
-
-                        <div class="flex gap-20 pt-10">
-                            <button class="btn btn-accent text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Salvar">Salvar</a></li></button>
-                            <button class="btn btn-secondary text-[#FFF] py-3 px-7 rounded-xl cursor-pointer hover:scale-110 transition transition-duration-400"><li><a href="Visualizar curso">Visualizar curso</a></li></button>
-                            
-                        </div>
-                        </div>
-                    </article>
+                  
+                    </div>
                 </section>
             </section>
         </section>
