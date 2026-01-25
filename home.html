@@ -34,7 +34,7 @@
                                 <circle cx="12" cy="12" r="5" />
                                 <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
                             </svg>
-                            <input type="checkbox" value="synthwave" class="toggle theme-controller" />
+                            <input type="checkbox" value="coffee" class="toggle theme-controller" />
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
@@ -65,7 +65,7 @@
 
 <!--informacoes do perfil-->
                             <li x-data="{ open: false }" class="relative">
-                                <div @click="open = true" class="flex items-center gap-2 bg-base-100 rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
+                                <div @click="open = true" class="flex items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
                                     <i class="fa-solid fa-user text-accent fa-lg "></i>
                                     <span class="font-semibold text-lg"> Ver Informações do Perfil </span>
                                 </div>
@@ -73,7 +73,7 @@
                         <!-- modal DE INFORMACOES  -->
                                 <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
 
-                                    <div class="bg-base-100 text-secondary rounded-xl p-8 relative">
+                                    <div class="bg-base-100 relative w-[900px] h-[500px] overflow-y-auto text-secondary rounded-xl p-8 relative">
 
                                 <!-- botão de fechar modal-->
                                         <button @click="open = false" class="absolute top-3 right-3 text-secondary hover:text-gray-800">
@@ -81,60 +81,104 @@
                                         </button>
 
                                     <!---INFORMACOES-->
-                                        <h1 class="text-4xl font-bold mb-4">Informações Pessoais </h1>
-                                        <div class="flex flex-col"> 
-                                            <div class="flex flex-row gap-3"> 
-                                                <div>
-                                                    <strong>Primeiro nome:</strong>
-                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
-                                                </div>
-                                                <div>
-                                                    <strong>Último nome:</strong>
-                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
-                                                </div>
-                                            </div>
+                                        <h1 class="text-4xl font-bold mb-4">Dados Cadastrais</h1>
+                                    <div class="flex flex-row gap-10">
 
-                                            <div class="flex flex-row gap-3"> 
-                                                <div>
-                                                    <strong>Número de telefone:</strong>
-                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
-                                                </div>
-                                                <div>
-                                                    <strong>Data de Nascimento:</strong>
-                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
-                                                </div>
-                                            </div>
+                                        <div class="flex flex-col gap-4">
 
-                                            <div class="flex flex-row gap-3"> 
-                                                <div>
-                                                    <strong>Endereço:</strong>
-                                                    <input type="text" placeholder="Digite seu primeiro nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
+                                            <div class="flex gap-8">
+                                                <div class="flex flex-col">
+                                                    <label for="nome" class="font-bold">Nome Completo:</label>
+                                                    <input id="nome" type="text" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
-                                                <div>
-                                                    <strong>Email:</strong>
-                                                    <input type="text" placeholder="Digite seu último nome..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"> 
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-row gap-3"> 
-                                                <div>
-                                                    <strong> Gênero:</strong>
-                                                    <label> 
-                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Feminino 
-                                                    </label> 
-                                                    
-                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Masculino 
-                                                    </label>
-                                                    <label> 
-                                                        <input type="radio" class="radio radio-sm cursor-pointer mx-3"> Prefiro não informar 
-                                                    </label>
+                                                <div class="flex flex-col">
+                                                    <label for="nascimento" class="font-bold">Data de Nascimento:</label>
+                                                    <input id="nascimento" type="text" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                                 
+                                                
+                                            </div>
+
+                                            <div class="flex gap-8">
+                                                <div class="flex flex-col">
+                                                    <label for="cpf" class="font-bold">CPF:</label>
+                                                    <input id="cpf" type="text" placeholder="Digite seu CPF" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+
+                                                <div class="flex flex-col">
+                                                    <label for="tel" class="font-bold">Telefone:</label>
+                                                    <input id="tel" type="tel" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class="flex gap-8">
+                                                
+
+                                                <div class="flex flex-col">
+                                                    <label for="email" class="font-bold">Email:</label>
+                                                    <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+
+                                                <div class="flex flex-col">
+                                                    <label for="senha" class="font-bold">Senha:</label>
+                                                    <input id="senha" type="text" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-8">
+                                                <div class="flex flex-col">
+                                                    <label for="cep" class="font-bold">CEP:</label>
+                                                    <input id="cep" type="text" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+
+                                                <div class="flex flex-col">
+                                                    <label for="rua" class="font-bold">Rua:</label>
+                                                    <input id="rua" type="text" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class="flex gap-8">
+                                                <div class="flex flex-col">
+                                                    <label for="bairro" class="font-bold">Bairro:</label>
+                                                    <input id="bairro" type="text" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
+
+                                                <div class="flex flex-col">
+                                                    <label for="numero" class="font-bold">Número da Casa:</label>
+                                                    <input id="numero" type="text" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="flex flex-col gap-4 justify-between">
 
-                                        <div class="flex justify-end mt-6 gap-4">
-                                            <button class="btn btn-accent">Editar</button>
-                                        </div>
+                                        
+                                                <div class="flex flex-col">
+                                                    <label class="font-bold">Deficiência:</label>
+                                                    <select class="select bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <option>Deficiência Física</option>
+                                                    <option>Deficiência Auditiva</option>
+                                                    <option>Deficiência Visual</option>
+                                                    <option>Deficiência Intelectual</option>
+                                                    <option>Deficiência Múltipla</option>
+                                                    <option>Deficiência Psicossocial</option>
+                                                    <option>TEA</option>
+                                                    </select>
+                                                </div>
+
+                                                <div>
+                                                    <strong>Gênero:</strong>
+                                                    <div class="flex flex-col gap-4 mt-2">
+                                                    <label><input type="radio" name="genero"> Feminino</label>
+                                                    <label><input type="radio" name="genero"> Masculino</label>
+                                                    <label><input type="radio" name="genero"> Prefiro não informar</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex  mt-6 gap-4">
+                                                    <button class="btn btn-accent">Editar</button>
+                                                </div>
                                     </div>
                                 </div>
                             </li>
@@ -193,46 +237,186 @@
 <!-- MODAL-->
     <section>
     
-    <div x-show="authOpen" class="fixed inset-0 flex items-center justify-center bg-base-100 z-50" role="dialog" aria-modal="true">
-    <div x-transition @click.away="authOpen = false" class="bg-base-200 rounded-lg p-8 w-full max-w-md shadow-lg">
-      
-      <!-- BOTÃO PARA FECHAR -->
-      <button @click="authOpen = false" class="absolute top-4 right-4 font-bold text-gray-500">
-        ✕
-      </button>
+        <div x-show="authOpen" class="fixed inset-0 flex items-center justify-center bg-base-100 z-50" role="dialog" aria-modal="true">
+        <div x-transition @click.away="authOpen = false" class="bg-base-200 rounded-lg p-8 w-full max-w-md shadow-lg">
+        
+        <!-- BOTÃO PARA FECHAR -->
+        <button @click="authOpen = false" class="absolute top-4 right-4 font-bold text-gray-500">
+            ✕
+        </button>
 
-      <!-- LOGIN -->
-      <div x-show="tela === 'login'" x-transition>
-        <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
-        <input type="email" placeholder="Digite seu endereço de email" class="input input-bordered w-full mb-4">
-        <input type="password" placeholder="Digite sua senha" class="input input-bordered w-full mb-6">
-        <button class="btn btn-secondary w-full">Entrar</button>
-        <p class="mt-4 text-center  text-sm">
-          Não tem conta?
-          <button @click="tela = 'cadastro'" class="link font-semibold">Criar conta</button>
-        </p>
-      </div>
+        <!-- LOGIN -->
+       <div x-show="tela === 'login'" x-transition>
+            <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div class="relative bg-base-100 text-secondary  rounded-lg p-8 w-full max-w-md shadow-lg">
+                    <button 
+                        @click="authOpen = false"
+                        class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold"
+                        aria-label="Fechar"
+                    >
+                        ✕
+                    </button>
 
-      <!-- CADASTRO -->
-      <div x-show="tela === 'cadastro'" x-transition>
-        <h2 class="text-2xl font-bold mb-6 text-center">Cadastrar-se</h2>
-        <input type="text" placeholder="Digite seu nome completo" required class="input input-bordered w-full mb-4">
-        <input type="email" placeholder="Digite seu endereço de email" required class="input input-bordered w-full mb-4">
-        <input type="tel" placeholder="Digite seu número de telefone" required pattern="^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}\-[0-9]{4}$" class="input input-bordered w-full mb-4">
-        <input type="password" placeholder="Digite sua senha" required class="input input-bordered w-full mb-6">
-        <button class="btn btn-secondary w-full">Cadastrar-se</button>
-        <p class="mt-4 text-center text-sm">
-          Já tem uma conta?
-          <button @click="tela = 'login'" class="link font-semibold">Entrar</button>
-        </p>
-      </div>
-    </div>
-    </div>
-    </div>
+                    <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
+                    <div class="flex flex-col items-center gap-4">
+
+                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+
+                        <input id="password" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
+                        
+                        <button class="btn btn-secondary w-full">Entrar</button>
+                    </div>
+
+
+
+                    <p class="mt-4 text-center text-sm">
+                        Não tem conta?
+                        <button @click="tela = 'cadastro'" class="link font-semibold">
+                        Criar conta
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CADASTRO -->
+        <div x-show="tela === 'cadastro'" x-transition>
+                <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+
+                    <div class="bg-base-100 text-secondary rounded-xl p-8 relative w-[900px] h-[500px] overflow-y-auto">
+
+                        <div class="absolute inset-0 bg-base-100 
+                                    before:content-[''] before:absolute before:inset-0
+                                    before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
+                                    before:bg-top-right before:bg-[length:auto_400px]
+                                    before:opacity-20
+                                    pointer-events-none">
+                        </div>
+                        <!--conteudo -->
+                        <div class="relative z-10 text-secondary">
+
+
+                    <!-- botão de fechar -->
+                        <button 
+                            @click="authOpen = false"
+                            class="absolute top-3 right-3 text-secondary hover:text-gray-800"
+                        >
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                        </button>
+                        <h1 class="text-4xl font-bold mb-4">Dados Cadastrais</h1>
+                        <div class="flex flex-row gap-10">
+
+                            <div class="flex flex-col gap-4">
+
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="nome" class="font-bold">Nome Completo:</label>
+                                        <input id="nome" type="text" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label for="nascimento" class="font-bold">Data de Nascimento:</label>
+                                        <input id="nascimento" type="text" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                    
+                                    
+                                </div>
+
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="cpf" class="font-bold">CPF:</label>
+                                        <input id="cpf" type="text" placeholder="Digite seu CPF" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="tel" class="font-bold">Telefone:</label>
+                                        <input id="tel" type="tel" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="flex gap-8">
+                                    
+
+                                    <div class="flex flex-col">
+                                        <label for="email" class="font-bold">Email:</label>
+                                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="senha" class="font-bold">Senha:</label>
+                                        <input id="senha" type="text" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="cep" class="font-bold">CEP:</label>
+                                        <input id="cep" type="text" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="rua" class="font-bold">Rua:</label>
+                                        <input id="rua" type="text" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="bairro" class="font-bold">Bairro:</label>
+                                        <input id="bairro" type="text" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="numero" class="font-bold">Número da Casa:</label>
+                                        <input id="numero" type="text" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 justify-between">
+
+                            
+                                    <div class="flex flex-col">
+                                        <label class="font-bold">Deficiência:</label>
+                                        <select class="select bg-white border border-secondary rounded-md py-2 px-5">
+                                        <option>Deficiência Física</option>
+                                        <option>Deficiência Auditiva</option>
+                                        <option>Deficiência Visual</option>
+                                        <option>Deficiência Intelectual</option>
+                                        <option>Deficiência Múltipla</option>
+                                        <option>Deficiência Psicossocial</option>
+                                        <option>TEA</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <strong>Gênero:</strong>
+                                        <div class="flex flex-col gap-4 mt-2">
+                                        <label><input type="radio" name="genero"> Feminino</label>
+                                        <label><input type="radio" name="genero"> Masculino</label>
+                                        <label><input type="radio" name="genero"> Prefiro não informar</label>
+                                        </div>
+                                    </div>
+                
+
+                            <!-- Botão -->
+                            <div class="flex flex-col gap-2">
+                                <button class="btn btn-secondary w-full mt-4">Cadastrar-se</button>
+
+                                    <p class="text-center text-sm">
+                                    Já tem uma conta?
+                                    <button @click="tela = 'login'" class="link font-semibold">Entrar</button>
+                                    </p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
     </section>
 
 
-<!--SESSAO SOBRE -->
+<!--SEÇAO SOBRE -->
 <section id="sobre" class="pt-32 p-20">
   
   <div class="flex flex-col items-center text-center px-4">
@@ -288,7 +472,7 @@
 
     </section>
 
-    <!-- SESSAO BLOG -->
+    <!-- SEÇAO BLOG -->
     <section id="blog" class="pt-32">
         <div class="flex flex-col items-center text-center px-4">
             <h1 class="text-5xl font-bold pb-10">Blog</h1>
@@ -397,7 +581,7 @@
 
     </section>
 
-    <!-- SESSAO EMPREGOS -->
+    <!-- SEÇAO EMPREGOS -->
     <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
         <div class="flex justify-center mx-auto pt-15 gap-6">
             <button class="btn btn-secondary" @click="opCurs = !opCurs">Ofertas de Cursos</button>
@@ -420,7 +604,7 @@
             <div>
                 <p class="py-2 font-bold">Região Administrativa</p>
                 <div class="flex gap-5">
-                    <select class="select bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500"
+                    <select class="select bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                         <option value="ZN" >Zona Norte</option>
                         <option value="ZL">Zona Leste</option>
                         <option value="ZS">Zona Sul</option>
@@ -559,7 +743,7 @@
         </section>
     </section>
 
-<!-- SESSAO CURSOS -->
+<!-- SEÇAO CURSOS -->
             <div x-show="opCurs" id="Cursos" class="flex flex-col items-start text-center px-4">
                 <h1 class="text-5xl font-bold py-10">
                 Buscar Cursos
@@ -724,7 +908,7 @@
         
     </section>
 
-    <!-- SESSAO MAPA -->
+    <!-- SEÇAO MAPA -->
     <section id="mapa" x-data="{opMap : false}">
         <div class="flex justify-center py-6">
             <button class="btn btn-secondary" @click="opMap = !opMap">Abrir Mapa</button>
