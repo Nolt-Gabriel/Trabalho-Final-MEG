@@ -52,6 +52,7 @@ def login(email: str = Form(...), senha: str = Form(...)):
 
 @app.post("/cadastro")
 def cadastro(
+    request: Request,
     nome: str = Form(...),
     email: str = Form(...),
     senha: str = Form(...),
@@ -64,7 +65,14 @@ def cadastro(
 
     if usuario_existente:
         db.close()
-        return RedirectResponse("/", status_code=302)
+        return templates.TemplateResponse(
+            "home.html",
+            {
+                "request": request,
+                "erro": "Este email já está cadastrado.",
+            }
+        )
+        #return RedirectResponse("/", status_code=302)
 
     # Cria novo usuário
     novo_usuario = Usuario(
@@ -82,7 +90,7 @@ def cadastro(
     response = RedirectResponse("/", status_code=302)
     response.set_cookie(key="usuario", value=email)
 
-    return response
+    return response 
 
 
 # LOGOUT
