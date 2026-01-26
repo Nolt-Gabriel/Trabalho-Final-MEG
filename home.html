@@ -57,9 +57,11 @@
                     <button @click="open = !open" class="p-2 rounded-full hover:bg-gray-200 transition">
                         <i class="fa-solid fa-user text-lg"></i>
                     </button>
-
+                    <button @click="authOpen = true; tela = 'logincandidato'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>                    
+            
                     <div x-show="open" @click.outside="open = false" x-transition class="menu bg-secondary absolute right-0 mt-2 w-100 rounded-lg  shadow-lg z-50 ">
                         <ul class="menu-items flex flex-col gap-4 p-4 ">
+    
 
 
 
@@ -223,8 +225,8 @@
               
 
               <div class="flex items-center gap-6 mt-4">
-                <button @click="authOpen = true; tela = 'login'" class="btn btn-lg btn-outline rounded-lg mt-6"> Entrar</button>
-                <button @click="authOpen = true; tela = 'cadastro'"  class="btn btn-lg btn-accent text-secondary-content mt-6"> Cadastrar-se </button>
+                <button @click="authOpen = true; tela = 'cadastroempresa'" class="btn btn-lg btn-outline rounded-lg mt-6">Sou empresa</button>
+                <button @click="authOpen = true; tela = 'cadastrocandidato'"  class="btn btn-lg btn-accent text-secondary-content mt-6">Sou candidato</button>
               </div>
           </div>
 
@@ -233,26 +235,15 @@
 
 <!-- MODAL-->
     <section>
-    
-        <div x-show="authOpen" class="fixed inset-0 flex items-center justify-center bg-base-100 z-50" role="dialog" aria-modal="true">
-        <div x-transition @click.away="authOpen = false" class="bg-base-200 rounded-lg p-8 w-full max-w-md shadow-lg">
-        
-        <!-- BOTÃO PARA FECHAR -->
-        <button @click="authOpen = false" class="absolute top-4 right-4 font-bold text-gray-500">
-            ✕
-        </button>
 
         <!-- LOGIN -->
-       <div x-show="tela === 'login'" x-transition>
-            <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+       <div x-show="tela === 'logincandidato'" x-transition @click.away="authOpen = true">
+            <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" role="dialog" aria-modal="true">
+            
                 <div class="relative bg-base-100 text-secondary  rounded-lg p-8 w-full max-w-md shadow-lg">
-                    <button 
-                        @click="authOpen = false"
-                        class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold"
-                        aria-label="Fechar"
-                    >
-                        ✕
-                    </button>
+                <button @click="authOpen = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold">
+                    ✕
+                </button>
 
                     <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
                     <div class="flex flex-col items-center gap-4">
@@ -268,7 +259,40 @@
 
                     <p class="mt-4 text-center text-sm">
                         Não tem conta?
-                        <button @click="tela = 'cadastro'" class="link font-semibold">
+                        <button @click="tela = 'cadastrocandidato'" class="link font-semibold">
+                        Criar conta
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+<!--cadastro empresa-->
+        <div x-show="tela === 'cadastroempresa'" x-transition @click.away="authOpen = true">
+            <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div class="relative bg-base-100 text-secondary  rounded-lg p-8 w-full max-w-md shadow-lg">
+                <button 
+                        @click="authOpen = false"
+                        class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold"
+                        aria-label="Fechar"
+                    >
+                        ✕
+                </button>
+
+                    <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
+                    <div class="flex flex-col items-center gap-4">
+
+                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+
+                        <input id="password" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
+                        
+                        <button class="btn btn-secondary w-full">Entrar</button>
+                    </div>
+
+
+
+                    <p class="mt-4 text-center text-sm">
+                        Não tem conta?
+                        <button @click="tela = 'cadastrocandidato'" class="link font-semibold">
                         Criar conta
                         </button>
                     </p>
@@ -276,21 +300,21 @@
             </div>
         </div>
 
-        <!-- CADASTRO -->
-        <div x-show="tela === 'cadastro'" x-transition>
-                <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+        <!-- CADASTRO candidato -->
+        <div x-show="tela === 'cadastrocandidato'" x-transition  @click.away="authOpen = true">
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50" role="dialog" aria-modal="true">
 
-                    <div class="bg-base-100 text-secondary rounded-xl p-8 relative w-[900px] h-[500px] overflow-y-auto">
+                <div class="bg-base-100 text-secondary rounded-xl p-8 relative w-[900px] h-[500px] overflow-y-auto">
 
-                        <div class="absolute inset-0 bg-base-100 
-                                    before:content-[''] before:absolute before:inset-0
-                                    before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
-                                    before:bg-top-right before:bg-[length:auto_400px]
-                                    before:opacity-20
-                                    pointer-events-none">
+                    <div class="absolute inset-0 bg-base-100 
+                                before:content-[''] before:absolute before:inset-0
+                                before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
+                                before:bg-top-right before:bg-[length:auto_400px]
+                                before:opacity-20
+                                pointer-events-none">
                         </div>
                         <!--conteudo -->
-                        <div class="relative z-10 text-secondary">
+                    <div class="relative z-10 text-secondary">
 
 
                     <!-- botão de fechar -->
@@ -410,6 +434,8 @@
                         
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
 
