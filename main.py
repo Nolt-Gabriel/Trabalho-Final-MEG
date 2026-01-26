@@ -1,4 +1,5 @@
 import customtkinter
+from tkinter import messagebox
 from PIL import Image, ImageTk
 
 
@@ -48,7 +49,7 @@ def abrir_login():
 
     emailentry = customtkinter.CTkEntry(loginframe, placeholder_text='email', text_color='#D27D3F', border_color='#BD5F1C')
     passwordentry = customtkinter.CTkEntry(loginframe, placeholder_text='senha', text_color='#D27D3F', border_color='#BD5F1C')
-    loginbutton = customtkinter.CTkButton(loginframe, text='Login', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4')
+    loginbutton = customtkinter.CTkButton(loginframe, text='Logar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4')
     cadastrobutton = customtkinter.CTkButton(loginframe, text='Cadastrar', fg_color='transparent', hover_color='#BD5F1C', command=lambda: abrir_cadastro(applogin))
 
     emailentry.grid(row=0, column=0, padx=20, pady=(200, 10))
@@ -113,7 +114,45 @@ def abrir_cadastro(login):
     check1 = customtkinter.CTkCheckBox(cadastroframe, text="Feminino", variable=var_fem, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_fem))
     check2 = customtkinter.CTkCheckBox(cadastroframe, text="Masculino", variable=var_masc, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_masc))
     check3 = customtkinter.CTkCheckBox(cadastroframe, text="Ocultar", variable=var_ocultar, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_ocultar))
-    cadastrobutton = customtkinter.CTkButton(cadastroframe, text='Cadastrar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4', command=lambda: (appcadastro.destroy(), login.deiconify()))
+
+    def salvar_cadastro():
+        nome = nomeentry.get().strip()
+        data_nascimento = dataentry.get().strip()
+        cpf = cpfentry.get().strip()
+        telefone = telefoneentry.get().strip()
+        email = emailentry.get().strip()
+        senha = passwordentry.get().strip()
+        cep = cepentry.get().strip()
+        rua = ruaentry.get().strip()
+        bairro = bairroentry.get().strip()
+        numero_casa = ndcasaentry.get().strip()
+        deficiencia = combobox.get()
+        sexo = "Feminino" if var_fem.get() else "Masculino" if var_masc.get() else "Oculto" if var_ocultar.get() else ""
+
+        if not (nome and data_nascimento and cpf and telefone and email and senha and cep and rua and bairro and numero_casa and deficiencia and sexo):
+            messagebox.showerror("Erro", "É necessário preencher todos os campos.")
+            return
+
+        dados = {
+            "nome": nomeentry.get(),
+            "data_nascimento": dataentry.get(),
+            "cpf": cpfentry.get(),
+            "telefone": telefoneentry.get(),
+            "email": emailentry.get(),
+            "senha": passwordentry.get(),
+            "cep": cepentry.get(),
+            "rua": ruaentry.get(),
+            "bairro": bairroentry.get(),
+            "numero_casa": ndcasaentry.get(),
+            "deficiencia": combobox.get(),
+            "sexo": "Feminino" if var_fem.get() else "Masculino" if var_masc.get() else "Oculto"
+        }
+        print(dados)
+        appcadastro.destroy()
+        login.deiconify()
+
+    cadastrobutton = customtkinter.CTkButton(cadastroframe, text='Cadastrar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4', command=salvar_cadastro)
+    loginbutton = customtkinter.CTkButton(cadastroframe, text='Logar', fg_color='transparent', hover_color='#BD5F1C', command=lambda: (appcadastro.destroy(),login.deiconify()))
 
 
     nomeentry.grid(row=0, column=0, padx=20, pady=(50, 10))
@@ -130,7 +169,8 @@ def abrir_cadastro(login):
     check1.grid(row=11, column=0, padx=20, pady=5,)
     check2.grid(row=12, column=0, padx=20, pady=5,)
     check3.grid(row=13, column=0, padx=20, pady=5,)
-    cadastrobutton.grid(row=14, column=0, padx=20, pady=(20, 50))
+    cadastrobutton.grid(row=14, column=0, padx=20, pady=(20, 20))
+    loginbutton.grid(row=15, column=0, padx=20, pady=(0, 50))
 
 
     login.withdraw()
