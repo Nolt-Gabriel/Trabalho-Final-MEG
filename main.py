@@ -16,6 +16,18 @@ def centralizar_janela(janela, largura, altura):
     janela.geometry(f"{largura}x{altura}+{x}+{y}")
 
 
+def receber_largura(janela):
+    largura_tela = janela.winfo_screenwidth()
+    print(largura_tela)
+    return largura_tela
+
+
+def receber_altura(janela):
+    altura_tela = janela.winfo_screenheight()
+    print(altura_tela)
+    return altura_tela
+
+
 def abrir_login():
 
     applogin = customtkinter.CTk()
@@ -49,7 +61,7 @@ def abrir_login():
 
     emailentry = customtkinter.CTkEntry(loginframe, placeholder_text='email', text_color='#D27D3F', border_color='#BD5F1C')
     passwordentry = customtkinter.CTkEntry(loginframe, placeholder_text='senha', text_color='#D27D3F', border_color='#BD5F1C')
-    loginbutton = customtkinter.CTkButton(loginframe, text='Logar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4')
+    loginbutton = customtkinter.CTkButton(loginframe, text='Logar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4', command=lambda: abrir_home(applogin))
     cadastrobutton = customtkinter.CTkButton(loginframe, text='Cadastrar', fg_color='transparent', hover_color='#BD5F1C', command=lambda: abrir_cadastro(applogin))
 
     emailentry.grid(row=0, column=0, padx=20, pady=(200, 10))
@@ -178,6 +190,57 @@ def abrir_cadastro(login):
     appcadastro.protocol(
         "WM_DELETE_WINDOW",
         lambda: (appcadastro.destroy(), login.deiconify())
+    )
+
+
+def abrir_home(login):
+
+    apphome = customtkinter.CTkToplevel(login)
+    apphome.title('AcesSol')
+
+    apphome.geometry(f'{receber_largura(apphome)}x{receber_altura(apphome)}')
+    apphome.attributes('-fullscreen', True)
+
+    largura = receber_largura(apphome)
+    altura = receber_altura(apphome)   
+
+    apphome.grid_columnconfigure(0, weight=1) 
+    apphome.grid_rowconfigure(1, weight=1)
+
+    headerframe = customtkinter.CTkFrame(apphome, width=largura, height=altura/10, fg_color='#D27D3F')
+    headerframe.grid(row=0, column=0, sticky='ew')
+
+    headerframe.grid_columnconfigure(0, weight=1)
+
+    imageframe = customtkinter.CTkFrame(headerframe, 200, 50)
+    imageframe.grid(row=0, column=0, padx=20, pady=20, sticky='w')
+
+    imageheader = Image.open('img/logo.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageheader, dark_image=imageheader, size=(200, 50))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color='#D27D3F')
+
+    bg_imageframe.place(relx=0, rely=0, relwidth=1, relheight=1)
+
+    buttoninicio = customtkinter.CTkButton(headerframe, text='Inicio', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttoninicio.grid(row=0, column=1, padx=10, pady=20)
+    buttonsobre = customtkinter.CTkButton(headerframe, text='Sobre', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonsobre.grid(row=0, column=2, padx=10, pady=20)
+    buttonblog = customtkinter.CTkButton(headerframe, text='Blog', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonblog.grid(row=0, column=3, padx=10, pady=20)
+    buttonemprego = customtkinter.CTkButton(headerframe, text='Empregos', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonemprego.grid(row=0, column=4, padx=10, pady=20)
+    buttonmapa = customtkinter.CTkButton(headerframe, text='Mapa', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonmapa.grid(row=0, column=5, padx=10, pady=20)
+    buttonsair = customtkinter.CTkButton(headerframe, text='[ >', fg_color='transparent', hover_color='#D27D3F', font=("Arial", 17), command=lambda: (apphome.destroy(),login.deiconify()))
+    buttonsair.grid(row=0, column=6, padx=0, pady=20)
+
+    login.withdraw()
+
+    apphome.protocol(
+        "WM_DELETE_WINDOW",
+        lambda: (apphome.destroy(), login.deiconify())
     )
 
 abrir_login()
