@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="theme.css">
 </head>
-<body class="min-h-screen m-0 bg-base-100 bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
+<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login' } ">
 
 
 <!--HEADER-->
@@ -44,7 +44,7 @@
 
 
 <!--NAVEGACAO-->
-                    <li><a href="home.html" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
+                    <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
                     <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
@@ -192,7 +192,7 @@
                                 <i class="fa-solid fa-bell text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Notificações</span>
                             </li>
-                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
                                 <i class="fa-solid fa-arrow-right-from-bracket text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Sair</span>
                             </li>
@@ -205,7 +205,7 @@
 
 
 <!--MAIN-->
-   <main class="max-w-7xl mx-auto text-secondary">
+   <main class="max-w-7xl mx-auto text-secondary" id="home">
 
 
 <!--HERO-->
@@ -213,15 +213,12 @@
         <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
           
           <div class="max-w-4xl mt-16">
-              <h1 class="font-bold text-5xl">
+              <h1 class="font-bold text-7xl md:text-5xl">
               Acessibilidade e solidariedade para todos 
               </h1>
 
               <p class="mt-6 text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae at harum cupiditate nesciunt veritatis dolores
-              natus aliquid vero ratione nihil, sequi adipisci, officia
-              nisi quam debitis, sit in sapiente enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsa, voluptate facilis similique explicabo alias numquam et obcaecati accusamus molestiae, deleniti impedit! Hic at, aliquam corrupti sapiente incidunt nulla ab.
+              Nosso objetivo é trazer mais inclusão a pessoas que normalmente são esquecidas, aqui vocês podem melhorar seu currículo com cursos profissionalizantes e de qualidade que implementam suas habilidades e os ajudam a ingressar no mercado de trabalho, além de encontrar vagas de emprego onde se sentirem mais confortáveis e incluídos
               </p>
               
 
@@ -425,11 +422,11 @@
     </h1>
 
     <p class="py-5 text-lg max-w-5xl">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae alias repudiandae veritatis facere cum iure mollitia. Autem, voluptatibus? Tenetur ipsam voluptas magnam dicta architecto facere sit atque error doloribus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci molestias non eos ut placeat eligendi tempora? Consectetur maxime suscipit modi sit laboriosam quae optio facilis! Dolorem ratione totam molestias quis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere culpa, repudiandae accusamus doloribus error laudantium quis reprehenderit voluptatibus? Quae illum suscipit aliquam vero voluptates molestias eaque voluptatem sequi! Ad, alias?
+      AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego
     </p>
 
     <figure>
-      <img src="img/girassolzinho2.svg" class="mt-6">
+      <img src="img/girassolzinho2.svg" alt="Girassol Fofinho" class="mt-6">
     </figure>
 
   </div>
@@ -444,8 +441,7 @@
         Solidariedade
       </strong>
       <p class="text-lg">
-        Falar sobre o objetivo do projeto de ajudar pessoas.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae unde doloribus dolores magni molestias quos rem. Voluptas consectetur, sit, laborum ipsam obcaecati sed deserunt, autem illum facilis necessitatibus expedita doloribus?
+        Sabemos que em diversos momentos Pessoas Com Deficiência passam por dificuldades, seja com relação ao preconceito ou simplesmente pela falta de oportunidade imposta a eles, por esse motivo, buscamos ajudar o máximo de pessoas com o auxílio de cursos e vagas de emprego exclusivas 
       </p>
     </div>
 
@@ -454,8 +450,7 @@
         Acessibilidade
       </strong>
       <p class="text-lg">
-        Falar sobre utilizacao da tecnologia de forma acessivel
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, asperiores est, accusantium, mollitia blanditiis odio laudantium qui eligendi amet fuga doloribus? Soluta rerum nulla ut consequuntur? Laborum natus optio odit!
+        Resolvemos então criar um projeto gratuito e acessível para todos, um local onde todos podem refletir e aprender sobre algo novo e que possivelmente o ajudará a conquistar o tão sonhado emprego ou até mesmo unicamente pelo conhecimento
       </p>
     </div>
 
@@ -464,8 +459,7 @@
         Inclusão
       </strong>
       <p class="text-lg ">
-        Falar sobre dificuldades de pcd 
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam excepturi earum enim, accusamus, praesentium alias, doloribus explicabo consequuntur quisquam eius aspernatur maxime? Quisquam saepe error quidem voluptates, debitis laborum.
+        Muitas vezes a exclusão de Pessoas Com Deficiência causa consequências seferas, muitas pessoas se reclusam com medo dos constrangimentos e da frustração de se sentirem invisíveis, entretanto, nosso objetivo e desmistificar tudo isso trazendo um ambiente mais amigável e inclusivo para que essas pessoas não se sintam exclúídas
       </p>
     </div>
   </div>
@@ -475,8 +469,8 @@
     <!-- SEÇAO BLOG -->
     <section id="blog" class="pt-32">
         <div class="flex flex-col items-center text-center px-4">
-            <h1 class="text-5xl font-bold pb-10">Blog</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima error qui quaerat omnis aliquam nam maxime quidem ipsam obcaecati rem tenetur, esse temporibus nostrum quas quibusdam nobis. Est, saepe quos!</p>
+            <h1 class="text-5xl max-md:text-7xl font-bold pb-10">Blog</h1>
+            <p>Nessa seção você pode encontrar alguns artigos pra te ajudar a entender um pouco da causa e também acabar encontrando algo novo para se divertir, se informar e expandir ainda mais seus conhecimentos</p>
         </div>
 
         <!--carrossel-->
