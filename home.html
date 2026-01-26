@@ -54,7 +54,7 @@
 
 <!--MENU usuario-->
                     <li x-data="{ open: false }" class="relative">
-                    <button @click="open = !open" class="p-2 rounded-full hover:bg-gray-200 transition">
+                    <button @click="open = !open" class=" p-2 rounded-full hover:bg-gray-200 transition">
                         <i class="fa-solid fa-user text-lg"></i>
                     </button>
 
@@ -65,7 +65,7 @@
 
 <!--informacoes do perfil-->
                             <li x-data="{ open: false }" class="relative">
-                                <div @click="open = true" class="flex items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
+                                <div @click="open = true" class="flex text-secondary-content items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
                                     <i class="fa-solid fa-user text-accent fa-lg "></i>
                                     <span class="font-semibold text-lg"> Ver Informações do Perfil </span>
                                 </div>
@@ -184,15 +184,15 @@
                             </li>
 
 <!--curriculo-->
-                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
                                 <i class="fa-solid fa-file text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Meu currículo </span>
                             </li>
-                            <li class="flex flex-row  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
                                 <i class="fa-solid fa-bell text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Notificações</span>
                             </li>
-                            <li class="flex flex-row items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
                                 <i class="fa-solid fa-arrow-right-from-bracket text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Sair</span>
                             </li>
@@ -205,7 +205,7 @@
 
 
 <!--MAIN-->
-   <main class="max-w-7xl mx-auto text-secondary" id="home">
+   <main class="max-w-7xl mx-auto text-secondary-content" id="home">
 
 
 <!--HERO-->
@@ -224,7 +224,7 @@
 
               <div class="flex items-center gap-6 mt-4">
                 <button @click="authOpen = true; tela = 'login'" class="btn btn-lg btn-outline rounded-lg mt-6"> Entrar</button>
-                <button @click="authOpen = true; tela = 'cadastro'"  class="btn btn-lg btn-accent text-secondary-content mt-6"> Cadastrar-se </button>
+                <button @click="authOpen = true; tela = 'cadastro'"  class="btn btn-lg btn-accent text-primary mt-6"> Cadastrar-se </button>
               </div>
           </div>
 
@@ -245,7 +245,7 @@
         <!-- LOGIN -->
        <div x-show="tela === 'login'" x-transition>
             <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                <div class="relative bg-base-100 text-secondary  rounded-lg p-8 w-full max-w-md shadow-lg">
+                <div class="relative bg-base-100 text-secondary-content  rounded-lg p-8 w-full max-w-md shadow-lg">
                     <button 
                         @click="authOpen = false"
                         class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold"
@@ -259,9 +259,9 @@
 
                         <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
 
-                        <input id="password" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
+                        <input id="senha" type="senha" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
                         
-                        <button class="btn btn-secondary w-full">Entrar</button>
+                        <button class="btn btn-secondary text-primary w-full">Entrar</button>
                     </div>
 
 
@@ -290,7 +290,7 @@
                                     pointer-events-none">
                         </div>
                         <!--conteudo -->
-                        <div class="relative z-10 text-secondary">
+                        <div class="relative z-10 text-secondary-content">
 
 
                     <!-- botão de fechar -->
@@ -437,7 +437,7 @@
     </h2>
 
     <div class="flex flex-col md:flex-row gap-12 max-w-6xl">
-      <strong class="text-4xl text-accent self-center">
+      <strong class="text-4xl text-success self-center">
         Solidariedade
       </strong>
       <p class="text-lg">
@@ -446,7 +446,7 @@
     </div>
 
     <div class="flex flex-col md:flex-row-reverse gap-12 max-w-6xl">
-      <strong class="text-4xl  text-accent self-center">
+      <strong class="text-4xl  text-success self-center">
         Acessibilidade
       </strong>
       <p class="text-lg">
@@ -455,7 +455,7 @@
     </div>
 
     <div class="flex flex-col md:flex-row gap-12 max-w-6xl">
-      <strong class="text-4xl  text-accent self-center">
+      <strong class="text-4xl  text-success self-center">
         Inclusão
       </strong>
       <p class="text-lg ">
@@ -474,7 +474,7 @@
         </div>
 
         <!--carrossel-->
-        <div class="carousel w-full gap-10 mt-10 scroll-smooth">
+        <div class="carousel text-secondary w-full gap-10 mt-10 scroll-smooth">
 
         <!--artigo1-->
             <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
@@ -577,9 +577,9 @@
 
     <!-- SEÇAO EMPREGOS -->
     <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
-        <div class="flex justify-center mx-auto pt-15 gap-6">
-            <button class="btn btn-secondary" @click="opCurs = !opCurs">Ofertas de Cursos</button>
-            <button class="btn btn-secondary" @click="opEmp = !opEmp">Ofertas de Emprego</button>
+        <div class="flex justify-center  mx-auto pt-15 gap-6">
+            <button class="btn btn-secondary text-white  " @click="opCurs = !opCurs">Ofertas de Cursos</button>
+            <button class="btn btn-secondary text-white " @click="opEmp = !opEmp">Ofertas de Emprego</button>
         </div>
         <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
             <h1 class="text-5xl font-bold py-10">
@@ -591,14 +591,14 @@
             <div>
                 <p class="py-2 font-bold">Busque sua vaga</p>
                 <div>
-                    <input type="text" placeholder="Buscar por vaga..." class="input bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                    <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                 </div>
             </div>
             
             <div>
                 <p class="py-2 font-bold">Região Administrativa</p>
                 <div class="flex gap-5">
-                    <select class="select bg-white border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                    <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                         <option value="ZN" >Zona Norte</option>
                         <option value="ZL">Zona Leste</option>
                         <option value="ZS">Zona Sul</option>
@@ -617,7 +617,7 @@
 
         <section x-show="opEmp" class="flex justify-around px-10">
             
-           <section class="flex flex-col p-8 gap-15">
+           <section class="flex flex-col text-secondary  p-8 gap-15">
                 <h1 class="text-3xl font-bold">Filtros</h1>
                 <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
                   
@@ -704,7 +704,7 @@
 
             </section>
 <!--vagas-->
-            <section class="flex flex-col pt-15 list-none">
+            <section class="flex flex-col pt-15 list-none text-secondary">
                 <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                     <div class="flex flex-row">
                         <figure class="pr-5 py-5 mr-4">
@@ -724,7 +724,7 @@
                             <p id="local">Local de Trabalho</p>
                         </div>
                         <div class="flex pt-10 gap-6">
-                            <button class="btn btn-secondary w-10 rounded-full">
+                            <button class="btn btn-accent w-10 rounded-full">
                                 <i class="fa-solid fa-bookmark"></i>
                             </button>
                         
@@ -905,7 +905,7 @@
     <!-- SEÇAO MAPA -->
     <section id="mapa" x-data="{opMap : false}">
         <div class="flex justify-center py-6">
-            <button class="btn btn-secondary" @click="opMap = !opMap">Abrir Mapa</button>
+            <button class="btn btn-secondary text-white " @click="opMap = !opMap">Abrir Mapa</button>
         </div>
         <div x-show="opMap" class="flex flex-col items-center text-center px-4">
             <h1 class="text-5xl font-bold py-10">
@@ -922,7 +922,7 @@
 
 
 <!--FOOTER-->
-    <footer class="footer p-10 bg-base-300 shadow flex-col justify-center md:flex flex-row gap-100 text-primary">
+    <footer class="footer p-10 bg-secondary shadow flex-col justify-center md:flex flex-row gap-100 text-primary">
         <aside class="max-w-lg">
             <figure>
             <img class="w-40" src="img/logo.svg" alt="AcesSol">
