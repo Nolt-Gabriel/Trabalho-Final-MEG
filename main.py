@@ -6,6 +6,12 @@ from PIL import Image, ImageTk
 customtkinter.set_appearance_mode('light')
 
 
+cor_primaria = '#D27D3F'
+cor_secundaria = '#BD5F1C'
+cor_terciaria = '#FFCAA4'
+cor_background = '#FFE0CA'
+
+
 def centralizar_janela(janela, largura, altura):
     largura_tela = janela.winfo_screenwidth()
     altura_tela = janela.winfo_screenheight()
@@ -13,7 +19,7 @@ def centralizar_janela(janela, largura, altura):
     x = (largura_tela - largura) // 2
     y = (altura_tela - altura) // 2
     
-    janela.geometry(f"{largura}x{altura}+{x}+{y}")
+    janela.geometry(f'{largura}x{altura}+{x}+{y}')
 
 
 def receber_largura(janela):
@@ -33,9 +39,9 @@ def abrir_login():
     applogin = customtkinter.CTk()
     applogin.title('Login')
 
-    applogin.iconbitmap("img/IconImage.ico")
+    applogin.iconbitmap('img/IconImage.ico')
 
-    applogin.geometry("800x600")
+    applogin.geometry('800x600')
     centralizar_janela(applogin, 800, 600)
     applogin.resizable(False, False)
 
@@ -43,8 +49,8 @@ def abrir_login():
     imageframe = customtkinter.CTkFrame(applogin, width=400, height=600)
     imageframe.grid(row=0, column=0)
 
-    loginframe = customtkinter.CTkFrame(applogin, width=400, height=600, fg_color='#D27D3F')
-    loginframe.grid(row=0, column=1, sticky="nsew")
+    loginframe = customtkinter.CTkFrame(applogin, width=400, height=600, fg_color=cor_primaria)
+    loginframe.grid(row=0, column=1, sticky='nsew')
 
     applogin.grid_columnconfigure(1, weight=1)
 
@@ -59,10 +65,10 @@ def abrir_login():
 
     loginframe.grid_columnconfigure(0, weight=1)
 
-    emailentry = customtkinter.CTkEntry(loginframe, placeholder_text='email', text_color='#D27D3F', border_color='#BD5F1C')
-    passwordentry = customtkinter.CTkEntry(loginframe, placeholder_text='senha', text_color='#D27D3F', border_color='#BD5F1C')
-    loginbutton = customtkinter.CTkButton(loginframe, text='Logar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4', command=lambda: abrir_home(applogin))
-    cadastrobutton = customtkinter.CTkButton(loginframe, text='Cadastrar', fg_color='transparent', hover_color='#BD5F1C', command=lambda: abrir_cadastro(applogin))
+    emailentry = customtkinter.CTkEntry(loginframe, placeholder_text='email', text_color=cor_primaria, border_color=cor_secundaria)
+    passwordentry = customtkinter.CTkEntry(loginframe, placeholder_text='senha', text_color=cor_primaria, border_color=cor_secundaria)
+    loginbutton = customtkinter.CTkButton(loginframe, text='Logar', fg_color=cor_background, text_color=cor_primaria, hover_color=cor_terciaria, command=lambda: abrir_home(applogin))
+    cadastrobutton = customtkinter.CTkButton(loginframe, text='Cadastrar', fg_color='transparent', hover_color=cor_secundaria, command=lambda: abrir_cadastro(applogin))
 
     emailentry.grid(row=0, column=0, padx=20, pady=(200, 10))
     passwordentry.grid(row=1, column=0, padx=20, pady=10)
@@ -78,12 +84,12 @@ def abrir_cadastro(login):
     appcadastro = customtkinter.CTkToplevel(login)
     appcadastro.title('Cadastro')
 
-    appcadastro.geometry("800x600")
+    appcadastro.geometry('800x600')
     centralizar_janela(appcadastro, 800, 600)
     appcadastro.resizable(False, False)
 
-    cadastroframe = customtkinter.CTkScrollableFrame(appcadastro, width=400, height=580, fg_color='#D27D3F', scrollbar_button_color='#FFEEDF', scrollbar_button_hover_color='#FFEEDF')
-    cadastroframe.grid(row=0, column=0, sticky="nsew")
+    cadastroframe = customtkinter.CTkScrollableFrame(appcadastro, width=400, height=580, fg_color=cor_primaria, scrollbar_button_color=cor_background, scrollbar_button_hover_color=cor_background)
+    cadastroframe.grid(row=0, column=0, sticky='nsew')
 
     imageframe = customtkinter.CTkFrame(appcadastro, width=400, height=600)
     imageframe.grid(row=0, column=1)
@@ -112,20 +118,21 @@ def abrir_cadastro(login):
         var_ocultar.set(False)
         appcadastro.after(10, lambda: selected.set(True))
     
-    nomeentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='nome', text_color='#D27D3F', border_color='#BD5F1C')
-    dataentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='dd/mm/aaaa', text_color='#D27D3F', border_color='#BD5F1C')
-    cpfentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='cpf', text_color='#D27D3F', border_color='#BD5F1C')
-    telefoneentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='(99) 99999-9999', text_color='#D27D3F', border_color='#BD5F1C')
-    emailentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='email', text_color='#D27D3F', border_color='#BD5F1C')
-    passwordentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='senha', text_color='#D27D3F', border_color='#BD5F1C')
-    cepentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='cep', text_color='#D27D3F', border_color='#BD5F1C')
-    ruaentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='rua', text_color='#D27D3F', border_color='#BD5F1C')
-    bairroentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='bairro', text_color='#D27D3F', border_color='#BD5F1C')
-    ndcasaentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='número da casa', text_color='#D27D3F', border_color='#BD5F1C')
-    combobox = customtkinter.CTkComboBox(cadastroframe, values=["Deficiência Física", "Deficiência Auditiva", "Deficiência Visual", "Deficiência Intelectual", "Deficiência Múltipla", "Deficiência Psicossocial", "TEA"], text_color='#D27D3F', border_color='#BD5F1C', dropdown_fg_color='#FFEEDF', dropdown_text_color='#BD5F1C', dropdown_hover_color='#FFCAA4')
-    check1 = customtkinter.CTkCheckBox(cadastroframe, text="Feminino", variable=var_fem, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_fem))
-    check2 = customtkinter.CTkCheckBox(cadastroframe, text="Masculino", variable=var_masc, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_masc))
-    check3 = customtkinter.CTkCheckBox(cadastroframe, text="Ocultar", variable=var_ocultar, onvalue=True, offvalue=False, text_color='white', fg_color='#BD5F1C', hover_color='#FFCAA4', border_color='#BD5F1C', command=lambda: selecionar_checkbox(var_ocultar))
+    nomeentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='nome', text_color=cor_primaria, border_color=cor_secundaria)
+    dataentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='dd/mm/aaaa', text_color=cor_primaria, border_color=cor_secundaria)
+    cpfentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='cpf', text_color=cor_primaria, border_color=cor_secundaria)
+    telefoneentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='(99) 99999-9999', text_color=cor_primaria, border_color=cor_secundaria)
+    emailentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='email', text_color=cor_primaria, border_color=cor_secundaria)
+    passwordentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='senha', text_color=cor_primaria, border_color=cor_secundaria)
+    cepentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='cep', text_color=cor_primaria, border_color=cor_secundaria)
+    ruaentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='rua', text_color=cor_primaria, border_color=cor_secundaria)
+    bairroentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='bairro', text_color=cor_primaria, border_color=cor_secundaria)
+    ndcasaentry = customtkinter.CTkEntry(cadastroframe, placeholder_text='número da casa', text_color=cor_primaria, border_color=cor_secundaria)
+    combobox = customtkinter.CTkComboBox(cadastroframe, values=['Deficiência Física', 'Deficiência Auditiva', 'Deficiência Visual', 'Deficiência Intelectual', 'Deficiência Múltipla', 'Deficiência Psicossocial', 'TEA'], text_color=cor_primaria, border_color=cor_secundaria, dropdown_fg_color=cor_background, dropdown_text_color=cor_secundaria, dropdown_hover_color=cor_terciaria)
+    check1 = customtkinter.CTkCheckBox(cadastroframe, text='Feminino', variable=var_fem, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_fem))
+    check2 = customtkinter.CTkCheckBox(cadastroframe, text='Masculino', variable=var_masc, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_masc))
+    check3 = customtkinter.CTkCheckBox(cadastroframe, text='Ocultar', variable=var_ocultar, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_ocultar))
+
 
     def salvar_cadastro():
         nome = nomeentry.get().strip()
@@ -139,32 +146,32 @@ def abrir_cadastro(login):
         bairro = bairroentry.get().strip()
         numero_casa = ndcasaentry.get().strip()
         deficiencia = combobox.get()
-        sexo = "Feminino" if var_fem.get() else "Masculino" if var_masc.get() else "Oculto" if var_ocultar.get() else ""
+        sexo = 'Feminino' if var_fem.get() else 'Masculino' if var_masc.get() else 'Oculto' if var_ocultar.get() else ''
 
         if not (nome and data_nascimento and cpf and telefone and email and senha and cep and rua and bairro and numero_casa and deficiencia and sexo):
-            messagebox.showerror("Erro", "É necessário preencher todos os campos.")
+            messagebox.showerror('Erro', 'É necessário preencher todos os campos.')
             return
 
         dados = {
-            "nome": nomeentry.get(),
-            "data_nascimento": dataentry.get(),
-            "cpf": cpfentry.get(),
-            "telefone": telefoneentry.get(),
-            "email": emailentry.get(),
-            "senha": passwordentry.get(),
-            "cep": cepentry.get(),
-            "rua": ruaentry.get(),
-            "bairro": bairroentry.get(),
-            "numero_casa": ndcasaentry.get(),
-            "deficiencia": combobox.get(),
-            "sexo": "Feminino" if var_fem.get() else "Masculino" if var_masc.get() else "Oculto"
+            'nome': nomeentry.get(),
+            'data_nascimento': dataentry.get(),
+            'cpf': cpfentry.get(),
+            'telefone': telefoneentry.get(),
+            'email': emailentry.get(),
+            'senha': passwordentry.get(),
+            'cep': cepentry.get(),
+            'rua': ruaentry.get(),
+            'bairro': bairroentry.get(),
+            'numero_casa': ndcasaentry.get(),
+            'deficiencia': combobox.get(),
+            'sexo': 'Feminino' if var_fem.get() else 'Masculino' if var_masc.get() else 'Oculto'
         }
         print(dados)
         appcadastro.destroy()
         login.deiconify()
 
-    cadastrobutton = customtkinter.CTkButton(cadastroframe, text='Cadastrar', fg_color='#FFEEDF', text_color='#D27D3F', hover_color='#FFCAA4', command=salvar_cadastro)
-    loginbutton = customtkinter.CTkButton(cadastroframe, text='Logar', fg_color='transparent', hover_color='#BD5F1C', command=lambda: (appcadastro.destroy(),login.deiconify()))
+    cadastrobutton = customtkinter.CTkButton(cadastroframe, text='Cadastrar', fg_color=cor_background, text_color=cor_primaria, hover_color=cor_terciaria, command=salvar_cadastro)
+    loginbutton = customtkinter.CTkButton(cadastroframe, text='Logar', fg_color='transparent', hover_color=cor_secundaria, command=lambda: (appcadastro.destroy(),login.deiconify()))
 
 
     nomeentry.grid(row=0, column=0, padx=20, pady=(50, 10))
@@ -188,7 +195,7 @@ def abrir_cadastro(login):
     login.withdraw()
 
     appcadastro.protocol(
-        "WM_DELETE_WINDOW",
+        'WM_DELETE_WINDOW',
         lambda: (appcadastro.destroy(), login.deiconify())
     )
 
@@ -199,7 +206,7 @@ def abrir_home(login):
     apphome.title('AcesSol')
 
     apphome.geometry(f'{receber_largura(apphome)}x{receber_altura(apphome)}')
-    apphome.attributes('-fullscreen', True)
+    apphome.state('zoomed')
 
     largura = receber_largura(apphome)
     altura = receber_altura(apphome)   
@@ -207,8 +214,35 @@ def abrir_home(login):
     apphome.grid_columnconfigure(0, weight=1) 
     apphome.grid_rowconfigure(1, weight=1)
 
-    headerframe = customtkinter.CTkFrame(apphome, width=largura, height=altura/10, fg_color='#D27D3F')
+    headerframe = customtkinter.CTkFrame(apphome, width=largura, height=altura/10, fg_color=cor_primaria, corner_radius=0)
     headerframe.grid(row=0, column=0, sticky='ew')
+
+    mainframe = customtkinter.CTkScrollableFrame(apphome, fg_color=cor_background, corner_radius=0, scrollbar_button_color=cor_background, scrollbar_button_hover_color=cor_background)
+    mainframe.grid(row=1, column=0, sticky='nsew')
+
+    mainframe.grid_rowconfigure(0, weight=1)
+    mainframe.grid_columnconfigure(0, weight=1)
+
+    telas = {}
+
+    def mostrar(nome):
+        for frame in telas.values():
+            frame.grid_remove()
+        telas[nome].grid(sticky='nsew')
+
+    for nome in ['Inicio', 'Sobre', 'Blog', 'Empregos', 'Mapa']:
+        frame = customtkinter.CTkFrame(
+            mainframe,
+            fg_color=cor_background,
+            corner_radius=0
+        )
+        frame.grid(row=0, column=0, sticky='nsew')
+        frame.grid_rowconfigure(0, weight=1)
+        frame.grid_columnconfigure(0, weight=1)
+        telas[nome] = frame
+
+    mostrar('Inicio')
+    
 
     headerframe.grid_columnconfigure(0, weight=1)
 
@@ -219,27 +253,62 @@ def abrir_home(login):
 
     ctk_image = customtkinter.CTkImage(light_image=imageheader, dark_image=imageheader, size=(200, 50))
 
-    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color='#D27D3F')
+    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color=cor_primaria)
 
     bg_imageframe.place(relx=0, rely=0, relwidth=1, relheight=1)
 
-    buttoninicio = customtkinter.CTkButton(headerframe, text='Inicio', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttoninicio = customtkinter.CTkButton(headerframe, text='Inicio', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17), command=lambda: mostrar('Inicio'))
     buttoninicio.grid(row=0, column=1, padx=10, pady=20)
-    buttonsobre = customtkinter.CTkButton(headerframe, text='Sobre', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonsobre = customtkinter.CTkButton(headerframe, text='Sobre', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17), command=lambda: mostrar('Sobre'))
     buttonsobre.grid(row=0, column=2, padx=10, pady=20)
-    buttonblog = customtkinter.CTkButton(headerframe, text='Blog', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonblog = customtkinter.CTkButton(headerframe, text='Blog', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17), command=lambda: mostrar('Blog'))
     buttonblog.grid(row=0, column=3, padx=10, pady=20)
-    buttonemprego = customtkinter.CTkButton(headerframe, text='Empregos', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonemprego = customtkinter.CTkButton(headerframe, text='Empregos', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17), command=lambda: mostrar('Empregos'))
     buttonemprego.grid(row=0, column=4, padx=10, pady=20)
-    buttonmapa = customtkinter.CTkButton(headerframe, text='Mapa', fg_color='transparent', hover_color='#BD5F1C', font=("Arial", 17))
+    buttonmapa = customtkinter.CTkButton(headerframe, text='Mapa', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17), command=lambda: mostrar('Mapa'))
     buttonmapa.grid(row=0, column=5, padx=10, pady=20)
-    buttonsair = customtkinter.CTkButton(headerframe, text='[ >', fg_color='transparent', hover_color='#D27D3F', font=("Arial", 17), command=lambda: (apphome.destroy(),login.deiconify()))
-    buttonsair.grid(row=0, column=6, padx=0, pady=20)
+    buttonsair = customtkinter.CTkButton(headerframe, text='[ >', fg_color='transparent', width=largura/15, hover_color=cor_primaria, font=('Inter', 17), command=lambda: (apphome.destroy(),login.deiconify()))
+    buttonsair.grid(row=0, column=6, padx=10, pady=20)
+
+    textframe = customtkinter.CTkFrame(telas['Inicio'], fg_color='transparent', height=altura/2)
+    textframe.grid(row=0, column=0, padx=(80 ,20), pady=(40, 20), sticky='nsew')
+
+    imageframe = customtkinter.CTkFrame(telas['Inicio'], fg_color='transparent', height=altura/1.3)
+    imageframe.grid(row=0, column=1, padx=20, pady=(0, 20), sticky='nsew')
+
+    imageinicio = Image.open('img/ImageFrame3.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageinicio, dark_image=imageinicio, size=(largura/2.3, altura/1.3))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color=cor_primaria)
+
+    bg_imageframe.place(relx=0, rely=0, relwidth=1, relheight=1)
+
+    titletext1 = customtkinter.CTkLabel(textframe, text='Acessibilidade e', text_color=cor_primaria, font=('Arial', 44))
+    titletext1.grid(row=0, column=0, sticky='w')
+    titletext2 = customtkinter.CTkLabel(textframe, text='solidariedade para todos', text_color=cor_primaria, font=('Arial', 44))
+    titletext2.grid(row=1, column=0, sticky='w')
+
+    iniciotext1 = customtkinter.CTkLabel(textframe, text='Nosso objetivo é trazer mais inclusão a pessoas que normalmente são ', text_color=cor_primaria, font=('Arial', 14))
+    iniciotext1.grid(row=3, column=0, pady=(20, 0), sticky='w')
+    iniciotext2 = customtkinter.CTkLabel(textframe, text='esquecidas, aqui vocês podem melhorar seu currículo com cursos', text_color=cor_primaria, font=('Arial', 14))
+    iniciotext2.grid(row=4, column=0, sticky='w')
+    iniciotext3 = customtkinter.CTkLabel(textframe, text='profissionalizantes e de qualidade que implementam suas habilidades e os', text_color=cor_primaria, font=('Arial', 14))
+    iniciotext3.grid(row=5, column=0, sticky='w')
+    iniciotext4 = customtkinter.CTkLabel(textframe, text='ajudam a ingressar no mercado de trabalho, além de encontrar vagas de', text_color=cor_primaria, font=('Arial', 14))
+    iniciotext4.grid(row=6, column=0, sticky='w')
+    iniciotext5 = customtkinter.CTkLabel(textframe, text='emprego onde se sentirem mais confortáveis e incluídos', text_color=cor_primaria, font=('Arial', 14))
+    iniciotext5.grid(row=7, column=0, pady=(0, 20),sticky='w')
+
+    telas['Inicio'].grid_columnconfigure(0, weight=1)
+    telas['Inicio'].grid_columnconfigure(1, weight=1)
+    telas['Inicio'].grid_rowconfigure(0, weight=1)
+
 
     login.withdraw()
 
     apphome.protocol(
-        "WM_DELETE_WINDOW",
+        'WM_DELETE_WINDOW',
         lambda: (apphome.destroy(), login.deiconify())
     )
 
