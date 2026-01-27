@@ -9,7 +9,7 @@ customtkinter.set_appearance_mode('light')
 cor_primaria = '#D27D3F'
 cor_secundaria = '#BD5F1C'
 cor_terciaria = '#FFCAA4'
-cor_background = '#FFE0CA'
+cor_background = '#FFEEDF'
 
 
 def centralizar_janela(janela, largura, altura):
@@ -285,7 +285,7 @@ def abrir_home(login):
     bg_imageframe.grid(row=0, column=0, sticky='nsew')
 
     titletext1 = customtkinter.CTkLabel(textframe, text='Acessibilidade e', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext1.grid(row=0, column=0, sticky='w')
+    titletext1.grid(row=0, column=0, pady=(80, 0), sticky='w')
     titletext2 = customtkinter.CTkLabel(textframe, text='solidariedade para todos', text_color=cor_primaria, font=('Inter', 44, 'bold'))
     titletext2.grid(row=1, column=0, sticky='w')
 
@@ -306,6 +306,28 @@ def abrir_home(login):
     telas['Inicio'].grid_columnconfigure(0, weight=1)
     telas['Inicio'].grid_columnconfigure(1, weight=1)
     telas['Inicio'].grid_rowconfigure(0, weight=1)
+
+    textframe1 = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
+    textframe1.grid(row=0, column=0, padx=(80 ,20), pady=(40, 20), sticky='nsew')
+
+    imageframe = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
+    imageframe.grid(row=1, column=0, padx=0, pady=0, sticky='nse')
+
+    imageinicio = Image.open('img/ImageFrame3.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageinicio, dark_image=imageinicio, size=(largura//2, altura//1.3))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color=cor_primaria)
+
+    bg_imageframe.grid(row=0, column=0, sticky='nsew')
+
+
+    titletext = customtkinter.CTkLabel(textframe1, text='Conheça o AcesSol', text_color=cor_primaria, font=('Inter', 44, 'bold'))
+    titletext.grid(row=0, column=0, pady=20)
+
+    telas['Sobre'].grid_columnconfigure(0, weight=1)
+    telas['Sobre'].grid_columnconfigure(1, weight=1)
+    telas['Sobre'].grid_rowconfigure(0, weight=1)
 
 
     login.withdraw()
