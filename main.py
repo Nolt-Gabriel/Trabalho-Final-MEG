@@ -308,10 +308,13 @@ def abrir_home(login):
     telas['Inicio'].grid_rowconfigure(0, weight=1)
 
     textframe1 = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
-    textframe1.grid(row=0, column=0, padx=(80 ,20), pady=(40, 20), sticky='nsew')
+    textframe1.grid(row=0, column=0, padx=(400 ,0), pady=(40, 20), sticky='nsew')
 
     imageframe = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
-    imageframe.grid(row=1, column=0, padx=0, pady=0, sticky='nse')
+    imageframe.grid(row=1, column=0, sticky='nsew')
+
+    textframe1.grid_rowconfigure(0, weight=1)
+    textframe1.grid_columnconfigure(0, weight=1)
 
     imageinicio = Image.open('img/ImageFrame3.png')
 
@@ -321,9 +324,20 @@ def abrir_home(login):
 
     bg_imageframe.grid(row=0, column=0, sticky='nsew')
 
-
     titletext = customtkinter.CTkLabel(textframe1, text='Conheça o AcesSol', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext.grid(row=0, column=0, pady=20)
+    titletext.grid(row=0, column=0, padx=(0, 20), pady=(20, 40))
+
+    sobretext1 = customtkinter.CTkLabel(textframe1, text='AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte', text_color=cor_primaria, font=('Inter', 17))
+    sobretext1.grid(row=1, column=0, padx=(0, 20))
+    sobretext2 = customtkinter.CTkLabel(textframe1, text='com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria', text_color=cor_primaria, font=('Inter', 17))
+    sobretext2.grid(row=2, column=0, padx=(0, 20))
+    sobretext3 = customtkinter.CTkLabel(textframe1, text='para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós', text_color=cor_primaria, font=('Inter', 17))
+    sobretext3.grid(row=3, column=0, padx=(0, 20))
+    sobretext4 = customtkinter.CTkLabel(textframe1, text='disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o', text_color=cor_primaria, font=('Inter', 17))
+    sobretext4.grid(row=4, column=0, padx=(0, 20))
+    sobretext5 = customtkinter.CTkLabel(textframe1, text='nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego', text_color=cor_primaria, font=('Inter', 17))
+    sobretext5.grid(row=5, column=0, padx=(0, 20))
+    
 
     telas['Sobre'].grid_columnconfigure(0, weight=1)
     telas['Sobre'].grid_columnconfigure(1, weight=1)
