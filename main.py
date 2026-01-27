@@ -10,6 +10,7 @@ cor_primaria = '#D27D3F'
 cor_secundaria = '#BD5F1C'
 cor_terciaria = '#FFCAA4'
 cor_background = '#FFEEDF'
+cor_decorativo = '#46B223'
 
 
 def centralizar_janela(janela, largura, altura):
@@ -307,37 +308,73 @@ def abrir_home(login):
     telas['Inicio'].grid_columnconfigure(1, weight=1)
     telas['Inicio'].grid_rowconfigure(0, weight=1)
 
-    textframe1 = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
-    textframe1.grid(row=0, column=0, padx=(400 ,0), pady=(40, 20), sticky='nsew')
+    centerframe = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent', width=largura)
+    centerframe.grid(row=0, column=0, padx=50)
 
-    imageframe = customtkinter.CTkFrame(telas['Sobre'], fg_color='transparent')
-    imageframe.grid(row=1, column=0, sticky='nsew')
+    imageframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    imageframe.grid(row=6, column=0, sticky='nsew', columnspan=2)
 
-    textframe1.grid_rowconfigure(0, weight=1)
-    textframe1.grid_columnconfigure(0, weight=1)
+    centerframe.grid_columnconfigure(0, weight=1)
 
-    imageinicio = Image.open('img/ImageFrame3.png')
+    imagesobre = Image.open('img/girassolzinho.png')
 
-    ctk_image = customtkinter.CTkImage(light_image=imageinicio, dark_image=imageinicio, size=(largura//2, altura//1.3))
+    ctk_image = customtkinter.CTkImage(light_image=imagesobre, dark_image=imagesobre, size=(largura/4, altura/3))
 
-    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color=cor_primaria)
+    bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color='transparent')
 
-    bg_imageframe.grid(row=0, column=0, sticky='nsew')
+    bg_imageframe.grid(row=0, column=0, sticky='nsew', padx=(largura/3.4, 0), pady=50)
 
-    titletext = customtkinter.CTkLabel(textframe1, text='Conheça o AcesSol', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext.grid(row=0, column=0, padx=(0, 20), pady=(20, 40))
+    titletext1 = customtkinter.CTkLabel(centerframe, text='Conheça o AcesSol', text_color=cor_primaria, font=('Inter', 44, 'bold'))
+    titletext1.grid(row=0, column=0, padx=(0, 20), pady=(40, 40), columnspan=3)
 
-    sobretext1 = customtkinter.CTkLabel(textframe1, text='AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte', text_color=cor_primaria, font=('Inter', 17))
-    sobretext1.grid(row=1, column=0, padx=(0, 20))
-    sobretext2 = customtkinter.CTkLabel(textframe1, text='com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria', text_color=cor_primaria, font=('Inter', 17))
-    sobretext2.grid(row=2, column=0, padx=(0, 20))
-    sobretext3 = customtkinter.CTkLabel(textframe1, text='para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós', text_color=cor_primaria, font=('Inter', 17))
-    sobretext3.grid(row=3, column=0, padx=(0, 20))
-    sobretext4 = customtkinter.CTkLabel(textframe1, text='disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o', text_color=cor_primaria, font=('Inter', 17))
-    sobretext4.grid(row=4, column=0, padx=(0, 20))
-    sobretext5 = customtkinter.CTkLabel(textframe1, text='nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego', text_color=cor_primaria, font=('Inter', 17))
-    sobretext5.grid(row=5, column=0, padx=(0, 20))
-    
+    sobretext1 = customtkinter.CTkLabel(centerframe, text='AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext1.grid(row=1, column=0, padx=(0, 20), columnspan=3)
+    sobretext2 = customtkinter.CTkLabel(centerframe, text='com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext2.grid(row=2, column=0, padx=(0, 20), columnspan=3)
+    sobretext3 = customtkinter.CTkLabel(centerframe, text='para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext3.grid(row=3, column=0, padx=(0, 20), columnspan=3)
+    sobretext4 = customtkinter.CTkLabel(centerframe, text='disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext4.grid(row=4, column=0, padx=(0, 20), columnspan=3)
+    sobretext5 = customtkinter.CTkLabel(centerframe, text='nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext5.grid(row=5, column=0, padx=(0, 20), columnspan=3)
+
+    titletext2 = customtkinter.CTkLabel(centerframe, text='Nossos Pilares', text_color=cor_primaria, font=('Inter', 30, 'bold'))
+    titletext2.grid(row=7, column=0, padx=(0), pady=(40, 40), columnspan=3)
+    titletext3 = customtkinter.CTkLabel(centerframe, text='Solidariedade', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
+    titletext3.grid(row=8, column=0, pady=(40, 40))
+    titletext4 = customtkinter.CTkLabel(centerframe, text='Acessibilidade', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
+    titletext4.grid(row=9, column=2, pady=(40, 40))
+    titletext5 = customtkinter.CTkLabel(centerframe, text='Inclusão', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
+    titletext5.grid(row=10, column=0, pady=(40, 40))
+
+    textframe1 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    textframe1.grid(row=8, column=1, columnspan=1)
+    textframe2 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    textframe2.grid(row=9, column=0, columnspan=2)
+    textframe3 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    textframe3.grid(row=10, column=1, columnspan=1, pady=(0, 160))
+
+    sobretext6 = customtkinter.CTkLabel(textframe1, text='Sabemos que em diversos momentos Pessoas Com Deficiência passam por dificuldades, seja com', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext6.grid(row=1, column=1, padx=0)
+    sobretext7 = customtkinter.CTkLabel(textframe1, text='relação ao preconceito ou simplesmente pela falta de oportunidade imposta a eles, por esse motivo,', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext7.grid(row=2, column=1, padx=0)
+    sobretext8 = customtkinter.CTkLabel(textframe1, text='buscamos ajudar o máximo de pessoas com o auxílio de cursos e vagas de emprego exclusivas', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext8.grid(row=3, column=1, padx=0)
+
+    sobretext9 = customtkinter.CTkLabel(textframe2, text='Resolvemos então criar um projeto gratuito e acessível para todos, um local onde todos podem', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext9.grid(row=1, column=0, padx=0)
+    sobretext10 = customtkinter.CTkLabel(textframe2, text='refletir e aprender sobre algo novo e que possivelmente o ajudará a conquistar o tão sonhado', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext10.grid(row=2, column=0, padx=0)
+    sobretext11 = customtkinter.CTkLabel(textframe2, text='emprego ou até mesmo unicamente pelo conhecimento', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext11.grid(row=3, column=0, padx=0)
+
+    sobretext12 = customtkinter.CTkLabel(textframe3, text='Muitas vezes a exclusão de Pessoas Com Deficiência causa consequências seferas, muitas pessoas se reclusam', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext12.grid(row=1, column=1, padx=0)
+    sobretext13 = customtkinter.CTkLabel(textframe3, text='com medo dos constrangimentos e da frustração de se sentirem invisíveis, entretanto, nosso objetivo e desmistificar', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext13.grid(row=2, column=1, padx=0)
+    sobretext14 = customtkinter.CTkLabel(textframe3, text='tudo isso trazendo um ambiente mais amigável e inclusivo para que essas pessoas não se sintam excluídas', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
+    sobretext14.grid(row=3, column=1, padx=0)
+
 
     telas['Sobre'].grid_columnconfigure(0, weight=1)
     telas['Sobre'].grid_columnconfigure(1, weight=1)
