@@ -15,11 +15,12 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
+    </script>
 
     <!-- OUTROS LINKS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="font-size.js">
     
 </head>
 <body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] " x-data="{ authOpen: false, tela: 'login', scale: 1 } " :style="`font-size: ${scale * 16}px`">
@@ -40,7 +41,7 @@
 
 
 <!--HEADER-->
-    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 rounded-full ">
+    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
                 <img src="img/logo.svg" alt="" class=" w-60" >  
@@ -76,7 +77,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
-                            </label>
+                        </label>
                     </li>
 
 
@@ -90,7 +91,7 @@
 
 
 
-<!--MENU usuario-->
+                    <!--MENU usuario-->
                     <li x-data="{ open: false }" class="relative ">
                         <button @click="open = !open" class=" p-2 rounded-full hover:bg-gray-200 transition">
                             <i class="fa-solid fa-user text-lg"></i>
@@ -103,19 +104,19 @@
 
 
 
-<!--informacoes do perfil-->
+                            <!--informacoes do perfil-->
                             <li x-data="{ open: false }" class="relative">
                                 <div @click="open = true" class="flex text-secondary-content items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition transition transition-duration-300 hover:scale-110">
                                     <i class="fa-solid fa-user text-accent fa-lg "></i>
                                     <span class="font-semibold text-lg"> Ver Informações do Perfil </span>
                                 </div>
 
-                        <!-- modal DE INFORMACOES  -->
+                                <!-- modal DE INFORMACOES  -->
                                 <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
 
                                     <div class="bg-base-100 relative w-[900px] h-[500px] overflow-y-auto text-secondary-content rounded-xl p-8 relative">
 
-                                <!-- botão de fechar modal-->
+                                        <!-- botão de fechar modal-->
                                         <button @click="open = false" class="absolute top-3 right-3 text-secondary hover:text-gray-800">
                                             <i class="fa-solid fa-xmark fa-lg"></i>
                                         </button>
@@ -223,7 +224,7 @@
                                 </div>
                             </li>
 
-<!--curriculo-->
+                            <!--curriculo-->
                             <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
                                 <i class="fa-solid fa-file text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Meu currículo </span>
@@ -244,32 +245,31 @@
     </header>
 
 
-<!--MAIN-->
-   <main class="max-w-7xl mx-auto text-secondary-content" id="home" :style="`font-size: ${scale * 16}px`">
+    <!--MAIN-->
+    <main class="max-w-7xl mx-auto text-secondary-content" id="home" :style="`font-size: ${scale * 16}px`">
 
+        <!--HERO-->
+        <section class="pt-32 mb-20 w-160 ">
+            <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
+            
+            <div class="max-w-4xl mt-16">
+                <h1 class="font-bold text-7xl md:text-5xl">
+                Acessibilidade e solidariedade para todos 
+                </h1>
 
-<!--HERO-->
-      <section class="pt-32 mb-20 w-160 ">
-        <div class=" flex flex-col md:flex-row text-center md:text-left gap-32">
-          
-          <div class="max-w-4xl mt-16">
-              <h1 class="font-bold text-7xl md:text-5xl">
-              Acessibilidade e solidariedade para todos 
-              </h1>
+                <p class="mt-6 text-lg">
+                Nosso objetivo é trazer mais inclusão a pessoas que normalmente são esquecidas, aqui vocês podem melhorar seu currículo com cursos profissionalizantes e de qualidade que implementam suas habilidades e os ajudam a ingressar no mercado de trabalho, além de encontrar vagas de emprego onde se sentirem mais confortáveis e incluídos
+                </p>
+                
 
-              <p class="mt-6 text-lg">
-              Nosso objetivo é trazer mais inclusão a pessoas que normalmente são esquecidas, aqui vocês podem melhorar seu currículo com cursos profissionalizantes e de qualidade que implementam suas habilidades e os ajudam a ingressar no mercado de trabalho, além de encontrar vagas de emprego onde se sentirem mais confortáveis e incluídos
-              </p>
-              
+                <div class="flex items-center gap-6 mt-4">
+                    <button @click="authOpen = true; tela = 'cadastroempresa'" class="btn btn-lg btn-outline rounded-lg mt-6 transition transition-duration-300 hover:scale-110">Sou empresa</button>
+                    <button @click="authOpen = true; tela = 'cadastrocandidato'"  class="btn btn-lg btn-accent text-white mt-6 transition transition-duration-300 hover:scale-110">Sou candidato</button>
+                </div>
+            </div>
 
-              <div class="flex items-center gap-6 mt-4">
-                <button @click="authOpen = true; tela = 'cadastroempresa'" class="btn btn-lg btn-outline rounded-lg mt-6 transition transition-duration-300 hover:scale-110">Sou empresa</button>
-                <button @click="authOpen = true; tela = 'cadastrocandidato'"  class="btn btn-lg btn-accent text-white mt-6 transition transition-duration-300 hover:scale-110">Sou candidato</button>
-              </div>
-          </div>
-
-          </div>
-      </section>
+            </div>
+        </section>
 
 <!-- MODAL-->
     <section>
@@ -286,7 +286,7 @@
             </button>
 
         <!-- LOGIN -->
-       <div x-show="tela === 'logincandidato'" x-transition>
+        <div x-show="tela === 'logincandidato'" x-transition>
             <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" role="dialog" aria-modal="true">
             
                 <div class="relative bg-base-100 text-secondary  rounded-lg p-8 w-full max-w-md shadow-lg">
@@ -364,11 +364,12 @@
                                 before:opacity-20
                                 pointer-events-none">
                         </div>
+
                         <!--conteudo -->
                     <div class="relative z-10 text-secondary">
 
 
-                    <!-- botão de fechar -->
+                        <!-- botão de fechar -->
                         <button 
                             @click="authOpen = false"
                             class="absolute top-3 right-3 text-secondary hover:text-gray-800"
@@ -652,455 +653,453 @@
 
         </section>
 
-        <!-- SEÇAO EMPREGOS -->
-        <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
-            <div class="flex justify-center  mx-auto pt-15 gap-6">
-                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = !opCurs">Ofertas de Cursos</button>
-                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opEmp = !opEmp">Ofertas de Emprego</button>
-            </div>
-            <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
-                <h1 class="text-5xl font-bold py-10">
-                Buscar Vagas
-                </h1>
-            </div>
-            <section x-show="opEmp" class="flex  gap-15 pl-20">
-
-                <div>
-                    <p class="py-2 font-bold">Busque sua vaga</p>
-                    <div>
-                        <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                <!-- SEÇAO EMPREGOS -->
+                <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
+                    <div class="flex justify-center py-6 mx-auto pt-15 gap-6">
+                        <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = !opCurs">Ofertas de Cursos</button>
+                        <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opEmp = !opEmp">Ofertas de Emprego</button>
                     </div>
-                </div>
-                
-                <div>
-                    <p class="py-2 font-bold">Região Administrativa</p>
-                    <div class="flex gap-5">
-                        <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-                            <option value="ZN" >Zona Norte</option>
-                            <option value="ZL">Zona Leste</option>
-                            <option value="ZS">Zona Sul</option>
-                            <option value="ZO">Zona Oeste</option>
-                        </select>
-
-                    <div>
-
-                        <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
-
+                    <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
+                        <h1 class="text-5xl font-bold py-10">
+                        Buscar Vagas
+                        </h1>
                     </div>
-
-                </div>
-
-            </section>
-
-            <section x-show="opEmp" class="flex justify-around px-10">
-                
-            <section class="flex flex-col text-secondary  p-8 gap-15">
-                    <h1 class="text-3xl font-bold">Filtros</h1>
-                    <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
-                    
-                        <div class="flex flex-col gap-2 gap-2">
-                            <p class="font-bold">LOCAL DE TRABALHO </p>
-                            <label> 
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
-                            </label>
-                        </div>
-
-                        <div class="flex flex-col gap-2 gap-2">
-                            <p class="font-bold">ESCOLARIDADE</p>
-                            <label> 
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
-                            </label>
-                        </div>
-
-                        <div class="flex flex-col gap-2 gap-2">
-                            <p class="font-bold">SETOR</p>
-                            <label> 
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
-                            </label>
-                            <label> 
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Financias 
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
-                            </label>
-                            <label> 
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
-                            </label>
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
-                            </label>
-                        </div>
-
-                    </div>
-
-
-                </section>
-    <!--vagas-->
-                <section class="flex flex-col pt-15 list-none text-secondary">
-                    <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                        <div class="flex flex-row">
-                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                            </figure>
-                            <div>
-                                <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
-                                <p class="pb-3">Empresa: TechNova</p>
-                                <p class="pb-10">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-between gap-8 font-semibold">
-                            <div>
-                                <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                <p id="salario">Salário: R$4.500</p>
-                                <p id="local">Local de Trabalho: Homeoffice</p>
-                            </div>
-                            <div class="flex pt-10 gap-6">
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-solid fa-bookmark"></i>
-                                </button>
-                            
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-regular fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                        <div class="flex flex-row">
-                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                            </figure>
-                            <div>
-                                <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
-                                <p class="pb-3">Empresa: Lumina Creativa</p>
-                                <p class="pb-10">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-between gap-8 font-semibold">
-                            <div>
-                                <p id="bairro"> Bairro: Potengi - ZN</p>
-                                <p id="salario">Salário: R$3.800</p>
-                                <p id="local">Local de Trabalho: hibrído</p>
-                            </div>
-                            <div class="flex pt-10 gap-6">
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-solid fa-bookmark"></i>
-                                </button>
-                            
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-regular fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                        <div class="flex flex-row">
-                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
-                            </figure>
-                            <div>
-                                <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
-                                <p class="pb-3">Empresa: TrendShop</p>
-                                <p class="pb-10">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-between gap-8 font-semibold">
-                            <div>
-                                <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                <p id="salario">Salário: R$2.300</p>
-                                <p id="local">Local de Trabalho: Presencial</p>
-                            </div>
-                            <div class="flex pt-10 gap-6">
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-solid fa-bookmark"></i>
-                                </button>
-                            
-                                <button class="btn btn-accent w-10 rounded-full">
-                                    <i class="fa-regular fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-        </section>
-
-    <!-- SEÇAO CURSOS -->
-                <div x-show="opCurs" id="Cursos" class="flex flex-col items-start text-center px-4">
-                    <h1 class="text-5xl font-bold py-10">
-                    Buscar Cursos
-                    </h1>
-                </div>
-                <section x-show="opCurs" class="flex  gap-15 pl-20">
-
-                    <div>
-
-                        <p class="py-2">Busque seu curso</p>
+                    <section x-show="opEmp" class="flex  gap-15 pl-20">
 
                         <div>
-                            <input type="text" placeholder="Buscar por curso..." class="input input-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 ">
+                            <p class="py-2 font-bold">Busque sua vaga</p>
+                            <div>
+                                <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                            </div>
                         </div>
-
-                    </div>
-                    
-                    <div>
-
-                        <p class="py-2">Cidade</p>
                         
-                        <div class="flex gap-5">
-                            
-                            <select class="select select-ghost border border-gray-300 rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-
-                                <option value="">Selecione sua Cidade</option>
-                                <option value="SP" >Natal</option>
-                                <option value="RJ">Extremoz</option>
-                                <option value="MG">Parnamirim</option>
-
-                            </select>
-
                         <div>
+                            <p class="py-2 font-bold">Região Administrativa</p>
+                            <div class="flex gap-5">
+                                <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                    <option value="ZN" >Zona Norte</option>
+                                    <option value="ZL">Zona Leste</option>
+                                    <option value="ZS">Zona Sul</option>
+                                    <option value="ZO">Zona Oeste</option>
+                                </select>
 
-                            <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+                            <div>
 
-                        </div>
+                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
 
-                    </div>
-
-                </section>
-
-                <section x-show="opCurs" class="flex justify-around px-10">
-                    <section class="flex flex-col p-15 gap-15">
-
-                        <p class="text-3xl font-bold">Filtros</p>
-
-                        <div class="flex flex-col gap-2 gap-2">
-
-                            <p class="font-semibold">Local de aula</p>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Presencial
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Remoto
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Hibrído
-                            </label>
-
-                        </div>
-
-                        <div class="flex flex-col gap-2">
-
-                            <p class="font-semibold">Escolaridade</p>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Fundamental
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Ensino Médio
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Superior
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Pós Graduação
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Mestrado
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                Doutorado
-                            </label>
-
-                        </div>
-
-                        <div class="flex flex-col gap-2">
-                            <p class="font-semibold">Especialidade</p>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                X
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                X
-                            </label>
-
-                            <label>
-                                <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">
-                                X
-                            </label>
+                            </div>
 
                         </div>
 
                     </section>
 
-    <!--cursos-->
-                    <section class="flex flex-col pt-15 list-none">
+                    <section x-show="opEmp" class="flex justify-around px-10">
                         
-                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                            <div class="flex flex-row">
-                                <figure class="pr-5 py-5 mr-4  ">
-                                    <img src="img/desenvolvedor.png" alt="Imagem placeholder" class="object-cover rounded">
-                                </figure>
-                                <div>
-                                    <h5 class="font-bold text-xl pb-3">Curso técnico em desenvolvimento de sistemas</h5>
-                                    <p class="pb-3">Curso</p>
-                                    <p class="pb-10">Curso técnico em desenvolvimento de sistemas voltado para formação de profissionais capazes de desenvolver, projetar, implementar e manter softwares e sistemas para diversas plataformas, como web desktop, e aplicativos móveis. Aprendizado voltado ao aprendizado de habilidades em python, html, css, JavaScript, banco de dados e etc.</p>
+                        <section class="flex flex-col text-secondary  p-8 gap-15">
+                            <h1 class="text-3xl font-bold">Filtros</h1>
+                            <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
+                            
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">LOCAL DE TRABALHO </p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="flex justify-between gap-8 font-semibold">
-                                <div>
-                                    <p id="bairro"> Bairro: Potengi, IFRN - ZN</p>
-                                    <p id="salario">Carga horária: 7h às 12h </p>
-                                    <p id="local">Período: 3 anos</p>
-                                </div>
-                                <div class="flex pt-10 gap-6">
-                                    <button class="btn btn-secondary w-10 rounded-full">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </button>
-                                
-                                    <button class="btn btn-accent w-10 rounded-full">
-                                        <i class="fa-regular fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                    
-                        </div>
 
-                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                            <div class="flex flex-row">
-                                <figure class="pr-5 py-5 mr-4 ">
-                                    <img src="img/curso de inglês.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                                </figure>
-                                <div>
-                                    <h5 class="font-bold text-xl pb-3">Curso de inglês</h5>
-                                    <p class="pb-3">Curso</p>
-                                    <p class="pb-10">Curso voltada para desenvolvimento das habilidades de compreensão ora, escrita, leitura e conversação, preparando alunos tanto para o dia a dia, quanto para o mercado de trabalho. Habilidades desenvolvidas envolvem vocabulário e gramática, compreensão de textos e áudios, redação e escrita formal e informal, dentre outras. Nível básico ao avançado  </p>
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">ESCOLARIDADE</p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="flex justify-between gap-8 font-semibold">
-                                <div>
-                                    <p id="bairro"> Bairro: Lagoa Azul, escola estadual Gregorio Matos</p>
-                                    <p id="salario">Carga horária: 7h às 11h </p>
-                                    <p id="local">Período: 2 anos</p>
-                                </div>
-                                <div class="flex pt-10 gap-6">
-                                    <button class="btn btn-secondary w-10 rounded-full">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </button>
-                                
-                                    <button class="btn btn-accent w-10 rounded-full">
-                                        <i class="fa-regular fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                    
-                        </div>
 
-                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                            <div class="flex flex-row">
-                                <figure class="pr-5 py-5 mr-4 ">
-                                    <img src="img/Gerenciamento-Agil-de-Projetos.png" alt="Imagem placeholder" class="object-cover rounded">
-                                </figure>
-                                <div>
-                                    <h5 class="font-bold text-xl pb-3">Curso de gestão de projetos ágil</h5>
-                                    <p class="pb-3">Curso</p>
-                                    <p class="pb-10">Curso focado em desenvolvimento de habilidades de organização, planejamento e execução de projetos utilizando métodologias ágeis, como Scrum e Kanban. Inlcui ferramentas práticas para o acompanhamento de tarefas e metas. </p>
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">SETOR</p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
+                                    </label>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Financias 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
+                                    </label>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
+                                    </label>
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+                        <!--vagas-->
+                        <section class="flex flex-col pt-15 list-none text-secondary">
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
+                                        <p class="pb-3">Empresa: TechNova</p>
+                                        <p class="pb-10">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
+                                        <p id="salario">Salário: R$4.500</p>
+                                        <p id="local">Local de Trabalho: Homeoffice</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between gap-8 font-semibold">
-                                <div>
-                                    <p id="bairro"> Bairro: Lagoa Nossa Senhora da Apresentação, empresa AgileBoost Academy</p>
-                                    <p id="salario">Carga horária: 13h às 18h </p>
-                                    <p id="local">Período: 1 ano</p>
+
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                        <p class="pb-3">Empresa: Lumina Creativa</p>
+                                        <p class="pb-10">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                    </div>
                                 </div>
-                                <div class="flex pt-10 gap-6">
-                                    <button class="btn btn-secondary w-10 rounded-full">
-                                        <i class="fa-solid fa-bookmark"></i>
-                                    </button>
-                                
-                                    <button class="btn btn-accent w-10 rounded-full">
-                                        <i class="fa-regular fa-plus"></i>
-                                    </button>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro"> Bairro: Potengi - ZN</p>
+                                        <p id="salario">Salário: R$3.800</p>
+                                        <p id="local">Local de Trabalho: hibrído</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                    
-                        </div>
+
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                        <p class="pb-3">Empresa: TrendShop</p>
+                                        <p class="pb-10">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                        <p id="salario">Salário: R$2.300</p>
+                                        <p id="local">Local de Trabalho: Presencial</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                     </section>
                 </section>
+
+                <!-- CURSOS -->
+                <section id="empregos" x-show="opCurs" class="pt-32">
+                    
+                    <div x-show="opCurs" class="flex flex-col items-start text-center px-4">
+                        <h1 class="text-5xl font-bold py-10">
+                        Buscar Cursos
+                        </h1>                    </div>
+                    <section x-show="opCurs" class="flex  gap-15 pl-20">
+
+                        <div>
+                            <p class="py-2 font-bold">Busque seu curso</p>
+                            <div>
+                                <input type="text" placeholder="Buscar por curso..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="py-2 font-bold">Região Administrativa</p>
+                            <div class="flex gap-5">
+                                <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                    <option value="ZN">Zona Norte</option>
+                                    <option value="ZL">Zona Leste</option>
+                                    <option value="ZS">Zona Sul</option>
+                                    <option value="ZO">Zona Oeste</option>
+                                </select>
+
+                            <div>
+
+                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <section x-show="opCurs" class="flex justify-around px-10">
+                        
+                        <section class="flex flex-col text-secondary  p-8 gap-15">
+                            <h1 class="text-3xl font-bold">Filtros</h1>
+                            <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
+                            
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">Tipo de Estudo</p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Presencial 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                    </label>
+                                </div>
+
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">ESCOLARIDADE</p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Fundamental 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Médio
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                    </label>
+                                </div>
+
+                                <div class="flex flex-col gap-2 gap-2">
+                                    <p class="font-bold">SETOR</p>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Administração 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
+                                    </label>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Financias 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
+                                    </label>
+                                    <label> 
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Engenharia 
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
+                                    </label>
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+                        <!--disponibilidade de cursos-->
+                        <section class="flex flex-col pt-15 list-none text-secondary">
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Curso de desenvolvimento web</h5>
+                                        <p class="pb-3">Empresa: TechNova</p>
+                                        <p class="pb-10">Curso de desenvolvimento web com Python, JavaScript, Html e Css. <br> Tecnologias aprendidas: Python, JavaScript, Html e Css</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro">Bairro: Lagoa Azul - ZN</p>
+                                        <p id="duracao">Duração: 120h</p>
+                                        <p id="local">Forma de Estudo: Remoto</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                        <p class="pb-3">Empresa: Lumina Creativa</p>
+                                        <p class="pb-10">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro"> Bairro: Potengi - ZN</p>
+                                        <p id="salario">Salário: R$3.800</p>
+                                        <p id="local">Local de Trabalho: hibrído</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                <div class="flex flex-row">
+                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                        <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                    </figure>
+                                    <div>
+                                        <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                        <p class="pb-3">Empresa: TrendShop</p>
+                                        <p class="pb-10">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between gap-8 font-semibold">
+                                    <div>
+                                        <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                        <p id="salario">Salário: R$2.300</p>
+                                        <p id="local">Local de Trabalho: Presencial</p>
+                                    </div>
+                                    <div class="flex pt-10 gap-6">
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+                                    
+                                        <button class="btn btn-accent w-10 rounded-full">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </section>        
+
             </section>
-            
         </section>
 
         <!-- SEÇAO MAPA -->
-        <section id="mapa" x-data="{opMap : false}">
+        <!-- <section id="mapa" x-data="{opMap : false}">
             <div class="flex justify-center py-6">
                 <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opMap = !opMap">Abrir Mapa</button>
             </div>
@@ -1114,29 +1113,34 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.74993873996!2d-35.26298522511876!3d-5.7490945567883776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3abb5048b2fcb%3A0xef4f6c5edaa6d542!2sIFRN%20Campus%20Natal-Zona%20Norte!5e0!3m2!1spt-BR!2sbr!4v1769199431702!5m2!1spt-BR!2sbr" width="700" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
             </section>
-        </section>
+        </section> -->
     </main>
 
 
-<!--FOOTER-->
-    <footer class="footer p-10 bg-secondary shadow flex-col justify-center md:flex flex-row gap-100 text-primary" :style="`font-size: ${scale * 16}px`">
+    <!--FOOTER-->
+    <footer class="footer p-10 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary" :style="`font-size: ${scale * 16}px`"> 
         <aside class="max-w-lg">
             <figure>
-            <img class="w-40" src="img/logo.svg" alt="AcesSol">
+                <img class="w-40" src="img/logo.svg" alt="Logo SAcesSol">
             </figure>
-            <p class="text-md  ">
+            <p class="text-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
             </p>
         </aside>
 
         <nav>
             <strong class="footer-title text-primary font-bold">Site map</strong>
-            <a href="#sobre" class="link link-hover">Sobre</a>
-            <a href="#mapa" class="link link-hover">Mapa</a>
-            <a href="#blog" class="link link-hover">Blog</a>
-            <a href="#empregos" class="link link-hover">Empregos</a>
+            <a href="#sobre" class="">Sobre</a>
+            <a href="#blog" class="">Blog</a>
+            <a href="#empregos" class="">Empregos</a>
+            <a href="#cursos" class="">Cursos</a>
         </nav>
+        <div>
+            <strong class="footer-title text-primary font-bold">Contatos</strong>
+            <span><i class="fa-brands fa-whatsapp"></i>(84) 9 4002-8922</span>
+            <span><i class="fa-solid fa-phone pr-5"></i>SAC 4002-8922</span>
+            <span><i class="fa-solid fa-envelope pr-5"></i>acessol_natal@gmail.com.br</span>
+        </div>
     </footer>
-
 </body>
 </html>
