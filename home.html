@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="theme.css">
     
 </head>
-<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px]" x-data="{ authOpen: false, tela: 'login', scale: 1 } " :style="`font-size: ${scale * 16}px`">
+<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] " x-data="{ authOpen: false, tela: 'login', scale: 1 } " :style="`font-size: ${scale * 16}px`">
 
     <!-- TENTATIVA DE BOTÃO PARA AUMENTAR TAMANHO DE FONTE -->
     <div class="flex flex-col fixed pt-100 inset-y-0 left-0 gap-1">
@@ -40,7 +40,7 @@
 
 
 <!--HEADER-->
-    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50  ">
+    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 rounded-full ">
         <div class="flex justify-between p-4 items-center">
             <figure class="hidden md:flex ">
                 <img src="img/logo.svg" alt="" class=" w-60" >  
@@ -91,7 +91,7 @@
 
 
 <!--MENU usuario-->
-                    <li x-data="{ open: false }" class="relative">
+                    <li x-data="{ open: false }" class="relative ">
                         <button @click="open = !open" class=" p-2 rounded-full hover:bg-gray-200 transition">
                             <i class="fa-solid fa-user text-lg"></i>
                         </button>
@@ -105,7 +105,7 @@
 
 <!--informacoes do perfil-->
                             <li x-data="{ open: false }" class="relative">
-                                <div @click="open = true" class="flex text-secondary-content items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition">
+                                <div @click="open = true" class="flex text-secondary-content items-center gap-2 bg-base-100  rounded-3xl text-secondary py-2 px-4 cursor-pointer hover:bg-gray-100 transition transition transition-duration-300 hover:scale-110">
                                     <i class="fa-solid fa-user text-accent fa-lg "></i>
                                     <span class="font-semibold text-lg"> Ver Informações do Perfil </span>
                                 </div>
@@ -224,15 +224,15 @@
                             </li>
 
 <!--curriculo-->
-                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
                                 <i class="fa-solid fa-file text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Meu currículo </span>
                             </li>
-                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
                                 <i class="fa-solid fa-bell text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Notificações</span>
                             </li>
-                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer">
+                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
                                 <i class="fa-solid fa-arrow-right-from-bracket text-accent fa-lg "></i>
                                 <span class="font-semibold text-lg">Sair</span>
                             </li>
@@ -263,8 +263,8 @@
               
 
               <div class="flex items-center gap-6 mt-4">
-                <button @click="authOpen = true; tela = 'cadastroempresa'" class="btn btn-lg btn-outline rounded-lg mt-6">Sou empresa</button>
-                <button @click="authOpen = true; tela = 'cadastrocandidato'"  class="btn btn-lg btn-accent text-white mt-6">Sou candidato</button>
+                <button @click="authOpen = true; tela = 'cadastroempresa'" class="btn btn-lg btn-outline rounded-lg mt-6 transition transition-duration-300 hover:scale-110">Sou empresa</button>
+                <button @click="authOpen = true; tela = 'cadastrocandidato'"  class="btn btn-lg btn-accent text-white mt-6 transition transition-duration-300 hover:scale-110">Sou candidato</button>
               </div>
           </div>
 
@@ -545,7 +545,7 @@
 
         <!-- SEÇAO BLOG -->
         <section id="blog" class="pt-32">
-            <div class="flex flex-col items-center text-center px-4">
+            <div class="flex flex-col items-center text-center px-4 ">
                 <h1 class="text-5xl max-md:text-7xl font-bold pb-10">Blog</h1>
                 <p class="text-xl">Nesta seção, você poderá encontrar artigos que lhe ajudem a entender as causas relacionadas aos PCDs, suas dificuldades, importância da inclusão e muito mais. Expanda seus conhecimentos e entenda um pouco mais sobre a realidade destas pessoas!</p>
             </div>
@@ -554,7 +554,7 @@
             <div class="carousel text-secondary w-full gap-10 mt-10 scroll-smooth">
 
             <!--artigo1-->
-                <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
+                <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg ">
                     <figure> 
                         <img src="/img/sobre rodas - filme.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
@@ -655,8 +655,8 @@
         <!-- SEÇAO EMPREGOS -->
         <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32">
             <div class="flex justify-center  mx-auto pt-15 gap-6">
-                <button class="btn btn-secondary text-white  " @click="opCurs = !opCurs">Ofertas de Cursos</button>
-                <button class="btn btn-secondary text-white " @click="opEmp = !opEmp">Ofertas de Emprego</button>
+                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = !opCurs">Ofertas de Cursos</button>
+                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opEmp = !opEmp">Ofertas de Emprego</button>
             </div>
             <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
                 <h1 class="text-5xl font-bold py-10">
@@ -784,21 +784,81 @@
                 <section class="flex flex-col pt-15 list-none text-secondary">
                     <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                         <div class="flex flex-row">
-                            <figure class="pr-5 py-5 mr-4">
-                                <img src="https://picsum.photos/400" alt="Imagem placeholder" class="object-cover rounded">
+                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
                             </figure>
                             <div>
-                                <h5 class="font-bold text-xl pb-3">Vaga 1#</h5>
-                                <p class="pb-3">Empresa</p>
-                                <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                                <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
+                                <p class="pb-3">Empresa: TechNova</p>
+                                <p class="pb-10">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
                             </div>
                         </div>
 
                         <div class="flex justify-between gap-8 font-semibold">
                             <div>
-                                <p id="bairro"> Bairro</p>
-                                <p id="salario">Salário</p>
-                                <p id="local">Local de Trabalho</p>
+                                <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
+                                <p id="salario">Salário: R$4.500</p>
+                                <p id="local">Local de Trabalho: Homeoffice</p>
+                            </div>
+                            <div class="flex pt-10 gap-6">
+                                <button class="btn btn-accent w-10 rounded-full">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </button>
+                            
+                                <button class="btn btn-accent w-10 rounded-full">
+                                    <i class="fa-regular fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                        <div class="flex flex-row">
+                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                            </figure>
+                            <div>
+                                <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                <p class="pb-3">Empresa: Lumina Creativa</p>
+                                <p class="pb-10">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between gap-8 font-semibold">
+                            <div>
+                                <p id="bairro"> Bairro: Potengi - ZN</p>
+                                <p id="salario">Salário: R$3.800</p>
+                                <p id="local">Local de Trabalho: hibrído</p>
+                            </div>
+                            <div class="flex pt-10 gap-6">
+                                <button class="btn btn-accent w-10 rounded-full">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </button>
+                            
+                                <button class="btn btn-accent w-10 rounded-full">
+                                    <i class="fa-regular fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                        <div class="flex flex-row">
+                            <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                            </figure>
+                            <div>
+                                <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                <p class="pb-3">Empresa: TrendShop</p>
+                                <p class="pb-10">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between gap-8 font-semibold">
+                            <div>
+                                <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                <p id="salario">Salário: R$2.300</p>
+                                <p id="local">Local de Trabalho: Presencial</p>
                             </div>
                             <div class="flex pt-10 gap-6">
                                 <button class="btn btn-accent w-10 rounded-full">
@@ -946,20 +1006,80 @@
                         
                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                             <div class="flex flex-row">
-                                <figure class="pr-5 py-5 mr-4">
-                                    <img src="https://picsum.photos/400" alt="Imagem placeholder" class="object-cover rounded">
+                                <figure class="pr-5 py-5 mr-4  ">
+                                    <img src="img/desenvolvedor.png" alt="Imagem placeholder" class="object-cover rounded">
                                 </figure>
                                 <div>
-                                    <h5 class="font-bold text-xl pb-3">Vaga 1#</h5>
+                                    <h5 class="font-bold text-xl pb-3">Curso técnico em desenvolvimento de sistemas</h5>
                                     <p class="pb-3">Curso</p>
-                                    <p class="pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi, aliquid quaerat facere qui consequuntur rem, vero laboriosam odio nulla reiciendis saepe dolorem ut? Possimus sunt earum ex commodi reprehenderit!</p>
+                                    <p class="pb-10">Curso técnico em desenvolvimento de sistemas voltado para formação de profissionais capazes de desenvolver, projetar, implementar e manter softwares e sistemas para diversas plataformas, como web desktop, e aplicativos móveis. Aprendizado voltado ao aprendizado de habilidades em python, html, css, JavaScript, banco de dados e etc.</p>
                                 </div>
                             </div>
                             <div class="flex justify-between gap-8 font-semibold">
                                 <div>
-                                    <p id="bairro"> Bairro</p>
-                                    <p id="salario">Carga horária</p>
-                                    <p id="local">Período</p>
+                                    <p id="bairro"> Bairro: Potengi, IFRN - ZN</p>
+                                    <p id="salario">Carga horária: 7h às 12h </p>
+                                    <p id="local">Período: 3 anos</p>
+                                </div>
+                                <div class="flex pt-10 gap-6">
+                                    <button class="btn btn-secondary w-10 rounded-full">
+                                        <i class="fa-solid fa-bookmark"></i>
+                                    </button>
+                                
+                                    <button class="btn btn-accent w-10 rounded-full">
+                                        <i class="fa-regular fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                    
+                        </div>
+
+                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                            <div class="flex flex-row">
+                                <figure class="pr-5 py-5 mr-4 ">
+                                    <img src="img/curso de inglês.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                </figure>
+                                <div>
+                                    <h5 class="font-bold text-xl pb-3">Curso de inglês</h5>
+                                    <p class="pb-3">Curso</p>
+                                    <p class="pb-10">Curso voltada para desenvolvimento das habilidades de compreensão ora, escrita, leitura e conversação, preparando alunos tanto para o dia a dia, quanto para o mercado de trabalho. Habilidades desenvolvidas envolvem vocabulário e gramática, compreensão de textos e áudios, redação e escrita formal e informal, dentre outras. Nível básico ao avançado  </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-between gap-8 font-semibold">
+                                <div>
+                                    <p id="bairro"> Bairro: Lagoa Azul, escola estadual Gregorio Matos</p>
+                                    <p id="salario">Carga horária: 7h às 11h </p>
+                                    <p id="local">Período: 2 anos</p>
+                                </div>
+                                <div class="flex pt-10 gap-6">
+                                    <button class="btn btn-secondary w-10 rounded-full">
+                                        <i class="fa-solid fa-bookmark"></i>
+                                    </button>
+                                
+                                    <button class="btn btn-accent w-10 rounded-full">
+                                        <i class="fa-regular fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                    
+                        </div>
+
+                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                            <div class="flex flex-row">
+                                <figure class="pr-5 py-5 mr-4 ">
+                                    <img src="img/Gerenciamento-Agil-de-Projetos.png" alt="Imagem placeholder" class="object-cover rounded">
+                                </figure>
+                                <div>
+                                    <h5 class="font-bold text-xl pb-3">Curso de gestão de projetos ágil</h5>
+                                    <p class="pb-3">Curso</p>
+                                    <p class="pb-10">Curso focado em desenvolvimento de habilidades de organização, planejamento e execução de projetos utilizando métodologias ágeis, como Scrum e Kanban. Inlcui ferramentas práticas para o acompanhamento de tarefas e metas. </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-between gap-8 font-semibold">
+                                <div>
+                                    <p id="bairro"> Bairro: Lagoa Nossa Senhora da Apresentação, empresa AgileBoost Academy</p>
+                                    <p id="salario">Carga horária: 13h às 18h </p>
+                                    <p id="local">Período: 1 ano</p>
                                 </div>
                                 <div class="flex pt-10 gap-6">
                                     <button class="btn btn-secondary w-10 rounded-full">
@@ -982,7 +1102,7 @@
         <!-- SEÇAO MAPA -->
         <section id="mapa" x-data="{opMap : false}">
             <div class="flex justify-center py-6">
-                <button class="btn btn-secondary text-white " @click="opMap = !opMap">Abrir Mapa</button>
+                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opMap = !opMap">Abrir Mapa</button>
             </div>
             <div x-show="opMap" class="flex flex-col items-center text-center px-4">
                 <h1 class="text-5xl font-bold py-10">
