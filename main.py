@@ -231,7 +231,7 @@ def abrir_home(login):
             frame.grid_remove()
         telas[nome].grid(sticky='nsew')
 
-    for nome in ['Inicio', 'Sobre', 'Blog', 'Empregos', 'Mapa']:
+    for nome in ['Inicio', 'Sobre', 'Blog', 'Empregos']:
         frame = customtkinter.CTkFrame(
             mainframe,
             fg_color=cor_background,
@@ -266,8 +266,6 @@ def abrir_home(login):
     buttonblog.grid(row=0, column=3, padx=10, pady=20)
     buttonemprego = customtkinter.CTkButton(headerframe, text='Empregos', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17, 'bold'), command=lambda: mostrar('Empregos'))
     buttonemprego.grid(row=0, column=4, padx=10, pady=20)
-    buttonmapa = customtkinter.CTkButton(headerframe, text='Mapa', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17, 'bold'), command=lambda: mostrar('Mapa'))
-    buttonmapa.grid(row=0, column=5, padx=10, pady=20)
     buttonsair = customtkinter.CTkButton(headerframe, text='[ >', fg_color='transparent', width=largura/15, hover_color=cor_primaria, font=('Inter', 17, 'bold'), command=lambda: (apphome.destroy(),login.deiconify()))
     buttonsair.grid(row=0, column=6, padx=10, pady=20)
 
@@ -381,19 +379,166 @@ def abrir_home(login):
     telas['Sobre'].grid_rowconfigure(0, weight=1)
 
 
-    centerframe = customtkinter.CTkScrollableFrame(telas['Blog'], orientation='horizontal', width=largura, height=altura/2, fg_color='transparent')
+    centerframe = customtkinter.CTkScrollableFrame(telas['Blog'], orientation='horizontal', scrollbar_button_color=cor_primaria, scrollbar_button_hover_color=cor_secundaria, width=largura, height=altura/2, fg_color='transparent')
     centerframe.grid(row=0, column=0, pady=(altura/6, 0))
 
-    blogframe1 = customtkinter.CTkFrame(centerframe, fg_color='red', width=largura/3, height=largura/3)
+    blogframe1 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe1.grid(row=0, column=0, padx=altura/7)
-    blogframe2 = customtkinter.CTkFrame(centerframe, fg_color='red', width=largura/3, height=largura/3)
+    blogframe2 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe2.grid(row=0, column=1, padx=altura/7)
-    blogframe3 = customtkinter.CTkFrame(centerframe, fg_color='red', width=largura/3, height=largura/3)
+    blogframe3 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe3.grid(row=0, column=2, padx=altura/7)
-    blogframe4 = customtkinter.CTkFrame(centerframe, fg_color='red', width=largura/3, height=largura/3)
+    blogframe4 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe4.grid(row=0, column=3, padx=altura/7)
-    blogframe5 = customtkinter.CTkFrame(centerframe, fg_color='red', width=largura/3, height=largura/3)
+    blogframe5 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe5.grid(row=0, column=4, padx=altura/7)
+    blogframe6 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe6.grid(row=0, column=5, padx=altura/7)
+
+
+    blogframe1.grid_propagate(False)
+    blogframe2.grid_propagate(False)
+    blogframe3.grid_propagate(False)
+    blogframe4.grid_propagate(False)
+    blogframe5.grid_propagate(False)
+    blogframe6.grid_propagate(False)
+
+    blogframe1.grid_rowconfigure(0, weight=1)
+    blogframe1.grid_columnconfigure(0, weight=1)
+    blogframe2.grid_rowconfigure(0, weight=1)
+    blogframe2.grid_columnconfigure(0, weight=1)
+    blogframe3.grid_rowconfigure(0, weight=1)
+    blogframe3.grid_columnconfigure(0, weight=1)
+    blogframe4.grid_rowconfigure(0, weight=1)
+    blogframe4.grid_columnconfigure(0, weight=1)
+    blogframe5.grid_rowconfigure(0, weight=1)
+    blogframe5.grid_columnconfigure(0, weight=1)
+    blogframe6.grid_rowconfigure(0, weight=1)
+    blogframe6.grid_columnconfigure(0, weight=1)
+
+
+    imageframe1 = customtkinter.CTkFrame(blogframe1, fg_color='transparent', corner_radius=15)
+    imageframe1.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    imageframe2 = customtkinter.CTkFrame(blogframe2, fg_color='transparent', corner_radius=15)
+    imageframe2.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    imageframe3 = customtkinter.CTkFrame(blogframe3, fg_color='transparent', corner_radius=15)
+    imageframe3.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    imageframe4 = customtkinter.CTkFrame(blogframe4, fg_color='transparent', corner_radius=15)
+    imageframe4.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    imageframe5 = customtkinter.CTkFrame(blogframe5, fg_color='transparent', corner_radius=15)
+    imageframe5.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    imageframe6 = customtkinter.CTkFrame(blogframe6, fg_color='transparent', corner_radius=15)
+    imageframe6.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+
+
+    imageframe1.grid_propagate(False)
+    imageframe2.grid_propagate(False)
+    imageframe3.grid_propagate(False)
+    imageframe4.grid_propagate(False)
+    imageframe5.grid_propagate(False)
+    imageframe6.grid_propagate(False)
+
+
+    imageblog1 = Image.open('img/blogimage1.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog1, dark_image=imageblog1, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe1, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+    imageblog2 = Image.open('img/blogimage2.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog2, dark_image=imageblog2, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe2, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+    imageblog3 = Image.open('img/blogimage3.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog3, dark_image=imageblog3, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe3, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+    imageblog4 = Image.open('img/blogimage4.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog4, dark_image=imageblog4, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe4, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+    imageblog5 = Image.open('img/blogimage5.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog5, dark_image=imageblog5, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe5, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+    imageblog6 = Image.open('img/blogimage6.png')
+
+    ctk_image = customtkinter.CTkImage(light_image=imageblog6, dark_image=imageblog6, size=(int(largura/3), int(altura/4)))
+
+    bg_imageframe = customtkinter.CTkLabel(imageframe6, image=ctk_image, text='', fg_color='transparent')
+
+    bg_imageframe.grid(row=0, column=0, sticky='we')
+
+
+    datetext1 = customtkinter.CTkLabel(blogframe1, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext1.grid(row=1, column=0, sticky='w', padx=15)
+    datetext2 = customtkinter.CTkLabel(blogframe2, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext2.grid(row=1, column=0, sticky='w', padx=15)
+    datetext3 = customtkinter.CTkLabel(blogframe3, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext3.grid(row=1, column=0, sticky='w', padx=15)
+    datetext4 = customtkinter.CTkLabel(blogframe4, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext4.grid(row=1, column=0, sticky='w', padx=15)
+    datetext5 = customtkinter.CTkLabel(blogframe5, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext5.grid(row=1, column=0, sticky='w', padx=15)
+    datetext6 = customtkinter.CTkLabel(blogframe6, text='23/01/26', text_color=cor_primaria, font=('Inter', 17))
+    datetext6.grid(row=1, column=0, sticky='w', padx=15)
+
+    newtext1 = customtkinter.CTkLabel(blogframe1, text='20 filmes com a inclusão de pessoas com deficiência', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext1.grid(row=2, column=0, sticky='w', padx=15)
+    newtext2 = customtkinter.CTkLabel(blogframe2, text='O que é o capacitismo e como combate-lo', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext2.grid(row=2, column=0, sticky='w', padx=15)
+    newtext3 = customtkinter.CTkLabel(blogframe3, text='Lista completa de tipos de deficiência', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext3.grid(row=2, column=0, sticky='w', padx=15)
+    newtext4 = customtkinter.CTkLabel(blogframe4, text='11 direitos de PCDs garantidos pela lei', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext4.grid(row=2, column=0, sticky='w', padx=15)
+    newtext5 = customtkinter.CTkLabel(blogframe5, text='O que significa PCD e quem se enquadra como um?', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext5.grid(row=2, column=0, sticky='w', padx=15)
+    newtext6 = customtkinter.CTkLabel(blogframe6, text='5 PCDs que entraram para a história', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    newtext6.grid(row=2, column=0, sticky='w', padx=15)
+
+    desctext1 = customtkinter.CTkLabel(blogframe1, wraplength=int(largura/3.2), text='Conheça 20 filmes que pregam a inclusão através da participação de PCDs.', text_color=cor_primaria, font=('Inter', 15))
+    desctext1.grid(row=3, column=0, sticky='w', padx=15)
+    desctext2 = customtkinter.CTkLabel(blogframe2, wraplength=int(largura/3.2), text='O que é o capacitismo e como combate-lo? Descubra clicando no link abaixo!', text_color=cor_primaria, font=('Inter', 15))
+    desctext2.grid(row=3, column=0, sticky='w', padx=15)
+    desctext3 = customtkinter.CTkLabel(blogframe3, wraplength=int(largura/3.2), text='Quais são os tipos de deficiêcia que existem? Veja a lista completa', text_color=cor_primaria, font=('Inter', 15))
+    desctext3.grid(row=3, column=0, sticky='w', padx=15)
+    desctext4 = customtkinter.CTkLabel(blogframe4, wraplength=int(largura/3.2), text='Conheça 11 direitos garantidos as Pessoas Com Deficiências que você deve conhecer', text_color=cor_primaria, font=('Inter', 15))
+    desctext4.grid(row=3, column=0, sticky='w', padx=15)
+    desctext5 = customtkinter.CTkLabel(blogframe5, wraplength=int(largura/3.2), text='Entenda o que significa a sigla PCD e quem se enquadra nela', text_color=cor_primaria, font=('Inter', 15))
+    desctext5.grid(row=3, column=0, sticky='w', padx=15)
+    desctext6 = customtkinter.CTkLabel(blogframe6, wraplength=int(largura/3.2), text='Conheça 5 PCDs que superaram os desafios e se tornaram simbolos de superação', text_color=cor_primaria, font=('Inter', 15))
+    desctext6.grid(row=3, column=0, sticky='w', padx=15)
+
+    buttonblog1 = customtkinter.CTkButton(blogframe1, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog1.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
+    buttonblog2 = customtkinter.CTkButton(blogframe2, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog2.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
+    buttonblog3 = customtkinter.CTkButton(blogframe3, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog3.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
+    buttonblog4 = customtkinter.CTkButton(blogframe4, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog4.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
+    buttonblog5 = customtkinter.CTkButton(blogframe5, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog5.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
+    buttonblog6 = customtkinter.CTkButton(blogframe6, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog6.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
 
 
     telas['Blog'].grid_columnconfigure(0, weight=1)
