@@ -17,21 +17,17 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
+    <!-- FONTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chewy&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Catamaran:wght@100..900&family=Chewy&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=M+PLUS+Rounded+1c&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- OUTROS LINKS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="font-size.js">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chewy&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Catamaran:wght@100..900&family=Chewy&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=M+PLUS+Rounded+1c&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
 </head>
-<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] " x-data="{ authOpen: false, tela: 'login', scale: 1 } " :style="`font-size: ${scale * 16}px`">
-
-    <!-- TENTATIVA DE BOTÃO PARA AUMENTAR TAMANHO DE FONTE -->
-    <div class="flex flex-col fixed pt-100 inset-y-0 left-0 gap-1">
-        <button @click="scale < 1.5 && (scale += 0.1)" class="btn btn-outline w-10 inline-block transition-transform duration-300 hover:scale-110">A+</button>
-        <button @click="scale > 0.8 && (scale -= 0.1)" class="btn btn-outline w-10 inline-block transition-transform duration-300 hover:scale-110">A-</button>
-    </div>
+<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] overflow-auto" x-data="{ authOpen: false, tela: 'login', scale: 1 } " >
 
     <!-- div VLibras -->
     <div vw class="enabled">
@@ -43,29 +39,14 @@
 
 
 <!--HEADER-->
-    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50">
-        <div class="flex justify-between p-4 items-center">
+    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 md:w-full">
+        <div class="flex md:justify-between justify-between p-4 items-center">
             <figure class="hidden md:flex ">
                 <img src="img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
                 <img src="img/girassolzinho.svg" class="">
             </figure>
-
-            
-            <!-- TENTATIVA DO MENU FLUTUANTE RESPONSIVO -->
-            <!-- <div x-data="{menu: false}" class="flex flex-col">
-                <i @click="menu = !menu" class="fa-solid fa-bars md:hidden absolute md:static"></i>
-                <div x-show="menu" class=" flex text-secondary items-center">
-                    <div class="menu bg-base-100 rounded p-2">
-                        <li><a class="hover:bg-base-200" href="#blog">Blog</a></li>
-                        <li><a class="hover:bg-base-200" href="#empregos">Empregos</a></li>
-                        <li><a class="hover:bg-base-200" href="#mapa">Mapa</a></li>
-                    </div>
-                </div>
-            
-                
-            </div> -->
 
             <!--MENU DESKTOP-->
             <ul class="hidden md:flex gap-6">
@@ -84,12 +65,12 @@
 
 
 
-<!--NAVEGACAO-->
+                    <!--NAVEGACAO-->
                     <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
                     <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><a href="#mapa" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Mapa</a></li>
+                    <li><a href="#cursos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Cursos</a></li>
 
 
 
@@ -172,7 +153,7 @@
                                             <div class="flex gap-8">
                                                 <div class="flex flex-col">
                                                     <label for="cep" class="font-bold">CEP:</label>
-                                                    <input id="cep" type="text" inputmode="numeric" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="cep" x-mod type="text" inputmode="numeric" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
 
                                                 <div class="flex flex-col">
@@ -273,7 +254,7 @@
             </div>
         </section>
 
-<!-- MODAL-->
+    <!-- MODAL-->
     <section>
         <div x-show="authOpen"
             x-transition
@@ -566,7 +547,7 @@
                         <strong class="text-xl ">20 filmes com a inclusão de pessoas com deficiência </strong>
                         <p class="font-[Catamaran] font-semibold">Conheça 20 filmes que pregam a inclusão através da participação de PCDs. </p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/" target="_blank">Acessar </a>
                     </button>
                 </div>
@@ -581,7 +562,7 @@
                         <strong class="text-xl">O que é o capacitismo e como combate-lo</strong>
                         <p class="font-[Catamaran] font-semibold">O que é o capacitismo e como combate-lo? Descubra clicando no link abaixo!</p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/janeiro/capacitismo-o-que-e-como-combater-e-por-que-e-tao-importante-falar-sobre-o-tema" target="_blank">Acessar </a>
                     </button>
                 </div>
@@ -596,7 +577,7 @@
                         <strong class="text-xl">Lista completa de tipos de deficiência</strong>
                         <p class="font-[Catamaran] font-semibold">Quais são os tipos de deficiêcia que existem? Veja a lista completa</p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://cidesp.com.br/artigo/quais-sao-os-tipos-de-deficiencia/" target="_blank">Acessar </a>
                     </button>
                 </div>
@@ -611,7 +592,7 @@
                         <strong class="text-xl">11 direitos de PCDs garantidos pela lei</strong>
                         <p class="font-[Catamaran] font-semibold">Conheça 11 direitos garantidos as Pessoas Com Deficiências que você deve conhecer</p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://www.deficienteciente.com.br/11-direitos-da-pcd-reconhecidos-por-lei-que-voce-precisa-conhecer.html" target="_blank">Acessar </a>
                     </button>
                 </div>
@@ -626,7 +607,7 @@
                         <strong class="text-xl">O que significa PCD e quem se enquadra como um?</strong>
                         <p class="font-[Catamaran] font-semibold">Entenda o que significa a sigla PCD e quem se enquadra nela </p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://www.terra.com.br/nos/pcd-o-que-significa-e-quem-se-enquadra,8757a445a54c5cd46cb4d5e02579e177dauonkwa.html" target="_blank">Acessar </a>
                     </button>
                 </div>
@@ -638,16 +619,16 @@
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
-                        <strong class="text-xl">5 PCDs que superaram os desafios e entraram para a história</strong>
+                        <strong class="text-xl">5 PCDs que entraram para a história</strong>
                         <p class="font-[Catamaran] font-semibold">Conheça 5 PCDs que superaram os desafios e se tornaram simbolos de superação</p>
                     </div>
-                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline ">
+                    <button class="btn btn-accent transition-transform duration-300 hover:scale-110 hover:underline relative inset-x-0 bottom-0">
                         <a href="https://freedom.ind.br/5-pcds-que-mudaram-a-historia-conquista-e-transformacao/" target="_blank">Acessar </a>
                     </button>
                 </div>
         
         </div>
-        <div class="flex justify-center gap-10 mt-10 ">           
+        <div class="flex justify-center gap-10 mt-10 pb-10">           
             <a href="#artigo1" class="btn btn-circle ">❮</a>
             <a href="#artigo6" class="btn btn-circle ">❯</a>   
         </div>
@@ -656,468 +637,585 @@
         </section>
 
                 <!-- SEÇAO EMPREGOS -->
-                <section id="empregos" x-data="{opEmp : false, opCurs : false}" class="pt-32 ">
-                    <div class="flex justify-center py-6 mx-auto pt-15 gap-6">
-                        <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = !opCurs">Ofertas de Cursos</button>
-                        <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opEmp = !opEmp">Ofertas de Emprego</button>
-                    </div>
-                    <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
-                        <h1 class="text-5xl font-bold py-10">
-                        Buscar Vagas
-                        </h1>
-                    </div>
-                    <section x-show="opEmp" class="flex  gap-15 pl-20">
+                <section id="empregos" x-data="{opEmp : false, opCurs : false}" class=" ">
+                    <div class="fab left-0 bottom-0 mb-0 pl-10 font-[Fredoka]">
+                        <div tabindex="0" role="button" class="btn btn-lg btn-circle btn-accent">A</div>
 
-                        <div>
-                            <p class="py-2 font-bold">Busque sua vaga</p>
-                            <div>
-                                <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <p class="py-2 font-bold">Região Administrativa</p>
-                            <div class="flex gap-5">
-                                <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-                                    <option value="ZN" >Zona Norte</option>
-                                    <option value="ZL">Zona Leste</option>
-                                    <option value="ZS">Zona Sul</option>
-                                    <option value="ZO">Zona Oeste</option>
-                                </select>
-
-                            <div>
-
-                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
-
-                            </div>
-
+                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
                         </div>
 
-                    </section>
-
-                    <section x-show="opEmp" class="flex justify-around px-10">
-                        
-                        <section class="flex flex-col text-secondary  p-8 gap-15">
-                            <h1 class="text-3xl font-bold">Filtros</h1>
-                            <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
-                            
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold">LOCAL DE TRABALHO </p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
-                                    </label>
+                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
+                        </div>
+   
+                    </div>
+                    <dialog id="empregos_modal" class="modal ">
+                        <div class="modal-box w-full max-w-7xl">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
+                                    <h1 class="text-5xl font-bold py-5">
+                                    Buscar Vagas
+                                    </h1>
                                 </div>
+                                <section x-show="opEmp" class="flex  gap-15 pl-20">
 
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold">ESCOLARIDADE</p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
-                                    </label>
-                                </div>
-
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold">SETOR</p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
-                                    </label>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Financias 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
-                                    </label>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
-                                    </label>
-                                </div>
-
-                            </div>
-
-
-                        </section>
-
-                        <!--vagas-->
-                        <section class="flex flex-col pt-15 list-none text-secondary">
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
                                     <div>
-                                        <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                        <p class="py-2 font-bold">Busque sua vaga</p>
+                                        <div>
+                                            <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="flex justify-between gap-8 font-semibold">
-                                    <div class="font-[Catamaran] font-semibold text-xl">
-                                        <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                        <p id="salario">Salário: R$4.500</p>
-                                        <p id="local">Local de Trabalho: Homeoffice</p>
-                                    </div>
-                                    <div class="flex pt-10 gap-6">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
                                     
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
                                     <div>
-                                        <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
-                                    </div>
-                                </div>
+                                        <p class="py-2 font-bold">Região Administrativa</p>
+                                        <div class="flex gap-5">
+                                            <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                                <option value="ZN">Zona Norte</option>
+                                                <option value="ZL">Zona Leste</option>
+                                                <option value="ZS">Zona Sul</option>
+                                                <option value="ZO">Zona Oeste</option>
+                                            </select>
 
-                                <div class="flex justify-between gap-8 font-semibold">
-                                    <div class="font-[Catamaran] font-semibold text-xl">
-                                        <p id="bairro"> Bairro: Potengi - ZN</p>
-                                        <p id="salario">Salário: R$3.800</p>
-                                        <p id="local">Local de Trabalho: hibrído</p>
+                                        <div>
+
+                                            <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+
+                                        </div>
+
                                     </div>
-                                    <div class="flex pt-10 gap-6">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
+
+                                </section>
+
+                                <section x-show="opEmp" class="flex justify-around px-10">
                                     
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                    <section class="flex flex-col text-secondary  p-8 gap-15">
+                                        <h1 class="text-3xl font-bold">Filtros</h1>
+                                        <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
+                                        
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">LOCAL DE TRABALHO </p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                                </label>
+                                            </div>
 
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
-                                    <div>
-                                        <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
-                                    </div>
-                                </div>
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">ESCOLARIDADE</p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                                </label>
+                                            </div>
 
-                                <div class="flex justify-between gap-8 font-semibold">
-                                    <div class="font-[Catamaran] font-semibold text-xl">
-                                        <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                        <p id="salario">Salário: R$2.300</p>
-                                        <p id="local">Local de Trabalho: Presencial</p>
-                                    </div>
-                                    <div class="flex pt-10 gap-6 ">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
-                                    
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                    </section>
-                </section>
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">SETOR</p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
+                                                </label>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Financias 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
+                                                </label>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+
+                                    </section>
+
+                                    <!--vagas-->
+                                    <section class="flex flex-col pt-15 list-none text-secondary">
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
+                                                    <p id="salario">Salário: R$4.500</p>
+                                                    <p id="local">Local de Trabalho: Homeoffice</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6">
+                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+                                                    <!-- Modal Mensagem de salvamento -->
+                                                    <dialog id="vagas_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <!-- Modal Adicionar -->
+                                                    <dialog id="plus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Potengi - ZN</p>
+                                                    <p id="salario">Salário: R$3.800</p>
+                                                    <p id="local">Local de Trabalho: hibrído</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6">
+                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+
+                                                    <dialog id="vagas_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <dialog id="plus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p id="salario">Salário: R$2.300</p>
+                                                    <p id="local">Local de Trabalho: Presencial</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6 ">
+                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+                                                    <dialog id="vagas_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <dialog id="plus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </section>
+                            </section>
+                            </form>
+                        </div>
+                    </dialog>
+                    
 
                 <!-- CURSOS -->
-                <section id="empregos" x-show="opCurs" class="pt-32">
-                    
-                    <div x-show="opCurs" class="flex flex-col items-start text-center px-4">
-                        <h1 class="text-5xl font-bold py-10">
-                        Buscar Cursos
-                        </h1>                    </div>
-                    <section x-show="opCurs" class="flex  gap-15 pl-20">
+                <dialog id="cursos_modal" class="modal ">
+                        <div class="modal-box w-full max-w-7xl">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                <div x-show="opCurs" class="flex flex-col items-end text-center px-4">
+                                    <h1 class="text-5xl font-bold py-5">
+                                    Buscar Cursos
+                                    </h1>
+                                </div>
+                                <section x-show="opCurs" class="flex  gap-15 pl-20">
 
-                        <div>
-                            <p class="py-2 font-bold">Busque seu curso</p>
-                            <div>
-                                <input type="text" placeholder="Buscar por curso..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-                            </div>
+                                    <div>
+                                        <p class="py-2 font-bold">Busque seu curso</p>
+                                        <div>
+                                            <input type="text" placeholder="Buscar por curso..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="py-2 font-bold">Região Administrativa</p>
+                                        <div class="flex gap-5">
+                                            <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                                <option value="ZN">Zona Norte</option>
+                                                <option value="ZL">Zona Leste</option>
+                                                <option value="ZS">Zona Sul</option>
+                                                <option value="ZO">Zona Oeste</option>
+                                            </select>
+
+                                        <div>
+
+                                            <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
+
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section x-show="opCurs" class="flex justify-around px-10">
+                                    
+                                    <section class="flex flex-col text-secondary  p-8 gap-15">
+                                        <h1 class="text-3xl font-bold">Filtros</h1>
+                                        <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
+                                        
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">MODALIDADE DE ENSINO </p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Presencial 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">EAD
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                                </label>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">ESCOLARIDADE</p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                                </label>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">SETOR</p>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Administração 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
+                                                </label>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Financias 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
+                                                </label>
+                                                <label> 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Engenharia 
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+
+                                    </section>
+
+                                    <!--vagas de cursos-->
+                                    <section class="flex flex-col pt-15 list-none text-secondary">
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Curso de Desenvolvedor Web</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
+                                                    <p id="salario">Salário: R$4.500</p>
+                                                    <p id="local">Local de Trabalho: Homeoffice</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6">
+                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+                                                    <!-- Modal Mensagem de salvamento -->
+                                                    <dialog id="cursos_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <!-- Modal Adicionar -->
+                                                    <dialog id="cplus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Potengi - ZN</p>
+                                                    <p id="salario">Salário: R$3.800</p>
+                                                    <p id="local">Local de Trabalho: hibrído</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6">
+                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+
+                                                    <dialog id="cursos_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <dialog id="cplus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
+                                            <div class="flex flex-row">
+                                                <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
+                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                </figure>
+                                                <div>
+                                                    <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex justify-between gap-8 font-semibold">
+                                                <div class="font-[Catamaran] font-semibold text-xl">
+                                                    <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p id="salario">Salário: R$2.300</p>
+                                                    <p id="local">Local de Trabalho: Presencial</p>
+                                                </div>
+                                                <div class="flex pt-10 gap-6 ">
+                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-solid fa-bookmark"></i>
+                                                    </button>
+                                                    <dialog id="cursos_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                
+                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                        <i class="fa-regular fa-plus"></i>
+                                                    </button>
+                                                    <dialog id="cplus_modal" class="modal">
+                                                        <div class="modal-box">
+                                                            <form method="dialog">
+                                                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                                                <h3 class="font-bold text-lg">Parabéns</h3>
+                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                            </form>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </section>
+                            </section>
+                            </form>
                         </div>
-                        
-                        <div>
-                            <p class="py-2 font-bold">Região Administrativa</p>
-                            <div class="flex gap-5">
-                                <select class="select bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
-                                    <option value="ZN">Zona Norte</option>
-                                    <option value="ZL">Zona Leste</option>
-                                    <option value="ZS">Zona Sul</option>
-                                    <option value="ZO">Zona Oeste</option>
-                                </select>
-
-                            <div>
-
-                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-                    <section x-show="opCurs" class="flex justify-around px-10">
-                        
-                        <section class="flex flex-col text-secondary  p-8 gap-15">
-                            <h1 class="text-3xl font-bold">Filtros</h1>
-                            <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
-                            
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold ">Tipo de Estudo</p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Presencial 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
-                                    </label>
-                                </div>
-
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold">ESCOLARIDADE</p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Fundamental 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Médio
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
-                                    </label>
-                                </div>
-
-                                <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                    <p class="font-bold">SETOR</p>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Administração 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Educação
-                                    </label>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Financias 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Turismo
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Informática
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Saúde
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comunicação  
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Recursos Humanos
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
-                                    </label>
-                                    <label> 
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Engenharia 
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
-                                    </label>
-                                </div>
-
-                            </div>
-
-
-                        </section>
-
-                        <!--disponibilidade de cursos-->
-                        <section class="flex flex-col pt-15 list-none text-secondary">
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
-                                    <div>
-                                        <h5 class="font-bold text-xl pb-3">Curso de desenvolvimento web</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Curso de desenvolvimento web com Python, JavaScript, Html e Css. <br> Tecnologias aprendidas: Python, JavaScript, Html e Css</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-between gap-8 font-semibold text-xl">
-                                    <div class="font-[Catamaran] font-semibold">
-                                        <p id="bairro">Bairro: Lagoa Azul - ZN</p>
-                                        <p id="duracao">Duração: 120h</p>
-                                        <p id="local">Forma de Estudo: Remoto</p>
-                                    </div>
-                                    <div class="flex pt-10 gap-6">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
-                                    
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
-                                    <div>
-                                        <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-between gap-8 font-semibold">
-                                    <div class="font-[Catamaran] font-semibold text-xl">
-                                        <p id="bairro"> Bairro: Potengi - ZN</p>
-                                        <p id="salario">Salário: R$3.800</p>
-                                        <p id="local">Local de Trabalho: hibrído</p>
-                                    </div>
-                                    <div class="flex pt-10 gap-6">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
-                                    
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
-                                <div class="flex flex-row">
-                                    <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                        <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
-                                    </figure>
-                                    <div>
-                                        <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
-                                        <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
-                                        <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-between gap-8 font-semibold">
-                                    <div class="font-[Catamaran] font-semibold text-xl">
-                                        <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                        <p id="salario">Salário: R$2.300</p>
-                                        <p id="local">Local de Trabalho: Presencial</p>
-                                    </div>
-                                    <div class="flex pt-10 gap-6">
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-solid fa-bookmark"></i>
-                                        </button>
-                                    
-                                        <button class="btn btn-accent w-10 rounded-full">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                    </section>
-                </section>        
+                    </dialog>        
 
             </section>
         </section>
 
-        <!-- SEÇAO MAPA -->
-        <!-- <section id="mapa" x-data="{opMap : false}">
-            <div class="flex justify-center py-6">
-                <button class="btn btn-secondary text-white transition transition-duration-300 hover:scale-110" @click="opMap = !opMap">Abrir Mapa</button>
-            </div>
-            <div x-show="opMap" class="flex flex-col items-center text-center px-4">
-                <h1 class="text-5xl font-bold py-10">
-                    Mapa
-                </h1>
-            </div>
-            <section x-show="opMap">
-                <section class="flex justify-center pb-10">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.74993873996!2d-35.26298522511876!3d-5.7490945567883776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3abb5048b2fcb%3A0xef4f6c5edaa6d542!2sIFRN%20Campus%20Natal-Zona%20Norte!5e0!3m2!1spt-BR!2sbr!4v1769199431702!5m2!1spt-BR!2sbr" width="700" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </section>
-            </section>
-        </section> -->
     </main>
-
 
     <!--FOOTER-->
     <footer class="footer p-10 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary font-[Catamaran] font-semibold" :style="`font-size: ${scale * 16}px` "> 
@@ -1125,10 +1223,6 @@
             <figure class="justify-center">
                 <img class="w-130" src="img/logo.svg" alt="Logo SAcesSol">
             </figure>
-            <!--
-            <p class="text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, nam odit labore perferendis modi vitae iure? Explicabo, quasi sed hic numquam quia illo molestiae illum minus molestias dolor repudiandae cupiditate!
-            </p>-->
         </aside>
 
         <nav>
