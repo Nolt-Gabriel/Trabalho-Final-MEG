@@ -23,11 +23,11 @@
 
     <!-- OUTROS LINKS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="/static/theme.css">
     <link rel="stylesheet" href="font-size.js">
     
 </head>
-<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] overflow-auto" x-data="{ authOpen: false, tela: 'login', scale: 1 } " >
+<body class="min-h-screen m-0 bg-base-100 md:bg-[url(/static/img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] overflow-auto" x-data="{ authOpen: false, tela: 'login', scale: 1 } " >
 
     <!-- div VLibras -->
     <div vw class="enabled">
@@ -42,10 +42,10 @@
     <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 md:w-full">
         <div class="flex md:justify-between justify-between p-4 items-center">
             <figure class="hidden md:flex ">
-                <img src="img/logo.svg" alt="" class=" w-60" >  
+                <img src="/static/static/img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
-                <img src="img/girassolzinho.svg" class="">
+                <img src="/static/img/girassolzinho.svg" class="">
             </figure>
 
             <!--MENU DESKTOP-->
@@ -330,6 +330,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <!-- CADASTRO candidato -->
         <div x-show="tela === 'cadastrocandidato'" x-transition  @click.away="authOpen = true">
             <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50" role="dialog" aria-modal="true">
@@ -338,7 +339,7 @@
 
                     <div class="absolute inset-0 bg-base-100 
                                 before:content-[''] before:absolute before:inset-0
-                                before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
+                                before:bg-[url(/static/img/solzinho.svg)] before:bg-no-repeat 
                                 before:bg-top-right before:bg-[length:auto_400px]
                                 before:opacity-20
                                 pointer-events-none">
@@ -449,24 +450,158 @@
                                         <label><input type="radio" name="genero"> Prefiro não informar</label>
                                         </div>
                                     </div>
+=======
+        <div 
+        x-data="{
+            cadastrar() {
+                const formData = {
+                    nome: $refs.nome?.value || '',
+                    nascimento: $refs.nascimento?.value || '',
+                    cpf: $refs.cpf?.value || '',
+                    tel: $refs.tel?.value || '',
+                    email: $refs.email?.value || '',
+                    senha: $refs.senha?.value || '',
+                    cep: $refs.cep?.value || '',
+                    rua: $refs.rua?.value || '',
+                    bairro: $refs.bairro?.value || '',
+                    numero: $refs.numero?.value || '',
+                    deficiencia: $refs.deficiencia?.value || '',
+                    genero: document.querySelector('input[name=\'genero\']:checked')?.value || ''
+                };
+>>>>>>> bb27e3e2ae55ee3b62030fe2ce8a736c257c07ac
                 
+                fetch('/cadastro', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    alert('Cadastro OK: ' + data.message);
+                    authOpen = false;
+                })
+                .catch(err => alert('Erro: ' + err));
+            }
+        }" 
+        x-show="tela === 'cadastrocandidato'" 
+        x-transition 
+        @click.away="authOpen = true"
+        >
+        <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50" role="dialog" aria-modal="true">
+            <div class="bg-base-100 text-secondary rounded-xl p-8 relative w-[900px] h-[500px] overflow-y-auto">
+                <div class="absolute inset-0 bg-base-100 
+                    before:content-[''] before:absolute before:inset-0
+                    before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
+                    before:bg-top-right before:bg-[length:auto_400px]
+                    before:opacity-20 pointer-events-none">
+                </div>
 
-                            <!-- Botão -->
-                            <div class="flex flex-col gap-2">
-                                <button class="btn btn-secondary text-white w-full mt-4">Cadastrar-se</button>
-
-                                    <p class="text-center text-sm">
-                                    Já tem uma conta?
-                                    <button @click="tela = 'logincandidato'" class="link font-semibold">Entrar</button>
-                                    </p>
+                <!-- Conteúdo -->
+                <div class="relative z-10 text-secondary">
+                    <!-- Botão de fechar -->
+                    <button @click="authOpen = false" class="absolute top-3 right-3 text-secondary hover:text-gray-800">
+                    <i class="fa-solid fa-xmark fa-lg"></i>
+                    </button>
+                    <h1 class="text-4xl font-bold mb-4">Dados Cadastrais</h1>
+                    
+                    <div class="flex flex-row gap-10">
+                    <div class="flex flex-col gap-4">
+                        <!-- COLUNA ESQUERDA -->
+                        <div class="flex gap-8">
+                            <div class="flex flex-col">
+                                <label for="nome" class="font-bold">Nome Completo:</label>
+                                <input x-ref="nome" id="nome" type="text" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
                             </div>
-
+                            <div class="flex flex-col">
+                                <label for="nascimento" class="font-bold">Data de Nascimento:</label>
+                                <input x-ref="nascimento" id="nascimento" type="text" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
                         </div>
-                        
+
+                        <div class="flex gap-8">
+                            <div class="flex flex-col">
+                                <label for="cpf" class="font-bold">CPF:</label>
+                                <input x-ref="cpf" id="cpf" type="text" placeholder="Digite seu CPF" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="tel" class="font-bold">Telefone:</label>
+                                <input x-ref="tel" id="tel" type="tel" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8">
+                            <div class="flex flex-col">
+                                <label for="email" class="font-bold">Email:</label>
+                                <input x-ref="email" id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="senha" class="font-bold">Senha:</label>
+                                <input x-ref="senha" id="senha" type="password" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8">
+                            <div class="flex flex-col">
+                                <label for="cep" class="font-bold">CEP:</label>
+                                <input x-ref="cep" id="cep" type="text" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="rua" class="font-bold">Rua:</label>
+                                <input x-ref="rua" id="rua" type="text" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8">
+                            <div class="flex flex-col">
+                                <label for="bairro" class="font-bold">Bairro:</label>
+                                <input x-ref="bairro" id="bairro" type="text" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="numero" class="font-bold">Número da Casa:</label>
+                                <input x-ref="numero" id="numero" type="text" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUNA DIREITA -->
+                    <div class="flex flex-col gap-4 justify-between">
+                        <div class="flex flex-col">
+                            <label class="font-bold">Deficiência:</label>
+                            <select x-ref="deficiencia" class="select bg-white border border-secondary rounded-md py-2 px-5">
+                                <option>Deficiência Física</option>
+                                <option>Deficiência Auditiva</option>
+                                <option>Deficiência Visual</option>
+                                <option>Deficiência Intelectual</option>
+                                <option>Deficiência Múltipla</option>
+                                <option>Deficiência Psicossocial</option>
+                                <option>TEA</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <strong>Gênero:</strong>
+                            <div class="flex flex-col gap-4 mt-2">
+                                <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
+                                <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
+                                <label><input type="radio" name="genero" value="Prefiro não informar"> Prefiro não informar</label>
+                            </div>
+                        </div>
+
+                        <!-- Botão -->
+                        <div class="flex flex-col gap-2">
+                            <button @click="cadastrar()" class="btn btn-secondary text-white w-full mt-4">Cadastrar-se</button>
+                            <p class="text-center text-sm">
+                                Já tem uma conta?
+                                <button @click="tela = 'logincandidato'" class="link font-semibold">Entrar</button>
+                            </p>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+
     </section>
 
     <!-- botão colapse -->
@@ -487,7 +622,7 @@
         </p>
 
         <figure>
-        <img src="img/girassolzinho2.svg" alt="Girassol Fofinho" class="mt-6">
+        <img src="/static/img/girassolzinho2.svg" alt="Girassol Fofinho" class="mt-6">
         </figure>
 
     </div>
@@ -540,7 +675,7 @@
             <!--artigo1-->
                 <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg ">
                     <figure> 
-                        <img src="/img/sobre rodas - filme.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/sobre rodas - filme.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class="py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -555,7 +690,7 @@
                 <!--artigo2-->
                 <div id="artigo2" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/img/imagem capacitismo.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/imagem capacitismo.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -570,7 +705,7 @@
                 <!--artigo3-->
                 <div id="artigo3" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/img/tipos de deficiência - imagem.png" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/tipos de deficiência - imagem.png" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -585,7 +720,7 @@
                 <!--artigo4-->
                 <div id="artigo4" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/img/Direitos dos PCDs - imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/Direitos dos PCDs - imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -600,7 +735,7 @@
                 <!--artigo5-->
                 <div id="artigo5" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/img/O q signific pcd - Imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/O q signific pcd - Imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -615,7 +750,7 @@
                 <!--artigo6-->
                 <div id="artigo6" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/img/stephen hawking - img.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/static/img/stephen hawking - img.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -780,7 +915,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
@@ -830,7 +965,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
@@ -879,7 +1014,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
@@ -930,8 +1065,8 @@
                     </dialog>
                     
 
-                <!-- CURSOS -->
-                <dialog id="cursos_modal" class="modal ">
+                    <!-- CURSOS -->
+                    <dialog id="cursos_modal" class="modal ">
                         <div class="modal-box w-full max-w-7xl">
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1063,7 +1198,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Curso de Desenvolvedor Web</h5>
@@ -1113,7 +1248,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Curso de Turismo (Módulo Básico)</h5>
@@ -1162,7 +1297,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/static/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Curso de Operador de Caixa</h5>
@@ -1206,22 +1341,22 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </section>
                                 </section>
-                            </section>
+
                             </form>
                         </div>
                     </dialog>        
 
-            </section>
+                </section>
         </section>
 
     </main>
-
     <!--FOOTER-->
     <footer class="footer p-10 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary font-[Catamaran] font-semibold" :style="`font-size: ${scale * 16}px` "> 
         <aside class="max-w-xl">
             <figure class="justify-center">
-                <img class="w-130" src="img/logo.svg" alt="Logo SAcesSol">
+                <img class="w-130" src="/static/img/logo.svg" alt="Logo SAcesSol">
             </figure>
         </aside>
 
