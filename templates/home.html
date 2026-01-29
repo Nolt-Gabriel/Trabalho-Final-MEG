@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="font-size.js">
     
 </head>
-<body class="min-h-screen m-0 bg-base-100 md:bg-[url(/static/img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] overflow-auto" x-data="{ authOpen: false, tela: 'login', scale: 1 } " >
+<body class="min-h-screen m-0 bg-base-100 md:bg-[url(img/solzinho.svg)] bg-no-repeat bg-top-right bg-size-[auto_800px] overflow-auto" x-data="{ authOpen: false, tela: 'login', scale: 1 } " >
 
     <!-- div VLibras -->
     <div vw class="enabled">
@@ -42,14 +42,14 @@
     <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 md:w-full">
         <div class="flex md:justify-between justify-between p-4 items-center">
             <figure class="hidden md:flex ">
-                <img src="/static/img/logo.svg" alt="" class=" w-60" >  
+                <img src="img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
-                <img src="/static/img/girassolzinho.svg" class="">
+                <img src="img/girassolzinho.svg" class="">
             </figure>
 
             <!--MENU DESKTOP-->
-            <ul class="hidden md:flex gap-6">
+            <ul class="flex items-center hidden md:flex gap-6">
                     <li>
                         <label class="flex cursor-pointer gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -69,17 +69,13 @@
                     <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
-                    <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><a href="#cursos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Cursos</a></li>
-
-
 
                     <!--MENU usuario-->
-                    <li x-data="{ open: false }" class="relative ">
+                    <li x-data="{ open: false }" class="relative">
                         <button @click="open = !open" class=" p-2 rounded-full hover:bg-gray-200 transition">
                             <i class="fa-solid fa-user text-lg"></i>
                         </button>
-                        <button @click="authOpen = true; tela = 'logincandidato'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>                    
+                        <button @click="authOpen = true; tela = 'logincandidato'" class="btn btn-outline rounded-lg"> Entrar</button>                    
             
                     <div x-show="open" @click.outside="open = false" x-transition class="menu bg-secondary absolute right-0 mt-2 w-100 rounded-lg  shadow-lg z-50 ">
                         <ul class="menu-items flex flex-col gap-4 p-4 ">
@@ -113,11 +109,11 @@
                                             <div class="flex gap-8">
                                                 <div class="flex flex-col">
                                                     <label for="nome" class="font-bold">Nome Completo:</label>
-                                                    <input id="nome" type="text" name="" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="nome" type="text" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                                 <div class="flex flex-col">
                                                     <label for="nascimento" class="font-bold">Data de Nascimento:</label>
-                                                    <input id="nascimento" name="" type="date" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="nascimento" type="date" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                                 
                                                 
@@ -131,7 +127,7 @@
 
                                                 <div class="flex flex-col">
                                                     <label for="tel" class="font-bold">Telefone:</label>
-                                                    <input id="tel" type="tel" name="" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="tel" type="tel" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                             </div>
 
@@ -141,24 +137,24 @@
 
                                                 <div class="flex flex-col">
                                                     <label for="email" class="font-bold">Email:</label>
-                                                    <input id="email" type="email" name="" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
 
                                                 <div class="flex flex-col">
                                                     <label for="senha" class="font-bold">Senha:</label>
-                                                    <input id="senha" type="password" placeholder="Digite sua senha" name="" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="senha" type="password" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                             </div>
 
                                             <div class="flex gap-8">
                                                 <div class="flex flex-col">
                                                     <label for="cep" class="font-bold">CEP:</label>
-                                                    <input id="cep" x-mod type="text" inputmode="numeric" name="" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="cep" x-mod type="text" inputmode="numeric" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
 
                                                 <div class="flex flex-col">
                                                     <label for="rua" class="font-bold">Rua:</label>
-                                                    <input id="rua" type="text" name="" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="rua" type="text" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                             </div>
 
@@ -166,21 +162,21 @@
                                             <div class="flex gap-8">
                                                 <div class="flex flex-col">
                                                     <label for="bairro" class="font-bold">Bairro:</label>
-                                                    <input id="bairro" type="text" name="" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="bairro" type="text" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
 
                                                 <div class="flex flex-col">
                                                     <label for="numero" class="font-bold">Número da Casa:</label>
-                                                    <input id="numero" type="number" name="" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                                    <input id="numero" type="number" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="flex flex-col gap-4 justify-between">
 
-                                        <!-- Man aqui é só o perplexity pra ajudar mesmo -->
+                                        
                                                 <div class="flex flex-col">
                                                     <label class="font-bold">Deficiência:</label>
-                                                    <select class="select bg-white border border-secondary rounded-md py-2 px-5" name="">
+                                                    <select class="select bg-white border border-secondary rounded-md py-2 px-5">
                                                     <option>Deficiência Física</option>
                                                     <option>Deficiência Auditiva</option>
                                                     <option>Deficiência Visual</option>
@@ -194,9 +190,9 @@
                                                 <div>
                                                     <strong>Gênero:</strong>
                                                     <div class="flex flex-col gap-4 mt-2">
-                                                    <label><input type="radio" name=""> Feminino</label>
-                                                    <label><input type="radio" name=""> Masculino</label>
-                                                    <label><input type="radio" name=""> Prefiro não informar</label>
+                                                    <label><input type="radio" name="genero"> Feminino</label>
+                                                    <label><input type="radio" name="genero"> Masculino</label>
+                                                    <label><input type="radio" name="genero"> Prefiro não informar</label>
                                                     </div>
                                                 </div>
 
@@ -229,7 +225,7 @@
 
 
     <!--MAIN-->
-    <main class="max-w-7xl mx-auto text-secondary-content" id="home" :style="`font-size: ${scale * 16}px`">
+    <main class="max-w-7xl mx-auto text-secondary-content" id="home" x-data="{expandir: false}" :style="`font-size: ${scale * 16}px`">
 
         <!--HERO-->
         <section class="pt-32 mb-20 w-160 ">
@@ -280,9 +276,9 @@
                     <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
                     <div class="flex flex-col items-center gap-4">
 
-                        <input id="email" type="email" name="login_email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
 
-                        <input id="senha" type="password" name="login_senha" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
+                        <input id="senha" type="password" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
                         
                         <button class="btn btn-secondary text-white w-full">Entrar</button>
                     </div>
@@ -313,11 +309,11 @@
                     <h2 class="text-2xl font-bold mb-6 text-center">Entrar</h2>
                     <div class="flex flex-col items-center gap-4">
 
-                        <input id="empresa" type="text" name="nome_empresa" placeholder="Digite o nome da empresa " class="input bg-white border border-secondary rounded-md py-2 px-5">
+                        <input id="empresa" type="text" placeholder="Digite o nome da empresa " class="input bg-white border border-secondary rounded-md py-2 px-5">
 
-                        <input id="email" type="email" name="email_empresa" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
 
-                        <input id="senha" type="password" name="senha_empresa" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
+                        <input id="senha" type="password" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">                    
                         
                         <button class="btn btn-secondary text-primary w-full">Entrar</button>
                     </div>
@@ -342,7 +338,7 @@
 
                     <div class="absolute inset-0 bg-base-100 
                                 before:content-[''] before:absolute before:inset-0
-                                before:bg-[url(/static/img/solzinho.svg)] before:bg-no-repeat 
+                                before:bg-[url(img/solzinho.svg)] before:bg-no-repeat 
                                 before:bg-top-right before:bg-[length:auto_400px]
                                 before:opacity-20
                                 pointer-events-none">
@@ -361,115 +357,110 @@
                         </button>
                         <h1 class="text-4xl font-bold mb-4">Dados Cadastrais</h1>
                         <div class="flex flex-row gap-10">
-                            <form action="/cadastro" method="post">
-                                <div class="flex flex-col gap-4">
 
-                                    <div class="flex gap-8" >
+                            <div class="flex flex-col gap-4">
 
-            
-
-                                        <div class="flex flex-col">
-                                            <label for="nome" class="font-bold">Nome Completo:</label>
-                                            <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <label for="nascimento" class="font-bold">Data de Nascimento:</label>
-                                            <input id="nascimento" type="text" name="nascimento" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-                                        
-                                        
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="nome" class="font-bold">Nome Completo:</label>
+                                        <input id="nome" type="text" placeholder="Digite seu nome completo" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                     </div>
-
-                                    <div class="flex gap-8">
-                                        <div class="flex flex-col">
-                                            <label for="cpf" class="font-bold">CPF:</label>
-                                            <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-
-                                        <div class="flex flex-col">
-                                            <label for="tel" class="font-bold">Telefone:</label>
-                                            <input id="tel" type="tel" name="telefone" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
+                                    <div class="flex flex-col">
+                                        <label for="nascimento" class="font-bold">Data de Nascimento:</label>
+                                        <input id="nascimento" type="text" placeholder="dd/mm/aaaa" class="input bg-white border border-secondary rounded-md py-2 px-5">
                                     </div>
-
                                     
-                                    <div class="flex gap-8">
-                                        
-
-                                        <div class="flex flex-col">
-                                            <label for="email" class="font-bold">Email:</label>
-                                            <input id="email" type="email" name="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-
-                                        <div class="flex flex-col">
-                                            <label for="senha" class="font-bold">Senha:</label>
-                                            <input id="senha" type="text" name="senha" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-                                    </div>
-
-                                    <div class="flex gap-8" >
-                                        <div class="flex flex-col">
-                                            <label for="cep" class="font-bold">CEP:</label>
-                                            <input id="cep" type="text" name="cep" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-
-                                        <div class="flex flex-col">
-                                            <label for="rua" class="font-bold">Rua:</label>
-                                            <input id="rua" type="text" name="rua" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-                                    </div>
-
                                     
-                                    <div class="flex gap-8">
-                                        <div class="flex flex-col">
-                                            <label for="bairro" class="font-bold">Bairro:</label>
-                                            <input id="bairro" type="text" name="bairro" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-
-                                        <div class="flex flex-col">
-                                            <label for="numero" class="font-bold">Número da Casa:</label>
-                                            <input id="numero" type="text" name="casa" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
-                                        </div>
-                                    </div>
                                 </div>
 
-                            
-                                <div class="flex flex-col gap-4 justify-between">
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="cpf" class="font-bold">CPF:</label>
+                                        <input id="cpf" type="text" placeholder="Digite seu CPF" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="tel" class="font-bold">Telefone:</label>
+                                        <input id="tel" type="tel" placeholder="(99) 99999-9999" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
 
                                 
-                                        <div class="flex flex-col">
-                                            <label class="font-bold">Deficiência:</label>
-                                            <select class="select bg-white border border-secondary rounded-md py-2 px-5" name="deficiencia">
-                                            <option>Deficiência Física</option>
-                                            <option>Deficiência Auditiva</option>
-                                            <option>Deficiência Visual</option>
-                                            <option>Deficiência Intelectual</option>
-                                            <option>Deficiência Múltipla</option>
-                                            <option>Deficiência Psicossocial</option>
-                                            <option>TEA</option>
-                                            </select>
-                                        </div>
+                                <div class="flex gap-8">
+                                    
 
-                                        <div>
-                                            <strong>Gênero:</strong>
-                                            <div class="flex flex-col gap-4 mt-2">
-                                            <label><input type="radio" name="genero"> Feminino</label>
-                                            <label><input type="radio" name="genero"> Masculino</label>
-                                            <label><input type="radio" name="genero"> Prefiro não informar</label>
-                                            </div>
-                                        </div>
-                    
+                                    <div class="flex flex-col">
+                                        <label for="email" class="font-bold">Email:</label>
+                                        <input id="email" type="email" placeholder="Digite seu email" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
 
-                                <!-- Botão -->
-                                <div class="flex flex-col gap-2">
-                                    <button class="btn btn-secondary text-white w-full mt-4">Cadastrar-se</button>
-
-                                        <p class="text-center text-sm">
-                                        Já tem uma conta?
-                                        <button @click="tela = 'logincandidato'" class="link font-semibold">Entrar</button>
-                                        </p>
+                                    <div class="flex flex-col">
+                                        <label for="senha" class="font-bold">Senha:</label>
+                                        <input id="senha" type="text" placeholder="Digite sua senha" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
                                 </div>
-                            </form>
+
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="cep" class="font-bold">CEP:</label>
+                                        <input id="cep" type="text" placeholder="Digite seu CEP" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="rua" class="font-bold">Rua:</label>
+                                        <input id="rua" type="text" placeholder="Digite o nome da rua" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="flex gap-8">
+                                    <div class="flex flex-col">
+                                        <label for="bairro" class="font-bold">Bairro:</label>
+                                        <input id="bairro" type="text" placeholder="Digite o nome do bairro" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <label for="numero" class="font-bold">Número da Casa:</label>
+                                        <input id="numero" type="text" placeholder="Digite o número da casa" class="input bg-white border border-secondary rounded-md py-2 px-5">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 justify-between">
+
+                            
+                                    <div class="flex flex-col">
+                                        <label class="font-bold">Deficiência:</label>
+                                        <select class="select bg-white border border-secondary rounded-md py-2 px-5">
+                                        <option>Deficiência Física</option>
+                                        <option>Deficiência Auditiva</option>
+                                        <option>Deficiência Visual</option>
+                                        <option>Deficiência Intelectual</option>
+                                        <option>Deficiência Múltipla</option>
+                                        <option>Deficiência Psicossocial</option>
+                                        <option>TEA</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <strong>Gênero:</strong>
+                                        <div class="flex flex-col gap-4 mt-2">
+                                        <label><input type="radio" name="genero"> Feminino</label>
+                                        <label><input type="radio" name="genero"> Masculino</label>
+                                        <label><input type="radio" name="genero"> Prefiro não informar</label>
+                                        </div>
+                                    </div>
+                
+
+                            <!-- Botão -->
+                            <div class="flex flex-col gap-2">
+                                <button class="btn btn-secondary text-white w-full mt-4">Cadastrar-se</button>
+
+                                    <p class="text-center text-sm">
+                                    Já tem uma conta?
+                                    <button @click="tela = 'logincandidato'" class="link font-semibold">Entrar</button>
+                                    </p>
+                            </div>
+
                         </div>
                         
                     </div>
@@ -478,26 +469,30 @@
         </div>
     </section>
 
-
-    <!--SEÇAO SOBRE -->
-    <section id="sobre" class="pt-32 p-20">
+    <!-- botão colapse -->
+    <div id="sobre"  class="flex justify-center pb-2">
+        <button @click="expandir = !expandir"><i class="fa-solid fa-circle-chevron-down w-10xl"></i></button>
+    </div>
     
-    <div class="flex flex-col items-center text-center px-4">
+    <!--SEÇAO SOBRE -->
+    <section x-show="expandir" x-transition.duration.500ms  class="">
+    
+    <div x-show="expandir" x-collapse.min.50px class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10 font-[Fredoka] tracking-wider">
         Conheça o AcesSol
         </h1>
 
         <p class="py-5 text-lg max-w-5xl font-[Catamaran] font-semibold">
-        AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego
+        AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidária para todos, aqui todas as pessoas com deficiências poderão ser devidamente incluídas na sociedade. Com uma aba Cursos e Empregos, nós disponibilizamos formas de ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de conseguir um emprego.
         </p>
 
         <figure>
-        <img src="/static/img/girassolzinho2.svg" alt="Girassol Fofinho" class="mt-6">
+        <img src="img/girassolzinho2.svg" alt="Girassol Fofinho" class="mt-6">
         </figure>
 
     </div>
 
-    <div class="mt-26 flex flex-col items-center gap-18 px-4">
+    <div x-show="expandir" class="mt-26 flex flex-col items-center gap-18 px-4">
         <h2 class="text-4xl font-bold font-[Fredoka] tracking-wider">
         Nossos Pilares
         </h2>
@@ -533,7 +528,7 @@
         </section>
 
         <!-- SEÇAO BLOG -->
-        <section id="blog" class="pt-32">
+        <section x-show="expandir" id="blog" class="pt-32">
             <div class="flex flex-col items-center text-center px-4 ">
                 <h1 class="text-5xl max-md:text-7xl font-bold pb-10 font-[Fredoka] tracking-wider">Blog</h1>
                 <p class="text-xl font-[Catamaran] font-semibold">Nesta seção, você poderá encontrar artigos que lhe ajudem a entender as causas relacionadas aos PCDs, suas dificuldades, importância da inclusão e muito mais. Expanda seus conhecimentos e entenda um pouco mais sobre a realidade destas pessoas!</p>
@@ -545,7 +540,7 @@
             <!--artigo1-->
                 <div id="artigo1" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg ">
                     <figure> 
-                        <img src="/static/img/sobre rodas - filme.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/sobre rodas - filme.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class="py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -560,7 +555,7 @@
                 <!--artigo2-->
                 <div id="artigo2" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/static/img/imagem capacitismo.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/imagem capacitismo.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -575,7 +570,7 @@
                 <!--artigo3-->
                 <div id="artigo3" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/static/img/tipos de deficiência - imagem.png" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/tipos de deficiência - imagem.png" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -590,7 +585,7 @@
                 <!--artigo4-->
                 <div id="artigo4" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/static/img/Direitos dos PCDs - imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/Direitos dos PCDs - imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -605,7 +600,7 @@
                 <!--artigo5-->
                 <div id="artigo5" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/static/img/O q signific pcd - Imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/O q signific pcd - Imagem.webp" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -620,7 +615,7 @@
                 <!--artigo6-->
                 <div id="artigo6" class="carousel-item w-1/4 flex flex-col bg-white rounded-lg p-6 shadow-lg">
                     <figure> 
-                        <img src="/static/img/stephen hawking - img.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
+                        <img src="/img/stephen hawking - img.jpg" alt="Imagem placeholder" class="h-50 object-cover rounded w-full">
                     </figure>  
                     <div class=" py-4 flex flex-col gap-3">
                         <p>23/01/26</p>
@@ -646,10 +641,10 @@
                     <div class="fab left-0 bottom-0 mb-0 pl-10 font-[Fredoka]">
                         <div tabindex="0" role="button" class="btn btn-lg btn-circle btn-accent">A</div>
 
-                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
+                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
                         </div>
 
-                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
+                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
                         </div>
    
                     </div>
@@ -785,7 +780,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/static/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
@@ -835,7 +830,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/source/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
@@ -884,7 +879,7 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/static/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
@@ -1068,20 +1063,20 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/static/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/programador.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Curso de Desenvolvedor Web</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Curso de Desenvolvedor Web para produção de sites com Html, Css e Java Script. <br>Tecnologias aprendidas: Html Completo, Css Completo (com frameworks) e Java Script Intermediário (com frameworks).</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
                                                     <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                                    <p id="salario">Salário: R$4.500</p>
-                                                    <p id="local">Local de Trabalho: Homeoffice</p>
+                                                    <p id="salario">Duração: 120h</p>
+                                                    <p id="local">Modalidade: EAD</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
@@ -1118,20 +1113,20 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/static/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
-                                                    <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                                    <h5 class="font-bold text-xl pb-3">Curso de Turismo (Módulo Básico)</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Prepare-se para planejar, gerenciar e promover destinos e serviços turísticos, abordando áreas como hotelaria, eventos, agenciamento e políticas públicas sustentáveis de maneira inicial.</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
                                                     <p id="bairro"> Bairro: Potengi - ZN</p>
-                                                    <p id="salario">Salário: R$3.800</p>
-                                                    <p id="local">Local de Trabalho: hibrído</p>
+                                                    <p id="salario">Duração: 80h</p>
+                                                    <p id="local">Modalidade: Híbrida</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
@@ -1167,20 +1162,20 @@
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
-                                                    <img src="/static/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
+                                                    <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
-                                                    <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                                    <h5 class="font-bold text-xl pb-3">Curso de Operador de Caixa</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Curso profissionalizante de Operador de Caixa, com módulos de atendimento ao cliente, manuseio de pagamentos (dinheiro, cartão), abertura/fechamento de caixa e técnicas de vendas.</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                                    <p id="salario">Salário: R$2.300</p>
-                                                    <p id="local">Local de Trabalho: Presencial</p>
+                                                    <p id="bairro">Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p id="salario">Duração: 60h</p>
+                                                    <p id="local">Modalidade: presencial</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6 ">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
@@ -1226,7 +1221,7 @@
     <footer class="footer p-10 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary font-[Catamaran] font-semibold" :style="`font-size: ${scale * 16}px` "> 
         <aside class="max-w-xl">
             <figure class="justify-center">
-                <img class="w-130" src="/static/img/logo.svg" alt="Logo SAcesSol">
+                <img class="w-130" src="img/logo.svg" alt="Logo SAcesSol">
             </figure>
         </aside>
 
