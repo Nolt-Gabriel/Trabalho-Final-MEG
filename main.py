@@ -67,6 +67,7 @@ def cadastro(
     genero: str = Form(...),
    
 ):
+    
     db = SessionLocal()
 
     # Verifica se o email já existe
