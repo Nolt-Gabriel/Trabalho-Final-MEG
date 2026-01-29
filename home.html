@@ -49,7 +49,7 @@
             </figure>
 
             <!--MENU DESKTOP-->
-            <ul class="hidden md:flex gap-6">
+            <ul class="flex items-center hidden md:flex gap-6">
                     <li>
                         <label class="flex cursor-pointer gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -69,17 +69,13 @@
                     <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
                     <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
                     <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
-                    <li><a href="#empregos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Empregos</a></li>
-                    <li><a href="#cursos" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Cursos</a></li>
-
-
 
                     <!--MENU usuario-->
-                    <li x-data="{ open: false }" class="relative ">
+                    <li x-data="{ open: false }" class="relative">
                         <button @click="open = !open" class=" p-2 rounded-full hover:bg-gray-200 transition">
                             <i class="fa-solid fa-user text-lg"></i>
                         </button>
-                        <button @click="authOpen = true; tela = 'logincandidato'" class="btn btn-outline rounded-lg mt-6"> Entrar</button>                    
+                        <button @click="authOpen = true; tela = 'logincandidato'" class="btn btn-outline rounded-lg"> Entrar</button>                    
             
                     <div x-show="open" @click.outside="open = false" x-transition class="menu bg-secondary absolute right-0 mt-2 w-100 rounded-lg  shadow-lg z-50 ">
                         <ul class="menu-items flex flex-col gap-4 p-4 ">
@@ -229,7 +225,7 @@
 
 
     <!--MAIN-->
-    <main class="max-w-7xl mx-auto text-secondary-content" id="home" :style="`font-size: ${scale * 16}px`">
+    <main class="max-w-7xl mx-auto text-secondary-content" id="home" x-data="{expandir: false}" :style="`font-size: ${scale * 16}px`">
 
         <!--HERO-->
         <section class="pt-32 mb-20 w-160 ">
@@ -473,17 +469,21 @@
         </div>
     </section>
 
-
-    <!--SEÇAO SOBRE -->
-    <section id="sobre" class="pt-32 p-20">
+    <!-- botão colapse -->
+    <div id="sobre"  class="flex justify-center pb-2">
+        <button @click="expandir = !expandir"><i class="fa-solid fa-circle-chevron-down w-10xl"></i></button>
+    </div>
     
-    <div class="flex flex-col items-center text-center px-4">
+    <!--SEÇAO SOBRE -->
+    <section x-show="expandir" x-transition.duration.500ms  class="">
+    
+    <div x-show="expandir" x-collapse.min.50px class="flex flex-col items-center text-center px-4">
         <h1 class="text-5xl font-bold py-10 font-[Fredoka] tracking-wider">
         Conheça o AcesSol
         </h1>
 
         <p class="py-5 text-lg max-w-5xl font-[Catamaran] font-semibold">
-        AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego
+        AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidária para todos, aqui todas as pessoas com deficiências poderão ser devidamente incluídas na sociedade. Com uma aba Cursos e Empregos, nós disponibilizamos formas de ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de conseguir um emprego.
         </p>
 
         <figure>
@@ -492,7 +492,7 @@
 
     </div>
 
-    <div class="mt-26 flex flex-col items-center gap-18 px-4">
+    <div x-show="expandir" class="mt-26 flex flex-col items-center gap-18 px-4">
         <h2 class="text-4xl font-bold font-[Fredoka] tracking-wider">
         Nossos Pilares
         </h2>
@@ -528,7 +528,7 @@
         </section>
 
         <!-- SEÇAO BLOG -->
-        <section id="blog" class="pt-32">
+        <section x-show="expandir" id="blog" class="pt-32">
             <div class="flex flex-col items-center text-center px-4 ">
                 <h1 class="text-5xl max-md:text-7xl font-bold pb-10 font-[Fredoka] tracking-wider">Blog</h1>
                 <p class="text-xl font-[Catamaran] font-semibold">Nesta seção, você poderá encontrar artigos que lhe ajudem a entender as causas relacionadas aos PCDs, suas dificuldades, importância da inclusão e muito mais. Expanda seus conhecimentos e entenda um pouco mais sobre a realidade destas pessoas!</p>
@@ -641,10 +641,10 @@
                     <div class="fab left-0 bottom-0 mb-0 pl-10 font-[Fredoka]">
                         <div tabindex="0" role="button" class="btn btn-lg btn-circle btn-accent">A</div>
 
-                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
+                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
                         </div>
 
-                        <div class="text-success font-bold"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
+                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
                         </div>
    
                     </div>
@@ -1068,15 +1068,15 @@
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Curso de Desenvolvedor Web</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Curso de Desenvolvedor Web para produção de sites com Html, Css e Java Script. <br>Tecnologias aprendidas: Html Completo, Css Completo (com frameworks) e Java Script Intermediário (com frameworks).</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
                                                     <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                                    <p id="salario">Salário: R$4.500</p>
-                                                    <p id="local">Local de Trabalho: Homeoffice</p>
+                                                    <p id="salario">Duração: 120h</p>
+                                                    <p id="local">Modalidade: EAD</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
@@ -1116,17 +1116,17 @@
                                                     <img src="/img/marketing - vaga.jpg" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
-                                                    <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
+                                                    <h5 class="font-bold text-xl pb-3">Curso de Turismo (Módulo Básico)</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Prepare-se para planejar, gerenciar e promover destinos e serviços turísticos, abordando áreas como hotelaria, eventos, agenciamento e políticas públicas sustentáveis de maneira inicial.</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
                                                     <p id="bairro"> Bairro: Potengi - ZN</p>
-                                                    <p id="salario">Salário: R$3.800</p>
-                                                    <p id="local">Local de Trabalho: hibrído</p>
+                                                    <p id="salario">Duração: 80h</p>
+                                                    <p id="local">Modalidade: Híbrida</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
@@ -1165,17 +1165,17 @@
                                                     <img src="/img/Vendas - emprego.webp" alt="Imagem placeholder" class="object-cover rounded">
                                                 </figure>
                                                 <div>
-                                                    <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
+                                                    <h5 class="font-bold text-xl pb-3">Curso de Operador de Caixa</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Curso profissionalizante de Operador de Caixa, com módulos de atendimento ao cliente, manuseio de pagamentos (dinheiro, cartão), abertura/fechamento de caixa e técnicas de vendas.</p>
                                                 </div>
                                             </div>
 
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                                    <p id="salario">Salário: R$2.300</p>
-                                                    <p id="local">Local de Trabalho: Presencial</p>
+                                                    <p id="bairro">Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p id="salario">Duração: 60h</p>
+                                                    <p id="local">Modalidade: presencial</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6 ">
                                                     <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
