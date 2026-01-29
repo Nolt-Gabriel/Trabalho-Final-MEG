@@ -48,6 +48,26 @@
                 <img src="/static/img/girassolzinho.svg" class="">
             </figure>
 
+<!---menu mobile-->     
+                <div class="md:hidden dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost">
+                        <i class="fa fa-bars text-3xl"></i>
+                    </label>
+
+                    <ul tabindex="0"
+                        class="dropdown-content menu bg-base-100 text-secondary-content rounded-box w-52 p-2 shadow-lg ">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                         <li> <button @click="authOpen = true; tela = 'logincandidato'">Entrar</button> </li>
+                         <li x-data="{ open: false }" class="relative">
+                        <button @click="open = !open" class="p-2 hover:bg-gray-200">
+                            <i class="fa-solid fa-user text-lg"></i>
+                        </button>
+                    </ul>
+                </div>
+            
+
             <!--MENU DESKTOP-->
             <ul class="flex items-center hidden md:flex gap-6">
                     <li>
@@ -219,8 +239,10 @@
                         </ul>
                     </div>
                 </li>   
-            </ul>
+            </ul> 
         </div>
+
+       
     </header>
 
 
