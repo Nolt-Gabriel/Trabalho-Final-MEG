@@ -132,7 +132,7 @@ def abrir_cadastro(login):
     combobox = customtkinter.CTkComboBox(cadastroframe, values=['Deficiência Física', 'Deficiência Auditiva', 'Deficiência Visual', 'Deficiência Intelectual', 'Deficiência Múltipla', 'Deficiência Psicossocial', 'TEA'], text_color=cor_primaria, border_color=cor_secundaria, dropdown_fg_color=cor_background, dropdown_text_color=cor_secundaria, dropdown_hover_color=cor_terciaria)
     check1 = customtkinter.CTkCheckBox(cadastroframe, text='Feminino', variable=var_fem, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_fem))
     check2 = customtkinter.CTkCheckBox(cadastroframe, text='Masculino', variable=var_masc, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_masc))
-    check3 = customtkinter.CTkCheckBox(cadastroframe, text='Ocultar', variable=var_ocultar, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_ocultar))
+    check3 = customtkinter.CTkCheckBox(cadastroframe, text='Outro', variable=var_ocultar, onvalue=True, offvalue=False, text_color='white', fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox(var_ocultar))
 
 
     def salvar_cadastro():
@@ -231,7 +231,7 @@ def abrir_home(login):
             frame.grid_remove()
         telas[nome].grid(sticky='nsew')
 
-    for nome in ['Inicio', 'Sobre', 'Blog', 'Empregos']:
+    for nome in ['Inicio', 'Sobre', 'Blog', 'Empregos', 'Cursos']:
         frame = customtkinter.CTkFrame(
             mainframe,
             fg_color=cor_background,
@@ -266,6 +266,8 @@ def abrir_home(login):
     buttonblog.grid(row=0, column=3, padx=10, pady=20)
     buttonemprego = customtkinter.CTkButton(headerframe, text='Empregos', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17, 'bold'), command=lambda: mostrar('Empregos'))
     buttonemprego.grid(row=0, column=4, padx=10, pady=20)
+    buttonemprego = customtkinter.CTkButton(headerframe, text='Cursos', fg_color='transparent', width=largura/15, hover_color=cor_secundaria, font=('Inter', 17, 'bold'), command=lambda: mostrar('Cursos'))
+    buttonemprego.grid(row=0, column=5, padx=10, pady=20)
     buttonsair = customtkinter.CTkButton(headerframe, text='[ >', fg_color='transparent', width=largura/15, hover_color=cor_primaria, font=('Inter', 17, 'bold'), command=lambda: (apphome.destroy(),login.deiconify()))
     buttonsair.grid(row=0, column=6, padx=10, pady=20)
 
@@ -284,23 +286,23 @@ def abrir_home(login):
     bg_imageframe.grid(row=0, column=0, sticky='nsew')
 
     titletext1 = customtkinter.CTkLabel(textframe, text='Acessibilidade e', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext1.grid(row=0, column=0, pady=(80, 0), sticky='w')
+    titletext1.grid(row=0, column=0, pady=(80, 0), sticky='w', padx=20)
     titletext2 = customtkinter.CTkLabel(textframe, text='solidariedade para todos', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext2.grid(row=1, column=0, sticky='w')
+    titletext2.grid(row=1, column=0, sticky='w', padx=20)
 
     iniciotext1 = customtkinter.CTkLabel(textframe, text='Nosso objetivo é trazer mais inclusão a pessoas que normalmente são ', text_color=cor_primaria, font=('Inter', 14))
-    iniciotext1.grid(row=3, column=0, pady=(20, 0), sticky='w')
+    iniciotext1.grid(row=3, column=0, pady=(20, 0), sticky='w', padx=20)
     iniciotext2 = customtkinter.CTkLabel(textframe, text='esquecidas, aqui vocês podem melhorar seu currículo com cursos', text_color=cor_primaria, font=('Inter', 14))
-    iniciotext2.grid(row=4, column=0, sticky='w')   
+    iniciotext2.grid(row=4, column=0, sticky='w', padx=20)   
     iniciotext3 = customtkinter.CTkLabel(textframe, text='profissionalizantes e de qualidade que implementam suas habilidades e os', text_color=cor_primaria, font=('Inter', 14))
-    iniciotext3.grid(row=5, column=0, sticky='w')
+    iniciotext3.grid(row=5, column=0, sticky='w', padx=20)
     iniciotext4 = customtkinter.CTkLabel(textframe, text='ajudam a ingressar no mercado de trabalho, além de encontrar vagas de', text_color=cor_primaria, font=('Inter', 14))
-    iniciotext4.grid(row=6, column=0, sticky='w')
+    iniciotext4.grid(row=6, column=0, sticky='w', padx=20)
     iniciotext5 = customtkinter.CTkLabel(textframe, text='emprego onde se sentirem mais confortáveis e incluídos', text_color=cor_primaria, font=('Inter', 14))
-    iniciotext5.grid(row=7, column=0, pady=(0, 40),sticky='w')
+    iniciotext5.grid(row=7, column=0, pady=(0, 40),sticky='w', padx=20)
 
     buttontext = customtkinter.CTkButton(textframe, text='Perfil', fg_color='transparent', border_width=1, border_color=cor_primaria, text_color=cor_primaria, hover_color=cor_terciaria, font=('Inter', 17, 'bold'))
-    buttontext.grid(row=8, column=0, sticky='w')
+    buttontext.grid(row=8, column=0, sticky='w', padx=20)
 
     telas['Inicio'].grid_columnconfigure(0, weight=1)
     telas['Inicio'].grid_columnconfigure(1, weight=1)
@@ -544,6 +546,303 @@ def abrir_home(login):
     telas['Blog'].grid_columnconfigure(0, weight=1)
     telas['Blog'].grid_columnconfigure(1, weight=1)
     telas['Blog'].grid_rowconfigure(0, weight=1)
+
+
+    centerframe = customtkinter.CTkFrame(telas['Empregos'], width=largura, height=altura, fg_color='transparent')
+    centerframe.grid(row=0, column=0, pady=(altura/6, 0))
+
+    filtroframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    filtroframe.grid(row=0, column=0)
+
+    vagaframe = customtkinter.CTkFrame(centerframe)
+    vagaframe.grid(row=0, column=1)
+
+
+    vagaframe.grid_propagate(False)
+
+
+    var_prec = customtkinter.BooleanVar(value=False)
+    var_remt = customtkinter.BooleanVar(value=False)
+    var_hybd = customtkinter.BooleanVar(value=False)
+
+    var_fund = customtkinter.BooleanVar(value=False)
+    var_medi = customtkinter.BooleanVar(value=False)
+    var_supe = customtkinter.BooleanVar(value=False)
+    var_grad = customtkinter.BooleanVar(value=False)
+    var_mest = customtkinter.BooleanVar(value=False)
+    var_dout = customtkinter.BooleanVar(value=False)
+
+    var_ad = customtkinter.BooleanVar(value=False)
+    var_cv = customtkinter.BooleanVar(value=False)
+    var_ed = customtkinter.BooleanVar(value=False)
+    var_fn = customtkinter.BooleanVar(value=False)
+    var_tr = customtkinter.BooleanVar(value=False)
+    var_if = customtkinter.BooleanVar(value=False)
+    var_sd = customtkinter.BooleanVar(value=False)
+    var_cc = customtkinter.BooleanVar(value=False)
+    var_rh = customtkinter.BooleanVar(value=False)
+    var_sg = customtkinter.BooleanVar(value=False)
+    var_eh = customtkinter.BooleanVar(value=False)
+    var_jr = customtkinter.BooleanVar(value=False)
+    var_ot = customtkinter.BooleanVar(value=False)
+
+
+    def selecionar_checkbox1(selected):
+        var_prec.set(False)
+        var_remt.set(False)
+        var_hybd.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+    def selecionar_checkbox2(selected):
+        var_fund.set(False)
+        var_medi.set(False)
+        var_supe.set(False)
+        var_grad.set(False)
+        var_mest.set(False)
+        var_dout.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+    def selecionar_checkbox3(selected):
+        var_ad.set(False)
+        var_cv.set(False)
+        var_ed.set(False)
+        var_fn.set(False)
+        var_tr.set(False)
+        var_if.set(False)
+        var_sd.set(False)
+        var_cc.set(False)
+        var_rh.set(False)
+        var_sg.set(False)
+        var_eh.set(False)
+        var_jr.set(False)
+        var_ot.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+
+    labelregion = customtkinter.CTkLabel(filtroframe, text='Região Administrativa', text_color=cor_primaria, font=('Inter', 15))
+    labelregion.grid(row=0, column=0, sticky='w', padx=20, pady=(20, 0))
+
+    combobox = customtkinter.CTkComboBox(filtroframe, values=['Zona Norte', 'Zona Leste', 'Zona Sul', 'Zona Oeste'], fg_color=cor_background, border_color=cor_primaria)
+    combobox.grid(row=1, column=0, sticky='w', padx=20)
+
+    buttonbusca = customtkinter.CTkButton(filtroframe, text='Buscar', fg_color=cor_decorativo, hover_color=cor_primaria, text_color='white')
+    buttonbusca.grid(row=2, column=0, sticky='w', padx=20, pady=20)
+
+    labelfiltro = customtkinter.CTkLabel(filtroframe, text='Filtros', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    labelfiltro.grid(row=3, column=0, sticky='w', padx=20)
+
+    checkfiltro1 = customtkinter.CTkLabel(filtroframe, text='LOCAL DE TRABALHO', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro1.grid(row=4, column=0, sticky='w', padx=20)
+
+    check1 = customtkinter.CTkCheckBox(filtroframe, text='Presencial', variable=var_prec, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox1(var_prec))
+    check2 = customtkinter.CTkCheckBox(filtroframe, text='Remoto', variable=var_remt, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox1(var_remt))
+    check3 = customtkinter.CTkCheckBox(filtroframe, text='Híbrido', variable=var_hybd, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox1(var_hybd))
+
+    check1.grid(row=5, column=0, sticky='w', padx=20, pady=5)
+    check2.grid(row=6, column=0, sticky='w', padx=20, pady=5)
+    check3.grid(row=7, column=0, sticky='w', padx=20, pady=5)
+
+    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESPECIALIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro2.grid(row=8, column=0, sticky='w', padx=20)
+
+    check4 = customtkinter.CTkCheckBox(filtroframe, text='Fundamental', variable=var_fund, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_fund))
+    check5 = customtkinter.CTkCheckBox(filtroframe, text='Médio', variable=var_medi, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_medi))
+    check6 = customtkinter.CTkCheckBox(filtroframe, text='Superior', variable=var_supe, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_supe))
+    check7 = customtkinter.CTkCheckBox(filtroframe, text='Pós Graduação', variable=var_grad, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_grad))
+    check8 = customtkinter.CTkCheckBox(filtroframe, text='Mestrado', variable=var_mest, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_mest))
+    check9 = customtkinter.CTkCheckBox(filtroframe, text='Doutorado', variable=var_dout, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_dout))
+
+    check4.grid(row=9, column=0, sticky='w', padx=20, pady=5)
+    check5.grid(row=10, column=0, sticky='w', padx=20, pady=5)
+    check6.grid(row=11, column=0, sticky='w', padx=20, pady=5)
+    check7.grid(row=12, column=0, sticky='w', padx=20, pady=5)
+    check8.grid(row=13, column=0, sticky='w', padx=20, pady=5)
+    check9.grid(row=14, column=0, sticky='w', padx=20, pady=5)
+
+    checkfiltro3 = customtkinter.CTkLabel(filtroframe, text='SETOR', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro3.grid(row=15, column=0, sticky='w', padx=20)
+
+    check10 = customtkinter.CTkCheckBox(filtroframe, text='Administração', variable=var_ad, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_ad))
+    check11 = customtkinter.CTkCheckBox(filtroframe, text='Comércio e Vendas', variable=var_cv, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_cv))
+    check12 = customtkinter.CTkCheckBox(filtroframe, text='Educação', variable=var_ed, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_ed))
+    check13 = customtkinter.CTkCheckBox(filtroframe, text='Financias', variable=var_fn, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_fn))
+    check14 = customtkinter.CTkCheckBox(filtroframe, text='Turismo', variable=var_tr, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_tr))
+    check15 = customtkinter.CTkCheckBox(filtroframe, text='Informática', variable=var_if, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_if))
+    check16 = customtkinter.CTkCheckBox(filtroframe, text='Saúde', variable=var_sd, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_sd))
+    check17 = customtkinter.CTkCheckBox(filtroframe, text='Comunicação', variable=var_cc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_cc))
+    check18 = customtkinter.CTkCheckBox(filtroframe, text='Recursos Humanos', variable=var_rh, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_rh))
+    check19 = customtkinter.CTkCheckBox(filtroframe, text='Serviços Gerais', variable=var_sg, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_sg))
+    check20 = customtkinter.CTkCheckBox(filtroframe, text='Engenharia', variable=var_eh, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_eh))
+    check21 = customtkinter.CTkCheckBox(filtroframe, text='Jurídico', variable=var_jr, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_jr))
+    check22 = customtkinter.CTkCheckBox(filtroframe, text='Outros', variable=var_ot, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox3(var_ot))
+
+
+    check10.grid(row=16, column=0, sticky='w', padx=20, pady=5)
+    check11.grid(row=17, column=0, sticky='w', padx=20, pady=5)
+    check12.grid(row=18, column=0, sticky='w', padx=20, pady=5)
+    check13.grid(row=19, column=0, sticky='w', padx=20, pady=5)
+    check14.grid(row=20, column=0, sticky='w', padx=20, pady=5)
+    check15.grid(row=21, column=0, sticky='w', padx=20, pady=5)
+    check16.grid(row=22, column=0, sticky='w', padx=20, pady=5)
+    check17.grid(row=23, column=0, sticky='w', padx=20, pady=5)
+    check18.grid(row=24, column=0, sticky='w', padx=20, pady=5)
+    check19.grid(row=25, column=0, sticky='w', padx=20, pady=5)
+    check20.grid(row=26, column=0, sticky='w', padx=20, pady=5)
+    check21.grid(row=27, column=0, sticky='w', padx=20, pady=5)
+    check22.grid(row=28, column=0, sticky='w', padx=20, pady=5)
+
+
+    telas['Empregos'].grid_columnconfigure(0, weight=1)
+    telas['Empregos'].grid_columnconfigure(1, weight=1)
+    telas['Empregos'].grid_rowconfigure(0, weight=1)
+
+    centerframe = customtkinter.CTkFrame(telas['Cursos'], width=largura, height=altura, fg_color='transparent')
+    centerframe.grid(row=0, column=0, pady=(altura/6, 0))
+
+    filtroframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
+    filtroframe.grid(row=0, column=0)
+
+    vagaframe = customtkinter.CTkFrame(centerframe)
+    vagaframe.grid(row=0, column=1)
+
+
+    vagaframe.grid_propagate(False)
+
+
+    var_precc = customtkinter.BooleanVar(value=False)
+    var_remtc = customtkinter.BooleanVar(value=False)
+    var_hybdc = customtkinter.BooleanVar(value=False)
+
+    var_fundc = customtkinter.BooleanVar(value=False)
+    var_medic = customtkinter.BooleanVar(value=False)
+    var_supec = customtkinter.BooleanVar(value=False)
+    var_gradc = customtkinter.BooleanVar(value=False)
+    var_mestc = customtkinter.BooleanVar(value=False)
+    var_doutc = customtkinter.BooleanVar(value=False)
+
+    var_adc = customtkinter.BooleanVar(value=False)
+    var_cvc = customtkinter.BooleanVar(value=False)
+    var_edc = customtkinter.BooleanVar(value=False)
+    var_fnc = customtkinter.BooleanVar(value=False)
+    var_trc = customtkinter.BooleanVar(value=False)
+    var_ifc = customtkinter.BooleanVar(value=False)
+    var_sdc = customtkinter.BooleanVar(value=False)
+    var_ccc = customtkinter.BooleanVar(value=False)
+    var_rhc = customtkinter.BooleanVar(value=False)
+    var_sgc = customtkinter.BooleanVar(value=False)
+    var_ehc = customtkinter.BooleanVar(value=False)
+    var_jrc = customtkinter.BooleanVar(value=False)
+    var_otc = customtkinter.BooleanVar(value=False)
+
+
+    def selecionar_checkbox4(selected):
+        var_precc.set(False)
+        var_remtc.set(False)
+        var_hybdc.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+    def selecionar_checkbox5(selected):
+        var_fundc.set(False)
+        var_medic.set(False)
+        var_supec.set(False)
+        var_gradc.set(False)
+        var_mestc.set(False)
+        var_doutc.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+    def selecionar_checkbox6(selected):
+        var_adc.set(False)
+        var_cvc.set(False)
+        var_edc.set(False)
+        var_fnc.set(False)
+        var_trc.set(False)
+        var_ifc.set(False)
+        var_sdc.set(False)
+        var_ccc.set(False)
+        var_rhc.set(False)
+        var_sgc.set(False)
+        var_ehc.set(False)
+        var_jrc.set(False)
+        var_otc.set(False)
+        apphome.after(10, lambda: selected.set(True))
+
+
+    labelregion = customtkinter.CTkLabel(filtroframe, text='Região Administrativa', text_color=cor_primaria, font=('Inter', 15))
+    labelregion.grid(row=0, column=0, sticky='w', padx=20, pady=(20, 0))
+
+    combobox = customtkinter.CTkComboBox(filtroframe, values=['Zona Norte', 'Zona Leste', 'Zona Sul', 'Zona Oeste'], fg_color=cor_background, border_color=cor_primaria)
+    combobox.grid(row=1, column=0, sticky='w', padx=20)
+
+    buttonbusca = customtkinter.CTkButton(filtroframe, text='Buscar', fg_color=cor_decorativo, hover_color=cor_primaria, text_color='white')
+    buttonbusca.grid(row=2, column=0, sticky='w', padx=20, pady=20)
+
+    labelfiltro = customtkinter.CTkLabel(filtroframe, text='Filtros', text_color=cor_primaria, font=('Inter', 17, 'bold'))
+    labelfiltro.grid(row=3, column=0, sticky='w', padx=20)
+
+    checkfiltro1 = customtkinter.CTkLabel(filtroframe, text='LOCAL DE TRABALHO', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro1.grid(row=4, column=0, sticky='w', padx=20)
+
+    check1 = customtkinter.CTkCheckBox(filtroframe, text='Presencial', variable=var_precc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox4(var_precc))
+    check2 = customtkinter.CTkCheckBox(filtroframe, text='Remoto', variable=var_remtc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox4(var_remtc))
+    check3 = customtkinter.CTkCheckBox(filtroframe, text='Híbrido', variable=var_hybdc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox4(var_hybdc))
+
+    check1.grid(row=5, column=0, sticky='w', padx=20, pady=5)
+    check2.grid(row=6, column=0, sticky='w', padx=20, pady=5)
+    check3.grid(row=7, column=0, sticky='w', padx=20, pady=5)
+
+    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESPECIALIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro2.grid(row=8, column=0, sticky='w', padx=20)
+
+    check4 = customtkinter.CTkCheckBox(filtroframe, text='Fundamental', variable=var_fundc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_fundc))
+    check5 = customtkinter.CTkCheckBox(filtroframe, text='Médio', variable=var_medic, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_medic))
+    check6 = customtkinter.CTkCheckBox(filtroframe, text='Superior', variable=var_supec, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_supec))
+    check7 = customtkinter.CTkCheckBox(filtroframe, text='Pós Graduação', variable=var_gradc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_gradc))
+    check8 = customtkinter.CTkCheckBox(filtroframe, text='Mestrado', variable=var_mestc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_mestc))
+    check9 = customtkinter.CTkCheckBox(filtroframe, text='Doutorado', variable=var_doutc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_doutc))
+
+    check4.grid(row=9, column=0, sticky='w', padx=20, pady=5)
+    check5.grid(row=10, column=0, sticky='w', padx=20, pady=5)
+    check6.grid(row=11, column=0, sticky='w', padx=20, pady=5)
+    check7.grid(row=12, column=0, sticky='w', padx=20, pady=5)
+    check8.grid(row=13, column=0, sticky='w', padx=20, pady=5)
+    check9.grid(row=14, column=0, sticky='w', padx=20, pady=5)
+
+    checkfiltro3 = customtkinter.CTkLabel(filtroframe, text='SETOR', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro3.grid(row=15, column=0, sticky='w', padx=20)
+
+    check10 = customtkinter.CTkCheckBox(filtroframe, text='Administração', variable=var_adc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_adc))
+    check11 = customtkinter.CTkCheckBox(filtroframe, text='Comércio e Vendas', variable=var_cvc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_cvc))
+    check12 = customtkinter.CTkCheckBox(filtroframe, text='Educação', variable=var_edc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_edc))
+    check13 = customtkinter.CTkCheckBox(filtroframe, text='Financias', variable=var_fnc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_fnc))
+    check14 = customtkinter.CTkCheckBox(filtroframe, text='Turismo', variable=var_trc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_trc))
+    check15 = customtkinter.CTkCheckBox(filtroframe, text='Informática', variable=var_ifc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_ifc))
+    check16 = customtkinter.CTkCheckBox(filtroframe, text='Saúde', variable=var_sdc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_sdc))
+    check17 = customtkinter.CTkCheckBox(filtroframe, text='Comunicação', variable=var_ccc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_ccc))
+    check18 = customtkinter.CTkCheckBox(filtroframe, text='Recursos Humanos', variable=var_rhc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_rhc))
+    check19 = customtkinter.CTkCheckBox(filtroframe, text='Serviços Gerais', variable=var_sgc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_sgc))
+    check20 = customtkinter.CTkCheckBox(filtroframe, text='Engenharia', variable=var_ehc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_ehc))
+    check21 = customtkinter.CTkCheckBox(filtroframe, text='Jurídico', variable=var_jrc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_jrc))
+    check22 = customtkinter.CTkCheckBox(filtroframe, text='Outros', variable=var_otc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox6(var_otc))
+
+
+    check10.grid(row=16, column=0, sticky='w', padx=20, pady=5)
+    check11.grid(row=17, column=0, sticky='w', padx=20, pady=5)
+    check12.grid(row=18, column=0, sticky='w', padx=20, pady=5)
+    check13.grid(row=19, column=0, sticky='w', padx=20, pady=5)
+    check14.grid(row=20, column=0, sticky='w', padx=20, pady=5)
+    check15.grid(row=21, column=0, sticky='w', padx=20, pady=5)
+    check16.grid(row=22, column=0, sticky='w', padx=20, pady=5)
+    check17.grid(row=23, column=0, sticky='w', padx=20, pady=5)
+    check18.grid(row=24, column=0, sticky='w', padx=20, pady=5)
+    check19.grid(row=25, column=0, sticky='w', padx=20, pady=5)
+    check20.grid(row=26, column=0, sticky='w', padx=20, pady=5)
+    check21.grid(row=27, column=0, sticky='w', padx=20, pady=5)
+    check22.grid(row=28, column=0, sticky='w', padx=20, pady=5)
+
+
+    telas['Cursos'].grid_columnconfigure(0, weight=1)
+    telas['Cursos'].grid_columnconfigure(1, weight=1)
+    telas['Cursos'].grid_rowconfigure(0, weight=1)
 
 
     login.withdraw()
