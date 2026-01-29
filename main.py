@@ -54,9 +54,18 @@ def login(email: str = Form(...), senha: str = Form(...)):
 def cadastro(
     request: Request,
     nome: str = Form(...),
+    nascimento: str = Form(...),
+    cpf: str = Form(...),
+    telefone: str = Form(...),
     email: str = Form(...),
     senha: str = Form(...),
-    telefone: str = Form(...)
+    cep: str = Form(...),
+    rua: str = Form(...),
+    bairro: str = Form(...),
+    casa: str = Form(...),
+    deficiencia: str = Form(...),
+    genero: str = Form(...),
+   
 ):
     db = SessionLocal()
 
