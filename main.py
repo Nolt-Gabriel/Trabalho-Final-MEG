@@ -8,14 +8,20 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from typing import Optional
 
-# Seus arquivos existentes
-from database import SessionLocal, engine
+# Arquivos do Banco de Dados
+from database import SessionLocal, engine, get_db
 from models import Base, Usuario
+
+#Hash de senha
+from utils_hash import get_password_hash
+
 
 app = FastAPI()
 
+
 templates = Jinja2Templates(directory="templates")
 
+#Monta as imagens e tudo que for Static
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
@@ -29,7 +35,6 @@ def home(request: Request, usuario: str | None = Cookie(None)):
             "usuario": usuario
         }
     )
-
 
 
 # Pydantic pro JSON do frontend
@@ -57,11 +62,13 @@ def get_db():
 
 @app.post("/cadastro")
 async def cadastro_usuario(
-    dados: CadastroUsuario,  # Recebe JSON direto!
+    dados: CadastroUsuario,  
     db: Session = Depends(get_db)
 ):
-    print("Dados recebidos:", dados.dict(exclude_unset=True))  # Debug
+    #DEBUG
+    print("Dados recebidos:", dados.dict(exclude_unset=True))  
     
+    #Verifica a existência do EMAIL
     email_existente = db.query(Usuario).filter(Usuario.email == dados.email).first()
     if email_existente:
         raise HTTPException(status_code=400, detail="Email já cadastrado!")
@@ -72,18 +79,20 @@ async def cadastro_usuario(
     if usuario_existente:
         raise HTTPException(status_code=400, detail="CPF já cadastrado!")
     
-    # Cria nova instância do seu model
+    hashed_senha = get_password_hash(dados.senha)  
+    
+    # Cria nova instância model
     novo_usuario = Usuario(
         nome=dados.nome,
         nascimento=dados.nascimento,
         cpf=dados.cpf,
         telefone=dados.tel,
         email=dados.email,
-        senha=dados.senha,  # TODO: hash_password(dados.senha)
+        senha=hashed_senha,  
         cep=dados.cep,
         rua=dados.rua,
         bairro=dados.bairro,
-        numero_casa=dados.numero,  # Ajuste campo se necessário
+        numero_casa=dados.numero,  
         deficiencia=dados.deficiencia,
         genero=dados.genero
     )
