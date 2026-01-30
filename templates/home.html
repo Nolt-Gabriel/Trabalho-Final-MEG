@@ -39,17 +39,27 @@
 
 
 <!--HEADER-->
-    <header class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 md:w-full">
+    <header x-data="{fontSize : 16}" class="bg-secondary text-primary fixed top-0 left-0 w-full px-10 z-50 md:w-full">
         <div class="flex md:justify-between justify-between p-4 items-center">
             <figure class="hidden md:flex ">
-                <img src="/static/static/img/logo.svg" alt="" class=" w-60" >  
+                <img src="/static/img/logo.svg" alt="" class=" w-60" >  
             </figure>     
             <figure class="md:hidden ">
                 <img src="/static/img/girassolzinho.svg" class="">
             </figure>
 
+            
+
             <!--MENU DESKTOP-->
             <ul class="flex items-center hidden md:flex gap-6">
+                
+                
+                <!--NAVEGACAO-->
+                <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
+                <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
+                <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
+                
+                    <!--CONTROLES DE TEMA-->
                     <li>
                         <label class="flex cursor-pointer gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -63,12 +73,21 @@
                         </label>
                     </li>
 
-
-
-                    <!--NAVEGACAO-->
-                    <li><a href="#home" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Início </a></li>
-                    <li><a href="#sobre" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110" >Sobre</a></li>
-                    <li><a href="#blog" class="hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Blog</a></li>
+                    <li>
+                        <!-- CONTROLES DE FONTE -->
+                        <div class=" flex gap-1 z-50">
+                            <button 
+                                @click="fontSize = Math.max(fontSize - 2, 12); document.documentElement.style.fontSize = fontSize + 'px';"
+                                class="btn btn-sm btn-outline font-bold text-sm">
+                                A-
+                            </button>
+                            <button 
+                                @click="fontSize = Math.min(fontSize + 2, 22); document.documentElement.style.fontSize = fontSize + 'px';"
+                                class="btn btn-sm btn-outline font-bold text-sm">
+                                A+
+                            </button>
+                        </div>
+                    </li>
 
                     <!--MENU usuario-->
                     <li x-data="{ open: false }" class="relative">
@@ -199,14 +218,32 @@
                                                 <div class="flex  mt-6 gap-4">
                                                     <button class="btn btn-accent">Editar</button>
                                                 </div>
+                                        </div>
                                     </div>
-                                </div>
                             </li>
 
                             <!--curriculo-->
-                            <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
-                                <i class="fa-solid fa-file text-accent fa-lg "></i>
-                                <span class="font-semibold text-lg">Meu currículo </span>
+                            <li x-data="{curriculo : false}" class="relative">
+                                <div @click="open = true" onclick="curriculum_modal.showModal()" class="flex flex-row text-secondary-content items-center gap-2 bg-base-100 rounded-3xl text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110 hover:bg-gray-100">
+                                    <i class="fa-solid fa-file text-accent fa-lg "></i>
+                                    <span class="font-semibold text-lg">Meu currículo </span>
+                                    <dialog id="curriculum_modal" class="modal">
+                                        <div class="modal-box">
+                                            <form method="dialog">
+                                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                            </form>
+                                            <form class="flex items-center flex-col gap-5" action="/upload" method="post" enctype="multipart/form-data">
+                                                <label class="" for="arquivo">Selecione um arquivo:</label>
+                                                <input class="bg-base-100 max-w-100 rounded p-15" type="file" id="arquivo" name="arquivo">
+                                                
+                                                <button class="btn btn-outline" type="submit">Enviar</button>
+                                            </form>
+                                            
+                                        </div>
+                                    </dialog>
+
+                                    
+                                </div>
                             </li>
                             <li class="flex flex-row  text-secondary-content  items-center gap-2 bg-base-100 rounded-3xl  text-secondary py-2 cursor-pointer transition transition-duration-300 hover:scale-110">
                                 <i class="fa-solid fa-bell text-accent fa-lg "></i>
@@ -330,7 +367,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <!-- CADASTRO candidato -->
         <div x-show="tela === 'cadastrocandidato'" x-transition  @click.away="authOpen = true">
             <div x-show="open" x-transition class="fixed inset-0 bg-black/50 flex justify-center items-center z-50" role="dialog" aria-modal="true">
@@ -450,7 +486,6 @@
                                         <label><input type="radio" name="genero"> Prefiro não informar</label>
                                         </div>
                                     </div>
-=======
         <div 
         x-data="{
             cadastrar() {
@@ -468,7 +503,6 @@
                     deficiencia: $refs.deficiencia?.value || '',
                     genero: document.querySelector('input[name=\'genero\']:checked')?.value || ''
                 };
->>>>>>> bb27e3e2ae55ee3b62030fe2ce8a736c257c07ac
                 
                 fetch('/cadastro', {
                     method: 'POST',
@@ -1353,7 +1387,7 @@
 
     </main>
     <!--FOOTER-->
-    <footer class="footer p-10 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary font-[Catamaran] font-semibold" :style="`font-size: ${scale * 16}px` "> 
+    <footer class="footer p-10 bottom-0 inset-y-0 bg-secondary shadow flex-col justify-around md:flex flex-row text-primary font-[Catamaran] font-semibold" :style="`font-size: ${scale * 16}px` "> 
         <aside class="max-w-xl">
             <figure class="justify-center">
                 <img class="w-130" src="/static/img/logo.svg" alt="Logo SAcesSol">
