@@ -6,6 +6,7 @@
 ## 📢 Tema do projeto
 ### 🏙 Olhares Sobre a Cidade - Urbanização
 
+
 O nosso projeto é voltado para o subtema de
 **acessibilidade e inclusão urbana**. Tendo em vista a história da **ocupação urbana de Natal**, é possível perceber que mesmo com os planos urbanísticos e intervenções, o processo de expansão do território ocorreu de forma acelerada e desigual. A ausência de infraestrutura adequada está presente em diversos serviços essenciais, que não possuem elevadores, banheiros acessíveis ou rampas apropriadas. Ao caminhar pela cidade é possível também identificar barreiras físicas e arquitetônicas que são obstáculos que limitam a mobilidade e o acesso de pessoas com deficiência ou mobilidade reduzida. Falta de rampas, presença de calçadas irregulares, buraco e ausência de piso tátil tornam o deslocamento inseguro e dificultam a mobilidade da população.</p>
 
