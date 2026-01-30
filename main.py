@@ -1,6 +1,7 @@
 import customtkinter
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import webbrowser
 
 
 customtkinter.set_appearance_mode('light')
@@ -529,17 +530,17 @@ def abrir_home(login):
     desctext6 = customtkinter.CTkLabel(blogframe6, wraplength=int(largura/3.2), text='Conheça 5 PCDs que superaram os desafios e se tornaram simbolos de superação', text_color=cor_primaria, font=('Inter', 15))
     desctext6.grid(row=3, column=0, sticky='w', padx=15)
 
-    buttonblog1 = customtkinter.CTkButton(blogframe1, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog1 = customtkinter.CTkButton(blogframe1, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo, command=lambda: webbrowser.open_new_tab('https://freedom.ind.br/20-filmes-inclusao-pessoas-com-deficiencia/'))
     buttonblog1.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
-    buttonblog2 = customtkinter.CTkButton(blogframe2, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog2 = customtkinter.CTkButton(blogframe2, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo, command=lambda: webbrowser.open_new_tab('https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/janeiro/capacitismo-o-que-e-como-combater-e-por-que-e-tao-importante-falar-sobre-o-tema'))
     buttonblog2.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
-    buttonblog3 = customtkinter.CTkButton(blogframe3, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog3 = customtkinter.CTkButton(blogframe3, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo,  command=lambda: webbrowser.open_new_tab('https://cidesp.com.br/artigo/quais-sao-os-tipos-de-deficiencia/'))
     buttonblog3.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
-    buttonblog4 = customtkinter.CTkButton(blogframe4, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog4 = customtkinter.CTkButton(blogframe4, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo,  command=lambda: webbrowser.open_new_tab('https://www.deficienteciente.com.br/11-direitos-da-pcd-reconhecidos-por-lei-que-voce-precisa-conhecer.html'))
     buttonblog4.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
-    buttonblog5 = customtkinter.CTkButton(blogframe5, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog5 = customtkinter.CTkButton(blogframe5, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo,  command=lambda: webbrowser.open_new_tab('https://www.terra.com.br/nos/pcd-o-que-significa-e-quem-se-enquadra,8757a445a54c5cd46cb4d5e02579e177dauonkwa.html'))
     buttonblog5.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
-    buttonblog6 = customtkinter.CTkButton(blogframe6, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo)
+    buttonblog6 = customtkinter.CTkButton(blogframe6, text='Acessar', text_color='white', hover_color=cor_primaria, fg_color=cor_decorativo,  command=lambda: webbrowser.open_new_tab('https://freedom.ind.br/5-pcds-que-mudaram-a-historia-conquista-e-transformacao/'))
     buttonblog6.grid(row=4, column=0, sticky='we', padx=15, pady=(10 ,30))
 
 
@@ -555,7 +556,7 @@ def abrir_home(login):
     filtroframe.grid(row=0, column=0)
 
     vagaframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
-    vagaframe.grid(row=0, column=1)
+    vagaframe.grid(row=0, column=1, padx=(largura/5, 0))
 
 
     var_prec = customtkinter.BooleanVar(value=False)
@@ -730,9 +731,9 @@ def abrir_home(login):
     localtextv2.grid(row=5, column=1, sticky='w', padx=10, pady=10)
     localtextv3.grid(row=5, column=1, sticky='w', padx=10, pady=10)
 
-    buttonemprego1 = customtkinter.CTkButton(vaga1, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
-    buttonemprego2 = customtkinter.CTkButton(vaga2, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
-    buttonemprego3 = customtkinter.CTkButton(vaga3, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego1 = customtkinter.CTkButton(vaga1, text='Candidatar-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego2 = customtkinter.CTkButton(vaga2, text='Candidatar-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego3 = customtkinter.CTkButton(vaga3, text='Candidatar-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
     buttonemprego1.grid(row=6, column=1, sticky='w', padx=10, pady=15)
     buttonemprego2.grid(row=6, column=1, sticky='w', padx=10, pady=15)
     buttonemprego3.grid(row=6, column=1, sticky='w', padx=10, pady=15)
@@ -751,7 +752,7 @@ def abrir_home(login):
     filtroframe.grid(row=0, column=0)
 
     vagaframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
-    vagaframe.grid(row=0, column=1)
+    vagaframe.grid(row=0, column=1, padx=(largura/5, 0))
 
 
     var_precc = customtkinter.BooleanVar(value=False)
@@ -926,9 +927,9 @@ def abrir_home(login):
     localtextv2.grid(row=5, column=1, sticky='w', padx=10, pady=10)
     localtextv3.grid(row=5, column=1, sticky='w', padx=10, pady=10)
 
-    buttoncurso1 = customtkinter.CTkButton(vaga1, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
-    buttoncurso2 = customtkinter.CTkButton(vaga2, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
-    buttoncurso3 = customtkinter.CTkButton(vaga3, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso1 = customtkinter.CTkButton(vaga1, text='Inscrever-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso2 = customtkinter.CTkButton(vaga2, text='Inscrever-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso3 = customtkinter.CTkButton(vaga3, text='Inscrever-se', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
     buttoncurso1.grid(row=6, column=1, sticky='w', padx=10, pady=15)
     buttoncurso2.grid(row=6, column=1, sticky='w', padx=10, pady=15)
     buttoncurso3.grid(row=6, column=1, sticky='w', padx=10, pady=15)
