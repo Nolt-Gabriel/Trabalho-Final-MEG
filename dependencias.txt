@@ -1,0 +1,105 @@
+-------------------------------------------------------------------------------
+Para rodar o site, você deve rodar em venv e baixar as seguintes dependências:
+
+univorn
+fastapi
+python-multipart
+sqlachemy
+jinja2
+
+
+
+---Foi feito pelo chatgpt estava com preguiça de fazer :D---
+
+
+TUTORIAL DE INSTALAÇÃO DO PROJETO (FASTAPI)
+
+PRÉ-REQUISITOS
+- Python 3.10 ou superior
+- Git
+- Terminal (Linux/macOS) ou Prompt/PowerShell (Windows) ou executa direto do bash do vscode, dá na mesma.
+
+Verifique o Python:
+python3 --version
+
+
+1. CLONAR O REPOSITÓRIO
+git clone <URL_DO_REPOSITORIO>
+cd Trabalho-Final-MEG
+
+
+2. CRIAR O AMBIENTE VIRTUAL (VENV)
+
+Linux / macOS:
+python3 -m venv venv
+
+Windows:
+python -m venv venv
+
+
+3. ATIVAR O AMBIENTE VIRTUAL
+
+Linux / macOS:
+source venv/bin/activate
+
+Windows (PowerShell):
+venv\Scripts\Activate
+
+Se aparecer (venv) no terminal, deu certo.
+
+
+4. INSTALAR AS BIBLIOTECAS NECESSÁRIAS
+pip install fastapi uvicorn sqlalchemy jinja2 python-multipart
+
+Bibliotecas:
+- fastapi: framework backend
+- uvicorn: servidor ASGI
+- sqlalchemy: ORM e banco de dados
+- jinja2: templates HTML
+- python-multipart: formulários HTML
+
+
+5. BANCO DE DADOS
+O arquivo database.db será criado automaticamente ao rodar o projeto.
+Esse arquivo não deve ser enviado para o Git.
+
+
+6. RODAR O PROJETO
+uvicorn main:app --reload
+
+Se aparecer:
+Uvicorn running on http://127.0.0.1:8000
+o projeto está rodando.
+
+
+7. ACESSAR O SITE
+Abra o navegador em:
+http://127.0.0.1:8000
+
+
+8. ENCERRAR O SERVIDOR
+Pressione CTRL + C no terminal.
+
+
+9. DESATIVAR O AMBIENTE VIRTUAL
+deactivate
+
+
+ESTRUTURA DO PROJETO
+
+Trabalho-Final-MEG/
+- main.py
+- database.py
+- models.py
+- templates/
+- static/
+- venv/
+- .gitignore
+- README.md
+
+
+!!!! OBSERVAÇÕES IMPORTANTES !!!!
+- Sempre ative o venv antes de rodar o projeto
+- !!!! Nunca suba venv/, __pycache__/ ou database.db para o Git !!!!
+- Em outro computador, basta repetir este tutorial
+
