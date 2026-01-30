@@ -322,35 +322,35 @@ def abrir_home(login):
 
     bg_imageframe = customtkinter.CTkLabel(imageframe, image=ctk_image, text='', fg_color='transparent')
 
-    bg_imageframe.grid(row=0, column=0, sticky='nsew', padx=(largura/3.1, 0), pady=50)
+    bg_imageframe.grid(row=0, column=0, sticky='nsew', padx=(largura/3.4, 0), pady=50)
 
     titletext1 = customtkinter.CTkLabel(centerframe, text='Conheça o AcesSol', text_color=cor_primaria, font=('Inter', 44, 'bold'))
-    titletext1.grid(row=0, column=0, padx=(largura/8, 0), pady=(40, 40), columnspan=3)
+    titletext1.grid(row=0, column=0, pady=(40, 40), columnspan=3)
 
     sobretext1 = customtkinter.CTkLabel(centerframe, text='AcesSol é um projeto criado pelos alunos do 2º ano de Informática e do 2º ano de Comércio do IFRN Campus Natal-Zona Norte', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
-    sobretext1.grid(row=1, column=0, padx=(largura/8, 0), columnspan=3)
+    sobretext1.grid(row=1, column=0, columnspan=3)
     sobretext2 = customtkinter.CTkLabel(centerframe, text='com orientação da Docente Marjorie Ramos. Neste projeto, buscamos ajudar a contruir uma cidade mais acessível e solidaria', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
-    sobretext2.grid(row=2, column=0, padx=(largura/8, 0), columnspan=3)
+    sobretext2.grid(row=2, column=0, columnspan=3)
     sobretext3 = customtkinter.CTkLabel(centerframe, text='para todos, aqui todos PCDs poderão ser devidamente incluídos na sociedade. Com uma aba Cursos e Empregos, nós', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
-    sobretext3.grid(row=3, column=0, padx=(largura/8, 0), columnspan=3)
+    sobretext3.grid(row=3, column=0, columnspan=3)
     sobretext4 = customtkinter.CTkLabel(centerframe, text='disponibilizamos formas de vocês ingressarem no mercado de trabalho, tanto disponibilizando vagas, quanto aumentando o', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
-    sobretext4.grid(row=4, column=0, padx=(largura/8, 0), columnspan=3)
+    sobretext4.grid(row=4, column=0, columnspan=3)
     sobretext5 = customtkinter.CTkLabel(centerframe, text='nível de conhecimento dos participantes com cursos profissionalizantes que os ajudam a ter mais chances de arrumar um emprego', text_color=cor_primaria, font=('Inter', 17), justify='center', wraplength=largura/1.4)
-    sobretext5.grid(row=5, column=0, padx=(largura/8, 0), columnspan=3)
+    sobretext5.grid(row=5, column=0, columnspan=3)
 
     titletext2 = customtkinter.CTkLabel(centerframe, text='Nossos Pilares', text_color=cor_primaria, font=('Inter', 30, 'bold'))
-    titletext2.grid(row=7, column=0, padx=(largura/8, 0), pady=(40, 40), columnspan=3)
+    titletext2.grid(row=7, column=0, pady=(40, 40), columnspan=3)
     titletext3 = customtkinter.CTkLabel(centerframe, text='Solidariedade', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
-    titletext3.grid(row=8, column=0, padx=(largura/6.2, 0), pady=80)
+    titletext3.grid(row=8, column=0, pady=80)
     titletext4 = customtkinter.CTkLabel(centerframe, text='Acessibilidade', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
     titletext4.grid(row=9, column=2, pady=80)
     titletext5 = customtkinter.CTkLabel(centerframe, text='Inclusão', text_color=cor_decorativo, font=('Inter', 24, 'bold'))
-    titletext5.grid(row=10, column=0, padx=(largura/6.2, 0), pady=80)
+    titletext5.grid(row=10, column=0, pady=80)
 
     textframe1 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     textframe1.grid(row=8, column=1, columnspan=1)
     textframe2 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
-    textframe2.grid(row=9, column=0, columnspan=2, padx=(largura/6.2, 0))
+    textframe2.grid(row=9, column=0, columnspan=2)
     textframe3 = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     textframe3.grid(row=10, column=1, columnspan=1)
 
@@ -384,17 +384,17 @@ def abrir_home(login):
     centerframe = customtkinter.CTkScrollableFrame(telas['Blog'], orientation='horizontal', scrollbar_button_color=cor_primaria, scrollbar_button_hover_color=cor_secundaria, width=largura, height=altura/2, fg_color='transparent')
     centerframe.grid(row=0, column=0, pady=(altura/6, 0))
 
-    blogframe1 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe1 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe1.grid(row=0, column=0, padx=altura/7)
-    blogframe2 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe2 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe2.grid(row=0, column=1, padx=altura/7)
-    blogframe3 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe3 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe3.grid(row=0, column=2, padx=altura/7)
-    blogframe4 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe4 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe4.grid(row=0, column=3, padx=altura/7)
-    blogframe5 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe5 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe5.grid(row=0, column=4, padx=altura/7)
-    blogframe6 = customtkinter.CTkFrame(centerframe, fg_color=cor_background, border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
+    blogframe6 = customtkinter.CTkFrame(centerframe, fg_color='white', border_color=cor_terciaria, border_width=2, width=largura/3, height=altura/2, corner_radius=15)
     blogframe6.grid(row=0, column=5, padx=altura/7)
 
 
@@ -554,11 +554,8 @@ def abrir_home(login):
     filtroframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     filtroframe.grid(row=0, column=0)
 
-    vagaframe = customtkinter.CTkFrame(centerframe)
+    vagaframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     vagaframe.grid(row=0, column=1)
-
-
-    vagaframe.grid_propagate(False)
 
 
     var_prec = customtkinter.BooleanVar(value=False)
@@ -642,7 +639,7 @@ def abrir_home(login):
     check2.grid(row=6, column=0, sticky='w', padx=20, pady=5)
     check3.grid(row=7, column=0, sticky='w', padx=20, pady=5)
 
-    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESPECIALIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESCOLARIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
     checkfiltro2.grid(row=8, column=0, sticky='w', padx=20)
 
     check4 = customtkinter.CTkCheckBox(filtroframe, text='Fundamental', variable=var_fund, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox2(var_fund))
@@ -691,6 +688,57 @@ def abrir_home(login):
     check21.grid(row=27, column=0, sticky='w', padx=20, pady=5)
     check22.grid(row=28, column=0, sticky='w', padx=20, pady=5)
 
+    vaga1 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga1.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    vaga2 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga2.grid(row=1, column=0, sticky='we', padx=15, pady=15)
+    vaga3 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga3.grid(row=2, column=0, sticky='we', padx=15, pady=15)
+
+    titletextv1 = customtkinter.CTkLabel(vaga1, text='Vaga de Desenvolvedor', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv2 = customtkinter.CTkLabel(vaga2, text='Vaga de Marketing Digital', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv3 = customtkinter.CTkLabel(vaga3, text='Vaga de Assistente de Vendas', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv1.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+    titletextv2.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+    titletextv3.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+
+    empresatextv1 = customtkinter.CTkLabel(vaga1, text='Empresa: TechNova', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv2 = customtkinter.CTkLabel(vaga2, text='Empresa: Lumina Creativa', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv3 = customtkinter.CTkLabel(vaga3, text='Empresa: TrendShop', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv1.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+    empresatextv2.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+    empresatextv3.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+
+    bairrotextv1 = customtkinter.CTkLabel(vaga1, text='Bairro: Lagoa Azul', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv2 = customtkinter.CTkLabel(vaga2, text='Bairro: Potengi', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv3 = customtkinter.CTkLabel(vaga3, text='Bairro: Nossa Senhora da Apresentação', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv1.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+    bairrotextv2.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+    bairrotextv3.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+
+    salartextv1 = customtkinter.CTkLabel(vaga1, text='Salário: R$ 4.500', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    salartextv2 = customtkinter.CTkLabel(vaga2, text='Salário: R$ 3.800', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    salartextv3 = customtkinter.CTkLabel(vaga3, text='Salário: R$ 2.300', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    salartextv1.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+    salartextv2.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+    salartextv3.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+
+    localtextv1 = customtkinter.CTkLabel(vaga1, text='Local: Homeoffice', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv2 = customtkinter.CTkLabel(vaga2, text='Local: Híbrido', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv3 = customtkinter.CTkLabel(vaga3, text='Local: Presencial', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv1.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+    localtextv2.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+    localtextv3.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+
+    buttonemprego1 = customtkinter.CTkButton(vaga1, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego2 = customtkinter.CTkButton(vaga2, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego3 = customtkinter.CTkButton(vaga3, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttonemprego1.grid(row=6, column=1, sticky='w', padx=10, pady=15)
+    buttonemprego2.grid(row=6, column=1, sticky='w', padx=10, pady=15)
+    buttonemprego3.grid(row=6, column=1, sticky='w', padx=10, pady=15)
+
+
+
 
     telas['Empregos'].grid_columnconfigure(0, weight=1)
     telas['Empregos'].grid_columnconfigure(1, weight=1)
@@ -702,11 +750,8 @@ def abrir_home(login):
     filtroframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     filtroframe.grid(row=0, column=0)
 
-    vagaframe = customtkinter.CTkFrame(centerframe)
+    vagaframe = customtkinter.CTkFrame(centerframe, fg_color='transparent')
     vagaframe.grid(row=0, column=1)
-
-
-    vagaframe.grid_propagate(False)
 
 
     var_precc = customtkinter.BooleanVar(value=False)
@@ -779,7 +824,7 @@ def abrir_home(login):
     labelfiltro = customtkinter.CTkLabel(filtroframe, text='Filtros', text_color=cor_primaria, font=('Inter', 17, 'bold'))
     labelfiltro.grid(row=3, column=0, sticky='w', padx=20)
 
-    checkfiltro1 = customtkinter.CTkLabel(filtroframe, text='LOCAL DE TRABALHO', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro1 = customtkinter.CTkLabel(filtroframe, text='MODALIDADE DE ENSINO', text_color=cor_primaria, font=('Inter', 15, 'bold'))
     checkfiltro1.grid(row=4, column=0, sticky='w', padx=20)
 
     check1 = customtkinter.CTkCheckBox(filtroframe, text='Presencial', variable=var_precc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox4(var_precc))
@@ -790,7 +835,7 @@ def abrir_home(login):
     check2.grid(row=6, column=0, sticky='w', padx=20, pady=5)
     check3.grid(row=7, column=0, sticky='w', padx=20, pady=5)
 
-    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESPECIALIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    checkfiltro2 = customtkinter.CTkLabel(filtroframe, text='ESCOLARIDADE', text_color=cor_primaria, font=('Inter', 15, 'bold'))
     checkfiltro2.grid(row=8, column=0, sticky='w', padx=20)
 
     check4 = customtkinter.CTkCheckBox(filtroframe, text='Fundamental', variable=var_fundc, onvalue=True, offvalue=False, text_color=cor_primaria, fg_color=cor_secundaria, hover_color=cor_terciaria, border_color=cor_secundaria, command=lambda: selecionar_checkbox5(var_fundc))
@@ -838,6 +883,55 @@ def abrir_home(login):
     check20.grid(row=26, column=0, sticky='w', padx=20, pady=5)
     check21.grid(row=27, column=0, sticky='w', padx=20, pady=5)
     check22.grid(row=28, column=0, sticky='w', padx=20, pady=5)
+
+    vaga1 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga1.grid(row=0, column=0, sticky='we', padx=15, pady=15)
+    vaga2 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga2.grid(row=1, column=0, sticky='we', padx=15, pady=15)
+    vaga3 = customtkinter.CTkFrame(vagaframe, fg_color='white', border_color='gray', border_width=1)
+    vaga3.grid(row=2, column=0, sticky='we', padx=15, pady=15)
+
+    titletextv1 = customtkinter.CTkLabel(vaga1, text='Curso de Desenvolvedor Web', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv2 = customtkinter.CTkLabel(vaga2, text='Curso de Turismo', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv3 = customtkinter.CTkLabel(vaga3, text='Curso de Operador de Caixa', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    titletextv1.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+    titletextv2.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+    titletextv3.grid(row=1, column=1, sticky='w', padx=10, pady=10)
+
+    empresatextv1 = customtkinter.CTkLabel(vaga1, text='Empresa: TechNova', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv2 = customtkinter.CTkLabel(vaga2, text='Empresa: Lumina Creativa', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv3 = customtkinter.CTkLabel(vaga3, text='Empresa: TrendShop', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    empresatextv1.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+    empresatextv2.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+    empresatextv3.grid(row=2, column=1, sticky='w', padx=10, pady=10)
+
+    bairrotextv1 = customtkinter.CTkLabel(vaga1, text='Bairro: Lagoa Azul', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv2 = customtkinter.CTkLabel(vaga2, text='Bairro: Potengi', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv3 = customtkinter.CTkLabel(vaga3, text='Bairro: Nossa Senhora da Apresentação', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    bairrotextv1.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+    bairrotextv2.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+    bairrotextv3.grid(row=3, column=1, sticky='w', padx=10, pady=10)
+
+    duratextv1 = customtkinter.CTkLabel(vaga1, text='Duração: 120h', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    duratextv2 = customtkinter.CTkLabel(vaga2, text='Duração: 80h', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    duratextv3 = customtkinter.CTkLabel(vaga3, text='Duração: 60h', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    duratextv1.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+    duratextv2.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+    duratextv3.grid(row=4, column=1, sticky='w', padx=10, pady=10)
+
+    localtextv1 = customtkinter.CTkLabel(vaga1, text='Modalidade: Remoto', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv2 = customtkinter.CTkLabel(vaga2, text='Modalidade: Híbrido', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv3 = customtkinter.CTkLabel(vaga3, text='Modalidade: Presencial', text_color=cor_primaria, font=('Inter', 15, 'bold'))
+    localtextv1.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+    localtextv2.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+    localtextv3.grid(row=5, column=1, sticky='w', padx=10, pady=10)
+
+    buttoncurso1 = customtkinter.CTkButton(vaga1, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso2 = customtkinter.CTkButton(vaga2, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso3 = customtkinter.CTkButton(vaga3, text='Acessar', text_color='white', fg_color=cor_decorativo, hover_color=cor_primaria)
+    buttoncurso1.grid(row=6, column=1, sticky='w', padx=10, pady=15)
+    buttoncurso2.grid(row=6, column=1, sticky='w', padx=10, pady=15)
+    buttoncurso3.grid(row=6, column=1, sticky='w', padx=10, pady=15)
 
 
     telas['Cursos'].grid_columnconfigure(0, weight=1)
