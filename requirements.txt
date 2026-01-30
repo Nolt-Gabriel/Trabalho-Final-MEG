@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+python-multipart
+sqlachemy
+jinja2
+
+
+
+
