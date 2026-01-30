@@ -62,6 +62,11 @@ async def cadastro_usuario(
 ):
     print("Dados recebidos:", dados.dict(exclude_unset=True))  # Debug
     
+    email_existente = db.query(Usuario).filter(Usuario.email == dados.email).first()
+    if email_existente:
+        raise HTTPException(status_code=400, detail="Email já cadastrado!")
+
+
     # Verifica se CPF já existe
     usuario_existente = db.query(Usuario).filter(Usuario.cpf == dados.cpf).first()
     if usuario_existente:
