@@ -9,7 +9,7 @@ Base = declarative_base()
 class Usuario(Base):
     __tablename__ = "Usuarios"
     
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     nome = Column(String(100), nullable=False)
     nascimento = Column(String(10), nullable=False)  # dd/mm/aaaa
     cpf = Column(String(14), unique=True, nullable=False)  # 000.000.000-00
@@ -28,13 +28,13 @@ class Usuario(Base):
     # vagas_salvas = relationship("VagaSalva", back_populates="candidato")
 
 # Se tiver outras tabelas (ex: empresas, cursos)
-class Empresa(Base):
-    __tablename__ = "empresas"
-    id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String(100), nullable=False)
-    email = Column(String(100), unique=True, nullable=False)
-    senha = Column(String(255), nullable=False)
-    cnpj = Column(String(18), unique=True, nullable=False)
+# class Empresa(Base):
+#     __tablename__ = "empresas"
+#     id = Column(Integer, primary_key=True, index=True)
+#     nome = Column(String(100), nullable=False)
+#     email = Column(String(100), unique=True, nullable=False)
+#     senha = Column(String(255), nullable=False)
+#     cnpj = Column(String(18), unique=True, nullable=False)
 
 # Rode uma vez pra criar tabelas:
 # python -c "from database import engine; from models import Base; Base.metadata.create_all(bind=engine)"
