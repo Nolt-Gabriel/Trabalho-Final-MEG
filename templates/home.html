@@ -849,32 +849,48 @@
         </section>
 
                 <!-- SEÇAO EMPREGOS -->
-                <section id="empregos" x-data="{opEmp : false, opCurs : false}" class=" ">
-                    <div class="fab left-0 bottom-0 mb-0 pb-5 pl-10 font-[Fredoka]">
-                        <div tabindex="0" role="button" class="btn md:btn-lg btn-sm btn-circle btn-accent ">A</div>
-
-                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary md:btn-lg btn-sm btn-circle text-white transition transition-duration-300 hover:scale-110 " @click="opCurs = true" onclick="cursos_modal.showModal()">C</button> Cursos
+                <section x-data="{ opEmp: false, opCurs: false }" class="">
+                    <div class="fab left-0 bottom-0 mb-0 pl-10 font-[Fredoka]">
+                        <div tabindex="0" role="button" class="btn btn-lg btn-circle btn-accent">A</div>
+                
+                        <div class="text-success font-bold mix-blend-difference">
+                            <button 
+                                class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" 
+                                @click="opEmp = true; setTimeout(() => document.getElementById('empregos_modal').showModal(), 0)">
+                                E
+                            </button> 
+                            Empregos
                         </div>
-
-                        <div class="text-success font-bold mix-blend-difference"><button class="btn btn-secondary md:btn-lg btn-sm btn-circle text-white transition transition-duration-300 hover:scale-110" @click="opEmp = true"  onclick="empregos_modal.showModal()">E</button> Empregos
+                
+                        <div class="text-success font-bold mix-blend-difference">
+                            <button 
+                                class="btn btn-secondary btn-lg btn-circle text-white transition transition-duration-300 hover:scale-110" 
+                                @click="opCurs = true; setTimeout(() => document.getElementById('cursos_modal').showModal(), 0)">
+                                C
+                            </button> 
+                            Cursos
                         </div>
-   
                     </div>
-                    <dialog id="empregos_modal" class="modal ">
+                
+                    <!-- MODAL DE EMPREGOS -->
+                    <dialog id="empregos_modal" class="modal">
                         <div class="modal-box w-full max-w-7xl">
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                                <div x-show="opEmp" class="flex flex-col items-end text-center px-4">
-                                    <h1 class="text-5xl font-bold py-5">
-                                    Buscar Vagas
-                                    </h1>
+                                
+                                <div class="flex flex-col items-end text-center px-4">
+                                    <h1 class="text-5xl font-bold py-5">Buscar Vagas</h1>
                                 </div>
-                                <section x-show="opEmp" class="flex  gap-15 pl-20">
-
+                
+                                <!-- SEÇÃO DE BUSCA -->
+                                <section class="flex gap-15 pl-20">
                                     <div>
                                         <p class="py-2 font-bold">Busque sua vaga</p>
                                         <div>
-                                            <input type="text" placeholder="Buscar por vaga..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                            <input 
+                                                type="text" 
+                                                placeholder="Buscar por vaga..." 
+                                                class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                                         </div>
                                     </div>
                                     
@@ -887,55 +903,54 @@
                                                 <option value="ZS">Zona Sul</option>
                                                 <option value="ZO">Zona Oeste</option>
                                             </select>
-
-                                        <div>
-
-                                            <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
-
+                
+                                            <div>
+                                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">
+                                                    Buscar
+                                                </button>
+                                            </div>
                                         </div>
-
                                     </div>
-
                                 </section>
-
-                                <section x-show="opEmp" class="flex justify-around px-10">
-                                    
-                                    <section class="flex flex-col text-secondary  p-8 gap-15">
+                
+                                <!-- SEÇÃO COM FILTROS E VAGAS -->
+                                <section class="flex justify-around px-10">
+                                    <!-- FILTROS -->
+                                    <section class="flex flex-col text-secondary p-8 gap-15">
                                         <h1 class="text-3xl font-bold">Filtros</h1>
                                         <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
-                                        
-                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                                <p class="font-bold">LOCAL DE TRABALHO </p>
-                                                <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial 
+                                            <div class="flex flex-col gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">LOCAL DE TRABALHO</p>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Remoto
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Remoto
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Hibrído
                                                 </label>
                                             </div>
-
-                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                
+                                            <div class="flex flex-col gap-2 font-[Catamaran] font-semibold">
                                                 <p class="font-bold">ESCOLARIDADE</p>
-                                                <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental
                                                 </label>
                                                 <label>
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Superior
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Pós Graduação
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Mestrado
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Doutorado
                                                 </label>
                                             </div>
 
@@ -981,14 +996,12 @@
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
                                                 </label>
                                             </div>
-
                                         </div>
-
-
                                     </section>
-
-                                    <!--vagas-->
+                
+                                    <!-- VAGAS -->
                                     <section class="flex flex-col pt-15 list-none text-secondary">
+                                        <!-- VAGA 1 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -997,22 +1010,26 @@
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de desenvolvedor</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TechNova</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigirs bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para programador Júnior a Pleno capaz de criar aplicativos e sites, corrigir bugs e implementar funcionalidades em sistemas web ou desktop. Desenvolvedor deve ter habilidades com Ruby</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                                    <p id="salario">Salário: R$4.500</p>
-                                                    <p id="local">Local de Trabalho: Homeoffice</p>
+                                                    <p>Bairro: Lagoa Azul - ZN</p>
+                                                    <p>Salário: R$4.500</p>
+                                                    <p>Local de Trabalho: Homeoffice</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
-                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('vagas_modal_1').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-                                                    <!-- Modal Mensagem de salvamento -->
-                                                    <dialog id="vagas_modal" class="modal">
+                                                    
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="vagas_modal_1" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1021,12 +1038,16 @@
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('plus_modal_1').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <!-- Modal Adicionar -->
-                                                    <dialog id="plus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="plus_modal_1" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1038,7 +1059,8 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                
+                                        <!-- VAGA 2 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -1047,22 +1069,26 @@
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de Marketing Digital</h5>
                                                     <p class="pb-3 font-[Catamaran] font-semibold">Empresa: Lumina Creativa</p>
-                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e anaálise de resultados</p>
+                                                    <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional no marketing digital capaz de criar campanhas online de qualidade, gerenciar de forma satisfatória redes sociais da empresa, criar bons anúncios e análise de resultados</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Potengi - ZN</p>
-                                                    <p id="salario">Salário: R$3.800</p>
-                                                    <p id="local">Local de Trabalho: hibrído</p>
+                                                    <p>Bairro: Potengi - ZN</p>
+                                                    <p>Salário: R$3.800</p>
+                                                    <p>Local de Trabalho: Hibrído</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
-                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('vagas_modal_2').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-
-                                                    <dialog id="vagas_modal" class="modal">
+                
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="vagas_modal_2" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1071,11 +1097,16 @@
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('plus_modal_2').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <dialog id="plus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="plus_modal_2" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1088,6 +1119,7 @@
                                             </div>
                                         </div>
 
+                                        <!-- VAGA 3 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -1095,22 +1127,27 @@
                                                 </figure>
                                                 <div>
                                                     <h5 class="font-bold text-xl pb-3">Vaga de assistente de vendas</h5>
-                                                    <p class="pb-3 font-[Catamaran] font-semibold">Empresa: TrendShop</p>
+                                                    <p class="pb-3 font-[Catamaran] font-semibold">Vaga de assistente de vendas</p>
                                                     <p class="pb-10 font-[Catamaran] font-semibold">Vaga para profissional que possa realizar bom atendimento ao cliente, organização de produtos, controle de estoque e suporte às operações de loja.</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                                    <p id="salario">Salário: R$2.300</p>
-                                                    <p id="local">Local de Trabalho: Presencial</p>
+                                                    <p>Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p>Salário: R$2.300</p>
+                                                    <p>Local de Trabalho: Presencial</p>
                                                 </div>
-                                                <div class="flex pt-10 gap-6 ">
-                                                    <button onclick="vagas_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                <div class="flex pt-10 gap-6">
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('vagas_modal_3').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-                                                    <dialog id="vagas_modal" class="modal">
+                                                    
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="vagas_modal_3" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1119,11 +1156,16 @@
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="plus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('plus_modal_3').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <dialog id="plus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="plus_modal_3" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -1135,29 +1177,31 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </section>
                                 </section>
-                            </section>
                             </form>
                         </div>
                     </dialog>
-                    
 
-                    <!-- CURSOS -->
-                    <dialog id="cursos_modal" class="modal ">
+                    <!-- MODAL DE CURSOS -->
+                    <dialog id="cursos_modal" class="modal">
                         <div class="modal-box w-full max-w-7xl">
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                                <div x-show="opCurs" class="flex flex-col items-end text-center px-4">
-                                    <h1 class="text-5xl font-bold py-5">
-                                    Buscar Cursos
-                                    </h1>
+                                
+                                <div class="flex flex-col items-end text-center px-4">
+                                    <h1 class="text-5xl font-bold py-5">Buscar Cursos</h1>
                                 </div>
-                                <section x-show="opCurs" class="flex  gap-15 pl-20">
-
+                
+                                <!-- SEÇÃO DE BUSCA -->
+                                <section class="flex gap-15 pl-20">
                                     <div>
                                         <p class="py-2 font-bold">Busque seu curso</p>
                                         <div>
-                                            <input type="text" placeholder="Buscar por curso..." class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
+                                            <input 
+                                                type="text" 
+                                                placeholder="Buscar por curso..." 
+                                                class="input bg-white text-secondary border border-secondary rounded-md py-2 pr-15 pl-5 cursor-pointer focus:ring focus:ring-gray-500">
                                         </div>
                                     </div>
                                     
@@ -1170,62 +1214,61 @@
                                                 <option value="ZS">Zona Sul</option>
                                                 <option value="ZO">Zona Oeste</option>
                                             </select>
-
-                                        <div>
-
-                                            <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">Buscar</button>
-
+                
+                                            <div>
+                                                <button class="btn btn-accent text-[#FFF] py-2 px-7 rounded-lg cursor-pointer hover:font-semibold inline-block transition-transform duration-300 hover:scale-110">
+                                                    Buscar
+                                                </button>
+                                            </div>
                                         </div>
-
                                     </div>
-
                                 </section>
-
-                                <section x-show="opCurs" class="flex justify-around px-10">
-                                    
-                                    <section class="flex flex-col text-secondary  p-8 gap-15">
+                
+                                <!-- SEÇÃO COM FILTROS E VAGAS -->
+                                <section class="flex justify-around px-10">
+                                    <!-- FILTROS -->
+                                    <section class="flex flex-col text-secondary p-8 gap-15">
                                         <h1 class="text-3xl font-bold">Filtros</h1>
                                         <div class="flex flex-col bg-white p-8 gap-8 rounded-lg shadow-lg">
-                                        
-                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
-                                                <p class="font-bold">MODALIDADE DE ENSINO </p>
-                                                <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Presencial 
+                                            <div class="flex flex-col gap-2 font-[Catamaran] font-semibold">
+                                                <p class="font-bold">MODALIDADE DE ENSINO</p>
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Presencial
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">EAD
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> EAD
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Hibrído
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Hibrído
                                                 </label>
                                             </div>
-
-                                            <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
+                
+                                            <div class="flex flex-col gap-2 font-[Catamaran] font-semibold">
                                                 <p class="font-bold">ESCOLARIDADE</p>
-                                                <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental 
+                                                <label>
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Fundamental
                                                 </label>
                                                 <label>
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Médio
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Superior
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Superior
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Pós Graduação
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Pós Graduação
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Mestrado
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Mestrado
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Doutorado
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Doutorado
                                                 </label>
                                             </div>
 
                                             <div class="flex flex-col gap-2 gap-2 font-[Catamaran] font-semibold">
                                                 <p class="font-bold">SETOR</p>
                                                 <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Administração 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Administração 
                                                 </label>
                                                 <label>
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Comércio e Vendas
@@ -1255,7 +1298,7 @@
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Serviços Gerais
                                                 </label>
                                                 <label> 
-                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Engenharia 
+                                                    <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3"> Engenharia 
                                                 </label>
                                                 <label>
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Jurídico
@@ -1264,14 +1307,12 @@
                                                     <input type="checkbox" class="checkbox checkbox-sm cursor-pointer mx-3">Outros
                                                 </label>
                                             </div>
-
                                         </div>
-
-
                                     </section>
-
-                                    <!--vagas de cursos-->
+                
+                                    <!-- CURSOS -->
                                     <section class="flex flex-col pt-15 list-none text-secondary">
+                                        <!-- CURSO 1 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -1283,45 +1324,55 @@
                                                     <p class="pb-10 font-[Catamaran] font-semibold">Curso de Desenvolvedor Web para produção de sites com Html, Css e Java Script. <br>Tecnologias aprendidas: Html Completo, Css Completo (com frameworks) e Java Script Intermediário (com frameworks).</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Lagoa Azul - ZN</p>
-                                                    <p id="salario">Duração: 120h</p>
-                                                    <p id="local">Modalidade: EAD</p>
+                                                    <p>Bairro: Lagoa Azul - ZN</p>
+                                                    <p>Duração: 120h</p>
+                                                    <p>Modalidade: EAD</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
-                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cursos_modal_1').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-                                                    <!-- Modal Mensagem de salvamento -->
-                                                    <dialog id="cursos_modal" class="modal">
+                                                    
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="cursos_modal_1" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                                <p class="py-4">Curso salvo com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cplus_modal_1').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <!-- Modal Adicionar -->
-                                                    <dialog id="cplus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="cplus_modal_1" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                                <p class="py-4">Curso adicionado com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
                                                 </div>
                                             </div>
                                         </div>
-
+                
+                                        <!-- CURSO 2 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -1333,37 +1384,47 @@
                                                     <p class="pb-10 font-[Catamaran] font-semibold">Prepare-se para planejar, gerenciar e promover destinos e serviços turísticos, abordando áreas como hotelaria, eventos, agenciamento e políticas públicas sustentáveis de maneira inicial.</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro"> Bairro: Potengi - ZN</p>
-                                                    <p id="salario">Duração: 80h</p>
-                                                    <p id="local">Modalidade: Híbrida</p>
+                                                    <p>Bairro: Potengi - ZN</p>
+                                                    <p>Duração: 80h</p>
+                                                    <p>Modalidade: Híbrida</p>
                                                 </div>
                                                 <div class="flex pt-10 gap-6">
-                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cursos_modal_2').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-
-                                                    <dialog id="cursos_modal" class="modal">
+                
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="cursos_modal_2" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                                <p class="py-4">Curso salvo com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cplus_modal_2').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <dialog id="cplus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="cplus_modal_2" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                                <p class="py-4">Curso adicionado com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
@@ -1371,6 +1432,7 @@
                                             </div>
                                         </div>
 
+                                        <!-- CURSO 3 -->
                                         <div class="flex flex-col shadow-lg bg-white max-w-4xl rounded-xl p-10 m-5 shadow-lg">
                                             <div class="flex flex-row">
                                                 <figure class="pr-5 py-5 mr-4 max-w-sm w-max max-h-sm h-max">
@@ -1382,36 +1444,46 @@
                                                     <p class="pb-10 font-[Catamaran] font-semibold">Curso profissionalizante de Operador de Caixa, com módulos de atendimento ao cliente, manuseio de pagamentos (dinheiro, cartão), abertura/fechamento de caixa e técnicas de vendas.</p>
                                                 </div>
                                             </div>
-
+                
                                             <div class="flex justify-between gap-8 font-semibold">
                                                 <div class="font-[Catamaran] font-semibold text-xl">
-                                                    <p id="bairro">Bairro: Nossa Senhora da Apresentação - ZN</p>
-                                                    <p id="salario">Duração: 60h</p>
-                                                    <p id="local">Modalidade: presencial</p>
+                                                    <p>Bairro: Nossa Senhora da Apresentação - ZN</p>
+                                                    <p>Duração: 60h</p>
+                                                    <p>Modalidade: Presencial</p>
                                                 </div>
-                                                <div class="flex pt-10 gap-6 ">
-                                                    <button onclick="cursos_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                                                <div class="flex pt-10 gap-6">
+                                                    <!-- BOTÃO SALVAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cursos_modal_3').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-solid fa-bookmark"></i>
                                                     </button>
-                                                    <dialog id="cursos_modal" class="modal">
+                                                    
+                                                    <!-- MODAL SALVAR - ID ÚNICO -->
+                                                    <dialog id="cursos_modal_3" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga salva com sucesso!</p>
+                                                                <p class="py-4">Curso salvo com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
-                                                
-                                                    <button onclick="cplus_modal.showModal()" class="btn btn-accent w-10 rounded-full">
+                
+                                                    <!-- BOTÃO ADICIONAR -->
+                                                    <button 
+                                                        onclick="document.getElementById('cplus_modal_3').showModal()" 
+                                                        class="btn btn-accent w-10 rounded-full">
                                                         <i class="fa-regular fa-plus"></i>
                                                     </button>
-                                                    <dialog id="cplus_modal" class="modal">
+                                                    
+                                                    <!-- MODAL ADICIONAR - ID ÚNICO -->
+                                                    <dialog id="cplus_modal_3" class="modal">
                                                         <div class="modal-box">
                                                             <form method="dialog">
                                                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                                 <h3 class="font-bold text-lg">Parabéns</h3>
-                                                                <p class="py-4">Vaga adicionada com sucesso!</p>
+                                                                <p class="py-4">Curso adicionado com sucesso!</p>
                                                             </form>
                                                         </div>
                                                     </dialog>
@@ -1420,13 +1492,11 @@
                                         </div>
                                     </section>
                                 </section>
-
                             </form>
                         </div>
-                    </dialog>        
-
+                    </dialog>
+                
                 </section>
-        </section>
 
     </main>
     <!--FOOTER-->
