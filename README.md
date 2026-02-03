@@ -53,3 +53,9 @@ O QUE NÃO ENTRA | Extruturas visuais muito complexas, pois vai contra o nosso o
 ```bash
 https://www.figma.com/design/Dv4FxkFP7OAwYTh6S3FaMo/Trabalho-Final---AcesSol?node-id=0-1&t=u44NIAs6oeiW7toe-1
 ```
+
+- **Trello**
+```bash
+https://trello.com/invite/b/68fb59d8ba4bf46ad9674563/ATTIcad37f45dc9aa5366ff472789c791b51E4660EB3/trabalho-final
+```
+
